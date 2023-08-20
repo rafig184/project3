@@ -17,3 +17,7 @@
 {"level":"error","message":"Incorrect integer value: 'dsdadsadasdsadasdsadasd' for column 'price' at row 1","service":"api"}
 {"level":"error","message":"Duplicate entry 'v@v' for key 'users.email_UNIQUE'","service":"api"}
 {"level":"error","message":"Invalid time value","service":"api"}
+{"level":"error","message":"Incorrect date value: '2023-08-19T21:00:00.000Z' for column 'startDate' at row 1","service":"api"}
+{"level":"error","message":"Incorrect date value: '2023-08-19T21:00:00.000Z' for column 'startDate' at row 1","service":"api"}
+{"level":"error","message":"Incorrect date value: '2023-08-19T21:00:00.000Z' for column 'startDate' at row 1","service":"api"}
+{"level":"error","message":"Incorrect date value: '2023-08-19T21:00:00.000Z' for column 'startDate' at row 1","service":"api"}

@@ -10,14 +10,15 @@ import { useAppDispatch } from "../../../../hooks";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 import { fetchVacationsAsync } from "../vacationSlice";
+import { format } from "date-fns";
 
 
 export interface IVacationsAdmin {
     vacationId: number,
     destination: string,
     desc: string,
-    startDate: string,
-    endDate: string,
+    startDate: Date,
+    endDate: Date,
     price: number,
     image: string
 }
@@ -60,7 +61,8 @@ export function AdminVacationCard(props: IVacationsAdmin) {
         }
     };
 
-
+    const formatedStartDate = format(new Date(props.startDate), "dd/MM/yyyy")
+    const formatedEndtDate = format(new Date(props.endDate), "dd/MM/yyyy")
 
     const header = (
         <Image style={{ height: "200px", width: "350px" }} src={props.image} alt="card" width="350" height="200" preview />
@@ -71,7 +73,7 @@ export function AdminVacationCard(props: IVacationsAdmin) {
         <Card title={props.destination.toUpperCase()} header={header} style={{ width: "350px", height: "650px" }}>
             <div style={{ backgroundColor: "grey", borderRadius: "10px" }}>
                 <div style={{ backgroundColor: "#495057", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}>
-                    <span style={{ color: "white" }}>{props.startDate} - {props.endDate}</span>
+                    <span style={{ color: "white" }}>{formatedStartDate} - {formatedEndtDate}</span>
                 </div>
                 <div style={{ borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}>
                     <h3 style={{ color: "black" }}>{`${props.price} $`}</h3>

@@ -86,8 +86,8 @@ CREATE TABLE `vacations` (
   `vacationId` int NOT NULL AUTO_INCREMENT,
   `destination` varchar(45) NOT NULL,
   `desc` varchar(500) NOT NULL,
-  `startDate` varchar(45) NOT NULL,
-  `endDate` varchar(45) NOT NULL,
+  `startDate` DATE NOT NULL,
+  `endDate` DATE NOT NULL,
   `price` int NOT NULL,
   `image` varchar(600) NOT NULL,
   PRIMARY KEY (`vacationId`)

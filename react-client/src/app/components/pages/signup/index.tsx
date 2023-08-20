@@ -7,6 +7,8 @@ import { InputText } from "primereact/inputtext";
 import { Button } from 'primereact/button';
 import { Toast } from "primereact/toast";
 import { useRef } from "react";
+import { Password } from 'primereact/password';
+import { Divider } from 'primereact/divider';
 
 
 const registrationSchema = object({
@@ -55,6 +57,17 @@ const RegistrationComponent = () => {
         toast.current?.show({ severity: 'error', summary: 'Error', detail: "Something went wrong!", life: 3000 });
     }
 
+    const header = <div className="font-bold mb-3">Pick a password</div>;
+    const footer = (
+        <>
+            <Divider />
+            <p className="mt-2">Suggestions</p>
+            <ul className="pl-2 ml-2 mt-0 line-height-3">
+                <li>Minimum 4 characters</li>
+            </ul>
+        </>
+    );
+
 
     return (
         <FormProvider {...methods}>
@@ -72,8 +85,11 @@ const RegistrationComponent = () => {
                         <InputText type="text" {...methods.register("lastName")} />
                         {methods.formState.errors.lastName && <span>{methods.formState.errors.lastName.message}</span>}
                         Password:
-                        <InputText type="password" {...methods.register("password")} />
-                        {methods.formState.errors.password && <span>{methods.formState.errors.password.message}</span>}
+                        <Password
+                            value={methods.getValues("password")} // Set the initial value
+                            onChange={(e) => methods.setValue("password", e.target.value)} // Update the value
+                            toggleMask header={header} footer={footer} // Toggle password visibility
+                        />
                     </div>
                     <Toast ref={toast} />
                     <Button style={{ marginTop: "5%" }} raised type="button" onClick={signUpService} severity="info">Sign Up</Button>

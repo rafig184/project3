@@ -56,9 +56,9 @@ function middlewareNewVacation(req: Request, res: Response, next: NextFunction) 
 vacationsRouter.post("/new-vacation", middlewareNewVacation, async function (req, res, next) {
     try {
         const { destination, startDate, endDate, desc, price, image } = req.body
-        const formatedStartDate = format(new Date(startDate), "dd/MM/yyyy")
-        const formatedEndtDate = format(new Date(endDate), "dd/MM/yyyy")
-        const result = await addVacation(destination, desc, formatedStartDate, formatedEndtDate, price, image)
+        const formatStartDate = new Date(startDate)
+        const formatEndDate = new Date(endDate)
+        const result = await addVacation(destination, desc, formatStartDate, formatEndDate, price, image)
         console.log(result)
         return res.json({ message: "Vacation successfully added!" })
     } catch (error) {

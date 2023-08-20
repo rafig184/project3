@@ -107,3 +107,15 @@
 {"level":"info","message":"Api is running on Port 4000","service":"api"}
 {"level":"info","message":"Api is running on Port 4000","service":"api"}
 {"level":"info","message":"Api is running on Port 4000","service":"api"}
+{"level":"info","message":"Api is running on Port 4000","service":"api"}
+{"level":"error","message":"Incorrect date value: '2023-08-19T21:00:00.000Z' for column 'startDate' at row 1","service":"api"}
+{"level":"error","message":"Incorrect date value: '2023-08-19T21:00:00.000Z' for column 'startDate' at row 1","service":"api"}
+{"level":"info","message":"Api is running on Port 4000","service":"api"}
+{"level":"info","message":"Api is running on Port 4000","service":"api"}
+{"level":"error","message":"Incorrect date value: '2023-08-19T21:00:00.000Z' for column 'startDate' at row 1","service":"api"}
+{"level":"info","message":"Api is running on Port 4000","service":"api"}
+{"level":"error","message":"Incorrect date value: '2023-08-19T21:00:00.000Z' for column 'startDate' at row 1","service":"api"}
+{"level":"info","message":"Api is running on Port 4000","service":"api"}
+{"level":"info","message":"Api is running on Port 4000","service":"api"}
+{"level":"info","message":"Api is running on Port 4000","service":"api"}
+{"level":"info","message":"Api is running on Port 4000","service":"api"}
