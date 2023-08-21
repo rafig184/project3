@@ -97,14 +97,13 @@ const AddVacation = () => {
                     <div>
                         <label htmlFor="text">Start Date:</label>
                     </div>
-                    <Calendar value={startDate} onChange={handlersStartDateCallback} dateFormat="dd/mm/yy" />
-
+                    <Calendar value={startDate} minDate={new Date()} onChange={handlersStartDateCallback} dateFormat="dd/mm/yy" />
                 </div>
                 <div>
                     <div>
                         <label htmlFor="text">End date:</label>
                     </div>
-                    <Calendar value={endDate} onChange={handlerEndDateCallback} dateFormat="dd/mm/yy" />
+                    <Calendar value={endDate} minDate={new Date(startDate)} onChange={handlerEndDateCallback} dateFormat="dd/mm/yy" />
                 </div>
                 <div>
                     <div>

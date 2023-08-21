@@ -19,7 +19,6 @@ export const fetchVacationsAsync = createAsyncThunk(
   "adminVacations/getVacationsService",
   async () => {
     const response = await getVacationsService()
-    // The value we return becomes the `fulfilled` action payload
     console.log(response);
 
     return response

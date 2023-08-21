@@ -5,6 +5,7 @@ import { ScrollPanel } from "primereact/scrollpanel";
 import { ToggleButton } from 'primereact/togglebutton';
 import { useState } from "react";
 import { Image } from "primereact/image";
+import { format } from "date-fns";
 
 export function VacationCard(props: IVacations) {
     const [checked, setChecked] = useState(false);
@@ -15,15 +16,18 @@ export function VacationCard(props: IVacations) {
     const footer = (
         <div className="flex flex-wrap justify-content-left gap-2">
             <Button label="" icon="pi pi-heart" severity="danger" />
-
         </div>
     );
+
+    const formatedStartDate = format(new Date(props.startDate), "dd/MM/yyyy")
+    const formatedEndtDate = format(new Date(props.endDate), "dd/MM/yyyy")
+
 
     return <div style={{ margin: "2%" }}>
         <Card title={props.destination.toUpperCase()} header={header} style={{ width: "350px", height: "600px" }}>
             <div style={{ backgroundColor: "grey", borderRadius: "10px" }}>
-                <div style={{ backgroundColor: "#495057", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}>
-                    <span style={{ color: "white" }}>{props.startDate} - {props.endDate}</span>
+                <div style={{ backgroundColor: "#B4E3FF", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}>
+                    <span style={{ color: "#55758F" }}>{formatedStartDate} - {formatedEndtDate}</span>
                 </div>
                 <div style={{ borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}>
                     <h3 style={{ color: "black" }}>{`${props.price} $`}</h3>

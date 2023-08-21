@@ -30,36 +30,19 @@ export default function AdminVacationsPage() {
         }
     }, [dispatch]);
 
-    // const [isGroupsLoading, setIsGroupsLoading] = useState(false)
+
     const navigate = useNavigate()
-    // async function getVacationsAction() {
-    //     try {
-    //         // setIsGroupsLoading(true)
-    //         const result = await getVacationsService()
-    //         setVacations(result)
-    //     } catch (error) {
-    //         alert("error")
-    //         navigate("/login")
-    //     } finally {
-    //         // setIsGroupsLoading(false)
-    //     }
-
-    // }
-
-    // useEffect(() => {
-    //     getVacationsAction()
-    //     return () => {
-    //         console.log("Unmount!")
-    //     }
-    // }, [])
 
 
-
-    return <div>
+    return <div >
         {/* <WithLoading isLoading={isCountriesLoading}> */}
-        <Button onClick={() => { navigate("/add-vacation") }} severity="info" raised>Add new vacation</Button>
-        <ConfirmDialog />
-        <AdminVacationList vacations={vacations} />
+        <div style={{ backgroundColor: "#C0C0C0", color: "#495057", paddingTop: "1%", paddingBottom: "1%", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}>
+            <Button onClick={() => { navigate("/add-vacation") }} severity="info" raised>Add new vacation</Button>
+        </div>
+        <div style={{ backgroundColor: "#EFF3F8", color: "#495057", display: "flex" }}>
+            <ConfirmDialog />
+            <AdminVacationList vacations={vacations} />
+        </div>
 
         {/* </WithLoading> */}
     </div>

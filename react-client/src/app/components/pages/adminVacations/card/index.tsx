@@ -24,10 +24,10 @@ export interface IVacationsAdmin {
 }
 
 
-
 export function AdminVacationCard(props: IVacationsAdmin) {
     const toast = useRef<Toast>(null);
 
+    const dispatch = useAppDispatch();
 
 
     const accept = () => {
@@ -51,11 +51,10 @@ export function AdminVacationCard(props: IVacationsAdmin) {
     };
 
     async function handleRemoveVacation() {
-
         try {
             const result = await deleteVacationsService(props.vacationId);
-
             console.log(result)
+            dispatch(fetchVacationsAsync())
         } catch (error) {
             console.error(error);
         }
@@ -63,6 +62,8 @@ export function AdminVacationCard(props: IVacationsAdmin) {
 
     const formatedStartDate = format(new Date(props.startDate), "dd/MM/yyyy")
     const formatedEndtDate = format(new Date(props.endDate), "dd/MM/yyyy")
+
+
 
     const header = (
         <Image style={{ height: "200px", width: "350px" }} src={props.image} alt="card" width="350" height="200" preview />

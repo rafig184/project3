@@ -1,5 +1,5 @@
 import './App.css'
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { Routes, Route, Link, useNavigate } from "react-router-dom"
 import { TabMenu } from 'primereact/tabmenu';
 import 'primeicons/primeicons.css';
@@ -24,33 +24,10 @@ interface IRoute {
   component: any,
   label?: string,
   icon?: string
-  onlyAdmin?: boolean
+  onlyAdmin: boolean
 }
 const routes: Array<IRoute> = [
 
-  // {
-  //     path: "/countries",
-  //     component: <ProtectedRoute><CountriesPage /></ProtectedRoute>,
-  //     key: "countries",
-  //     label: "Countries"
-  // },
-  {
-    path: "/signup",
-
-    component: <RegistrationComponent />,
-    key: "signup",
-    label: "Sign-up",
-    icon: "pi pi-sign-in",
-    onlyAdmin: true
-  },
-  {
-    path: "/login",
-    component: <LoginComponent />,
-    key: "login",
-    label: "Log-In",
-    icon: "pi pi-user",
-    onlyAdmin: true
-  },
   {
 
     path: "/user-vacations",
@@ -69,13 +46,40 @@ const routes: Array<IRoute> = [
     onlyAdmin: true
   },
   {
+    path: "/add-vacation",
+    component: <ProtectedRoute><AddVacation /></ProtectedRoute>,
+    key: "reports",
+    label: "Reports",
+    icon: "pi pi-chart-bar",
+    onlyAdmin: true
 
+  },
+  {
     path: "/add-vacation",
     component: <ProtectedRoute><AddVacation /></ProtectedRoute>,
     key: "add-vacation",
     // label: "Add Vacations",
     // icon: "pi pi-user"
+    onlyAdmin: true
   },
+
+  {
+    path: "/signup",
+    component: <RegistrationComponent />,
+    key: "signup",
+    // label: "Sign-up",
+    // icon: "pi pi-sign-in",
+    onlyAdmin: false
+  },
+  {
+    path: "/login",
+    component: <LoginComponent />,
+    key: "login",
+    // label: "Log-In",
+    // icon: "pi pi-user",
+    onlyAdmin: false
+  },
+
   // {
   //   path: "*",
   //   component: <NotFound />,
@@ -111,27 +115,75 @@ function App() {
     localStorage.setItem("token", "")
     localStorage.setItem("role", "")
   }
+  function loginHandler() {
+    navigate("/login")
+
+  }
+  function signinHandler() {
+    navigate("/signup")
+
+  }
+
+  useEffect(() => {
+    const route = routes[activeIndex];
+    navigate(route.path);
+  }, [activeIndex]);
+
+  const items = routes
+    .filter((route: IRoute) => route.label)
+    .map((route: IRoute) => ({
+      label: route.label,
+      icon: route.icon,
+      path: route.path,
+    }));
+
+  const userRole = localStorage.getItem("role")
+  const userToken = localStorage.getItem("token")
+
+  const filteredRoutes = routes.filter((route: IRoute) => {
+    if (route.onlyAdmin && userRole !== "admin") {
+      return false;
+    }
+    return true;
+  });
 
   return (
     <div>
       <div className='top-container'>
-        <Button style={{ display: "flex", justifyContent: "left" }} onClick={logoutHandler} severity="info" raised icon="pi pi-sign-out" label="Log Out" />
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          {userToken ? (
+            <span>
+              <Button onClick={logoutHandler} severity="info" raised icon="pi pi-sign-out" label="Log Out" />
+            </span>
+          ) : (
+            <span>
+              <Button onClick={loginHandler} severity="info" raised icon="pi pi-user" label="Log In" />
+              <span> </span>
+              <Button onClick={signinHandler} severity="info" raised icon="pi pi-sign-in" label="Sign In" />
+            </span>
+          )}
+        </div>
+
+
         <div className='tabMenu' >
-          <div style={{ marginBottom: "3%" }}>
-            <Image src={logoImage} alt="Image" width="250" />
+          <div style={{ marginBottom: "3%", marginTop: "1%" }}>
+            <Image src={logoImage} alt="Image" width="180" />
           </div>
-          <TabMenu model={routes.filter(route => route.label).map(route => ({ label: route.label, value: route.key, icon: route.icon }))} activeIndex={activeIndex} onTabChange={onTabChange} />
+          {userRole === "admin" && (
+            <TabMenu style={{ borderRadius: "10px" }} model={items} activeIndex={activeIndex} onTabChange={(e) => setActiveIndex(e.index)} />
+          )}
         </div>
       </div>
 
       <div style={{ marginTop: "5%", display: "flex", justifyContent: "center" }}>
-        {/* {routes.filter(r => r.label).map((route: IRoute) => {
-          return <Link key={route.label} to={route.path} > {route.label} </Link>
-        })} */}
         <Routes>
-          {routes.map((route: IRoute) => {
-            return <Route path={route.path} key={route.key} element={route.component} />
-          })}
+          {filteredRoutes.map((route: IRoute) => (
+            <Route
+              key={route.key}
+              path={route.path}
+              element={userRole === "admin" || !route.onlyAdmin ? route.component : null}
+            />
+          ))}
         </Routes>
       </div>
     </div>

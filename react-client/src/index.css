@@ -18,9 +18,9 @@
 .top-container {
   position: sticky;
   top: 0;
-  background-color: #BCD2E5;
+  background-color: #d0dfec;
   /* Change to your desired background color */
-  padding: 10px;
+  /* padding: 10px; */
   z-index: 100;
   /* Ensure the top container is above other content */
 }
@@ -41,7 +41,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #BCD2E5;
+  background-color: #d0dfec;
 }
 
 h1 {
