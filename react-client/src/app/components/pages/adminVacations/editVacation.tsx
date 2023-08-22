@@ -135,7 +135,7 @@ const EditVacationPage = (vacationId: any) => {
                     />
                 </div>
                 <Toast ref={toast} />
-                <Button style={{ marginTop: "5%" }} type="button" onClick={addVacationService} raised>Edit Vacation</Button>
+                <Button severity="info" style={{ marginTop: "5%" }} type="button" onClick={addVacationService} raised>Edit Vacation</Button>
             </form>
         </div>
 

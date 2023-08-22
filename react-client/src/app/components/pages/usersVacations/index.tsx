@@ -9,6 +9,7 @@ import { RootState } from "../../../store";
 import { useSelector } from "react-redux";
 import { fetchVacationsAsync } from "../adminVacations/vacationSlice";
 import { Checkbox } from 'primereact/checkbox';
+import { WithLoading } from "../../ui-components/withLoading";
 
 
 export default function UserVacationsPage() {
@@ -28,6 +29,7 @@ export default function UserVacationsPage() {
 
     const dispatch = useAppDispatch();
     const vacations = useSelector((state: RootState) => state.vacations.vacationsData);
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -53,7 +55,7 @@ export default function UserVacationsPage() {
         }
     }, [vacations, futureChecked]);
 
-    const navigate = useNavigate()
+
 
 
 
@@ -74,7 +76,7 @@ export default function UserVacationsPage() {
         </div>
 
         {/* </WithLoading> */}
-    </div>
+    </div >
 }
 
 

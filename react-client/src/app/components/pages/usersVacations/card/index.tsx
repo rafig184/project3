@@ -11,7 +11,10 @@ export function VacationCard(props: IVacations) {
     const [checked, setChecked] = useState(false);
 
     const header = (
-        <Image style={{ height: "200px", width: "350px" }} src={props.image} alt="card" width="350" height="200" preview />
+        <div style={{ position: "relative" }}>
+            <Image src={props.image} alt="Destination" style={{ height: "200px", width: "350px", borderRadius: "10px 10px 0 0" }} width="350" height="200" preview />
+            <h2 style={{ position: "absolute", top: "10px", left: "10px", color: "white", zIndex: 1, textShadow: "3px 3px 5px rgba(0, 0, 0, 0.6)" }}>{props.destination.toUpperCase()}</h2>
+        </div>
     );
     const footer = (
         <div className="flex flex-wrap justify-content-left gap-2">
@@ -24,7 +27,7 @@ export function VacationCard(props: IVacations) {
 
 
     return <div style={{ margin: "2%" }}>
-        <Card title={props.destination.toUpperCase()} header={header} style={{ width: "350px", height: "600px" }}>
+        <Card header={header} style={{ width: "350px", height: "550px" }}>
             <div style={{ backgroundColor: "grey", borderRadius: "10px" }}>
                 <div style={{ backgroundColor: "#B4E3FF", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}>
                     <span style={{ color: "#55758F" }}>{formatedStartDate} - {formatedEndtDate}</span>

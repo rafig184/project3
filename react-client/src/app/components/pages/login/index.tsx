@@ -34,9 +34,10 @@ const LoginComponent = () => {
             const result = await axios.post("http://localhost:4000/auth/login", loginPayload)
             // alert("User logged in succesfully")
             showSuccess(result.data.message)
-            console.log(result.data);
+            console.log(result.data.firstName);
             localStorage.setItem("token", result.data.token)
             localStorage.setItem("role", result.data.role)
+            localStorage.setItem("firstName", result.data.firstName)
             if (result.data.role === "user") {
                 setTimeout(() => { navigate("/user-vacations") }, 500)
             } else setTimeout(() => { navigate("/admin-vacations") }, 500)
@@ -50,7 +51,7 @@ const LoginComponent = () => {
     }
 
     const showSuccess = (result: any) => {
-        toast.current?.show({ severity: 'success', summary: 'Success', detail: result, life: 3000 });
+        toast.current?.show({ severity: 'success', summary: 'Login Success', detail: result, life: 3000 });
     }
     const showError = () => {
         toast.current?.show({ severity: 'error', summary: 'Error', detail: "Something went wrong!", life: 3000 });

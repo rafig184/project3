@@ -29,16 +29,6 @@ interface IRoute {
   onlyAdmin: boolean
 }
 const routes: Array<IRoute> = [
-
-  {
-
-    path: "/user-vacations",
-    component: <ProtectedRoute><UserVacationsPage /></ProtectedRoute>,
-    key: "user-vacations",
-    label: "Vacations",
-    icon: "pi pi-globe",
-    onlyAdmin: false
-  },
   {
     path: "/admin-vacations",
     component: <ProtectedRoute><AdminVacationsPage /></ProtectedRoute>,
@@ -48,7 +38,7 @@ const routes: Array<IRoute> = [
     onlyAdmin: true
   },
   {
-    path: "/add-vacation",
+    path: "/reports",
     component: <ProtectedRoute><AddVacation /></ProtectedRoute>,
     key: "reports",
     label: "Reports",
@@ -56,6 +46,15 @@ const routes: Array<IRoute> = [
     onlyAdmin: true
 
   },
+  {
+    path: "/user-vacations",
+    component: <ProtectedRoute><UserVacationsPage /></ProtectedRoute>,
+    key: "user-vacations",
+    // label: "Vacations",
+    // icon: "pi pi-globe",
+    onlyAdmin: false
+  },
+
   {
     path: "/add-vacation",
     component: <ProtectedRoute><AddVacation /></ProtectedRoute>,
@@ -123,6 +122,7 @@ function App() {
     navigate("/login")
     localStorage.setItem("token", "")
     localStorage.setItem("role", "")
+    localStorage.setItem("firstName", "")
   }
   function loginHandler() {
     navigate("/login")
@@ -148,6 +148,7 @@ function App() {
 
   const userRole = localStorage.getItem("role")
   const userToken = localStorage.getItem("token")
+  const userFirstName = localStorage.getItem("firstName")
 
   const filteredRoutes = routes.filter((route: IRoute) => {
     if (route.onlyAdmin && userRole !== "admin") {
@@ -163,7 +164,7 @@ function App() {
           {userToken ? (
             <div style={{ display: "flex", justifyContent: "space-between", margin: "auto" }}>
               <div>
-                <Avatar icon="pi pi-user" size="large" style={{ backgroundColor: '#2196F3', color: '#ffffff' }} shape="circle" /> Welcome back
+                <Avatar icon="pi pi-user" size="large" style={{ backgroundColor: '#2196F3', color: '#ffffff' }} shape="circle" /><span style={{ color: "#808080", fontSize: "larger" }}> Welcome back {userFirstName}</span>
               </div>
               <div>
                 <Button onClick={logoutHandler} severity="info" raised icon="pi pi-sign-out" label="Log Out" />
@@ -184,7 +185,7 @@ function App() {
             <Image src={logoImage} alt="Image" width="180" />
           </div>
           {userRole === "admin" && (
-            <TabMenu style={{ borderRadius: "10px" }} model={items} activeIndex={activeIndex} onTabChange={(e) => setActiveIndex(e.index)} />
+            <TabMenu style={{ borderRadius: "10px" }} model={items} activeIndex={activeIndex} onTabChange={onTabChange} />
           )}
         </div>
       </div>

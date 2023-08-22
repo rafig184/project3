@@ -1,18 +1,19 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState, AppThunk } from "../../../store"
 import { getVacationsService } from "./api"
+import { getFollowersService } from "./api/followers"
 // import { fetchCount } from "./counterAPI"
 
 export interface IVacationsAdmin {
   vacationsData: Array<any>
-  // totalLikes: number
+  followers: Array<any>
 }
 
 
 
 const initialState: IVacationsAdmin = {
   vacationsData: [],
-
+  followers: []
 }
 
 export const fetchVacationsAsync = createAsyncThunk(
@@ -20,7 +21,14 @@ export const fetchVacationsAsync = createAsyncThunk(
   async () => {
     const response = await getVacationsService()
     console.log(response);
-
+    return response
+  }
+)
+export const fetchFollowersAsync = createAsyncThunk(
+  "adminVacations/getFollowersService",
+  async () => {
+    const response = await getFollowersService()
+    console.log(response);
     return response
   }
 )
@@ -34,7 +42,7 @@ export const vacationSlice = createSlice({
     //   const index = state.vacationsData.findIndex(v => v.destination.toLowerCase() === action.payload)
     //   if (index !== -1) {
     //     state.vacationsData[index].likes++
-    //     state.totalLikes = state.vacationsData.reduce(
+    //     state.totalFollowers = state.vacationsData.reduce(
     //       (sum, current) => sum + current.likes,
     //       0
     //     );
@@ -57,6 +65,22 @@ export const vacationSlice = createSlice({
       .addCase(fetchVacationsAsync.rejected, (state) => {
 
         state.vacationsData = []
+
+      })
+
+    builder.addCase(fetchFollowersAsync.pending, (state) => {
+
+      state.followers = []
+    })
+      .addCase(fetchFollowersAsync.fulfilled, (state, action) => {
+
+        // state.value += action.payload
+        state.followers = action.payload
+
+      })
+      .addCase(fetchFollowersAsync.rejected, (state) => {
+
+        state.followers = []
 
       })
   },

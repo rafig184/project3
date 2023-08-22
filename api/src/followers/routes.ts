@@ -3,21 +3,22 @@ import express, { NextFunction, Request, Response } from "express"
 import zod from "zod"
 import { addNewFollower } from "./handlers/addNewFollower"
 import { removeFollower } from "./handlers/deleteFollower"
+import { getAllFollowers } from "./handlers/getAllFollowers"
 
 
 
 const followerRouter = express.Router()
 
-// vacationsRouter.get("/", async function (req, res, next) {
-//     try {
-//         const result = await getAllVacations()
-//         console.log(result);
-//         return res.json(result)
-//     } catch (error) {
-//         console.log(error);
-//         return next(error)
-//     }
-// })
+followerRouter.get("/", async function (req, res, next) {
+    try {
+        const result = await getAllFollowers()
+        console.log(result);
+        return res.json(result)
+    } catch (error) {
+        console.log(error);
+        return next(error)
+    }
+})
 
 followerRouter.delete("/", async function (req: Request, res: Response, next: NextFunction) {
 

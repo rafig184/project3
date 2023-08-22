@@ -47,8 +47,9 @@ app.listen(process.env.PORT, () => {
 //         } else {
 //             (req as any).currentUserEmail = decoded.email;
 //             (req as any).currentUserId = decoded.userId;
+//             (req as any).currentUserFirstName = decoded.firstName;
 //             (req as any).currentUserRole = decoded.role;
-//             console.log(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User authenticated Successfully`)
+//             logger.error(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User authenticated Successfully`)
 //             return next()
 //         }
 //     });

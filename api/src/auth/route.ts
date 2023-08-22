@@ -11,7 +11,6 @@ dotenv.config()
 
 
 const authRouter = express.Router();
-// const users = [{ email: "root@root.com", password: "admin" }];
 
 export const signupSchema = zod.object({
     firstName: zod.string().max(100),
@@ -63,9 +62,10 @@ authRouter.post("/login", middlewareLogin, async function (req, res, next) {
         console.log(result, userRecord)
         if (!result) throw new Error()
         console.log(userRecord[0].role);
+        console.log(`first name is : ${userRecord[0].firstName}`);
 
-        const signedToken = jsonwebtoken.sign({ email: userRecord.email, userId: userRecord.userId, role: userRecord.role }, "PASSWORD123456789", { expiresIn: '60h' })
-        res.json({ token: signedToken, role: userRecord[0].role })
+        const signedToken = jsonwebtoken.sign({ email: userRecord.email, userId: userRecord.userId, role: userRecord.role, firstName: userRecord.firstName }, "PASSWORD123456789", { expiresIn: '60h' })
+        res.json({ token: signedToken, role: userRecord[0].role, firstName: userRecord[0].firstName })
     } catch (error) {
         console.log(error);
         return res.status(401).send("User is unauthorized")

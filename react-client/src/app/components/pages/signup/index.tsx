@@ -39,18 +39,16 @@ const RegistrationComponent = () => {
         try {
             const result = await axios.post("http://localhost:4000/auth/sign-up", signUpPayload)
             showSuccess(result.data.message)
-            // alert(result.data.message)
             setTimeout(() => { navigate("/login") }, 1000)
         } catch (ex) {
             console.log(ex);
             showError()
-            // alert("Something went wrong!")
         }
 
     }
 
-    const showSuccess = (result: any) => {
-        toast.current?.show({ severity: 'success', summary: 'Success', detail: result, life: 3000 });
+    const showSuccess = (message: any) => {
+        toast.current?.show({ severity: 'success', summary: 'Success', detail: message, life: 3000 });
 
     }
     const showError = () => {

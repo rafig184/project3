@@ -16,13 +16,11 @@
 }
 
 .top-container {
+  min-width: 100%;
   position: sticky;
   top: 0;
   background-color: #d0dfec;
-  /* Change to your desired background color */
-  /* padding: 10px; */
   z-index: 100;
-  /* Ensure the top container is above other content */
 }
 
 a {
