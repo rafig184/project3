@@ -30,8 +30,6 @@ export default function UserVacationsPage() {
     const vacations = useSelector((state: RootState) => state.vacations.vacationsData);
 
 
-
-
     useEffect(() => {
         try {
             dispatch(fetchVacationsAsync());
@@ -61,7 +59,7 @@ export default function UserVacationsPage() {
 
     return <div>
         {/* <WithLoading isLoading={isCountriesLoading}> */}
-        <div style={{ backgroundColor: "#C0C0C0", color: "#495057", display: "flex", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }} className="card flex justify-content-center">
+        <div style={{ paddingTop: "2%", paddingBottom: "2%", backgroundColor: "#C0C0C0", color: "#495057", display: "flex", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }} className="card flex justify-content-center">
             <div style={{ margin: "auto" }}>
                 <Checkbox onChange={handlerFutureChecked} checked={futureChecked}></Checkbox>
                 <label htmlFor="ingredient1" className="ml-2">Show only future vacations</label>

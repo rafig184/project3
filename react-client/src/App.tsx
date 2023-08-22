@@ -15,6 +15,8 @@ import { Button } from 'primereact/button';
 import { ProtectedRoute } from './app/components/ui-components/protected-route';
 import { Image } from 'primereact/image';
 import logoImage from '../src/assets/logo1.png';
+import { Avatar } from 'primereact/avatar';
+import EditVacationPage from './app/components/pages/adminVacations/editVacation';
 
 
 console.log("test")
@@ -62,7 +64,14 @@ const routes: Array<IRoute> = [
     // icon: "pi pi-user"
     onlyAdmin: true
   },
-
+  {
+    path: "/edit-vacation",
+    component: <ProtectedRoute><EditVacationPage /></ProtectedRoute>,
+    key: "edit-vacation",
+    // label: "Add Vacations",
+    // icon: "pi pi-user"
+    onlyAdmin: true
+  },
   {
     path: "/signup",
     component: <RegistrationComponent />,
@@ -150,11 +159,16 @@ function App() {
   return (
     <div>
       <div className='top-container'>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div >
           {userToken ? (
-            <span>
-              <Button onClick={logoutHandler} severity="info" raised icon="pi pi-sign-out" label="Log Out" />
-            </span>
+            <div style={{ display: "flex", justifyContent: "space-between", margin: "auto" }}>
+              <div>
+                <Avatar icon="pi pi-user" size="large" style={{ backgroundColor: '#2196F3', color: '#ffffff' }} shape="circle" /> Welcome back
+              </div>
+              <div>
+                <Button onClick={logoutHandler} severity="info" raised icon="pi pi-sign-out" label="Log Out" />
+              </div>
+            </div>
           ) : (
             <span>
               <Button onClick={loginHandler} severity="info" raised icon="pi pi-user" label="Log In" />

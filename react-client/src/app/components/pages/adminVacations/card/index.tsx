@@ -11,6 +11,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 import { fetchVacationsAsync } from "../vacationSlice";
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
+import EditVacationPage from "../editVacation";
 
 
 export interface IVacationsAdmin {
@@ -28,7 +30,7 @@ export function AdminVacationCard(props: IVacationsAdmin) {
     const toast = useRef<Toast>(null);
 
     const dispatch = useAppDispatch();
-
+    const navigate = useNavigate();
 
     const accept = () => {
         toast.current?.show({ severity: 'success', summary: 'Confirmed', detail: 'Vacation Deleted', life: 3000 });
@@ -60,6 +62,11 @@ export function AdminVacationCard(props: IVacationsAdmin) {
         }
     };
 
+    function editHandler() {
+        navigate("/edit-vacation")
+
+    }
+
     const formatedStartDate = format(new Date(props.startDate), "dd/MM/yyyy")
     const formatedEndtDate = format(new Date(props.endDate), "dd/MM/yyyy")
 
@@ -87,7 +94,7 @@ export function AdminVacationCard(props: IVacationsAdmin) {
 
             <div style={{ marginTop: "5%" }}>
                 <Button severity="danger" onClick={confirm} icon="pi pi-times" label="Delete" raised />
-                <Button style={{ marginLeft: "4%" }} label="Edit" icon="pi pi-file-edit" severity="info" raised />
+                <Button onClick={editHandler} style={{ marginLeft: "4%" }} label="Edit" icon="pi pi-file-edit" severity="info" raised />
             </div>
 
 

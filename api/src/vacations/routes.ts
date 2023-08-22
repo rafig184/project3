@@ -5,6 +5,7 @@ import { format } from 'date-fns'
 import { getAllVacations } from "./handlers/getAllVacations"
 import { removeVacation } from "./handlers/deleteVacation"
 import { addVacation } from "./handlers/addVacation"
+import { editVacation } from "./handlers/editVacation"
 
 
 
@@ -64,6 +65,18 @@ vacationsRouter.post("/new-vacation", middlewareNewVacation, async function (req
     } catch (error) {
         console.log(error)
         return next(error)
+    }
+})
+
+vacationsRouter.put("/edit-vacation/:vacationID", async function (req: Request, res: Response, next: NextFunction) {
+    const vacationID = parseInt(req.params.vacationID);
+    const { destination, desc, startDate, endDate, price, image } = req.body;
+    try {
+        const results = await editVacation(destination, desc, startDate, endDate, price, image, vacationID);
+        res.json(results);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Error updating Vacation" });
     }
 })
 

@@ -7,18 +7,16 @@ import { useState } from "react";
 export default function VacationList(props: { vacations: Array<IVacations> }) {
 
     const [first, setFirst] = useState<number>(0);
-    const [rows, setRows] = useState<number>(10);
 
     const onPageChange = (event: PaginatorPageChangeEvent) => {
         setFirst(event.first);
-        setRows(event.rows);
     };
 
-
+    const displayedVacations = props.vacations.slice(first, first + 9);
 
     return <div>
         <div style={{ display: "flex", flexDirection: "row", alignItems: "flex-start", justifyContent: "center", flexWrap: "wrap" }}>
-            {props.vacations.map((vacation: { image: string, destination: string, startDate: string, endDate: string, price: number, desc: string }) => {
+            {displayedVacations.map((vacation: { image: string, destination: string, startDate: string, endDate: string, price: number, desc: string }) => {
                 return <VacationCard key={vacation?.destination + vacation.startDate}
                     image={vacation.image}
                     destination={vacation?.destination}
@@ -28,6 +26,6 @@ export default function VacationList(props: { vacations: Array<IVacations> }) {
                     price={vacation.price} />
             })}
         </div>
-        <Paginator first={first} rows={10} totalRecords={props.vacations.length} onPageChange={onPageChange} />
+        <Paginator first={first} rows={9} totalRecords={props.vacations.length} onPageChange={onPageChange} />
     </div>
 }

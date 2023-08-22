@@ -3,14 +3,14 @@ import { RootState, AppThunk } from "../../../store"
 import { getVacationsService } from "./api"
 // import { fetchCount } from "./counterAPI"
 
-export interface IVacation {
+export interface IVacationsAdmin {
   vacationsData: Array<any>
   // totalLikes: number
 }
 
 
 
-const initialState: IVacation = {
+const initialState: IVacationsAdmin = {
   vacationsData: [],
 
 }
