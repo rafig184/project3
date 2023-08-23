@@ -69,7 +69,6 @@ export const vacationSlice = createSlice({
       })
 
     builder.addCase(fetchFollowersAsync.pending, (state) => {
-
       state.followers = []
     })
       .addCase(fetchFollowersAsync.fulfilled, (state, action) => {

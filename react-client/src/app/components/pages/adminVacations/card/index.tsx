@@ -80,21 +80,25 @@ export function AdminVacationCard(props: IVacationsAdmin) {
     );
 
 
+
+
     return <div style={{ margin: "2%" }}>
-        <Card header={header} style={{ width: "350px", height: "550px" }}>
-            <div style={{ backgroundColor: "grey", borderRadius: "10px" }}>
-                <div style={{ backgroundColor: "#495057", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}>
-                    <span style={{ color: "white" }}>{formatedStartDate} - {formatedEndtDate}</span>
+        <Card header={header} style={{ width: "350px", height: "560px" }}>
+            <div style={{ borderBottomRightRadius: "10px" }}>
+                <div style={{ position: "relative", marginBottom: "1%", backgroundColor: "#495057", paddingTop: "2%", paddingBottom: "2%", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", zIndex: 1 }}>
+                    <span style={{ color: "white" }}>
+                        <i className={"pi pi-calendar"}></i><span> </span>
+                        {formatedStartDate} - {formatedEndtDate}</span>
                 </div>
-                <div style={{ borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}>
-                    <h3 style={{ color: "black" }}>{`${props.price} $`}</h3>
-                </div>
-                <ScrollPanel style={{ width: '100%', height: '120px', backgroundColor: "silver", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }} className="custombar1">
+                <ScrollPanel style={{ position: "relative", marginTop: "-8px", width: '101%', height: '130px', backgroundColor: "silver", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", zIndex: 2 }} className="custombar1">
                     <p>{props.desc}</p>
                 </ScrollPanel>
+
+            </div>
+            <div style={{ borderRadius: "10px", padding: "1px", marginTop: "1%", backgroundColor: "#3B82F6" }} >
+                <h3 style={{ color: "white" }}>{`${props.price} $`}</h3>
             </div>
             <Toast ref={toast} />
-
             <div style={{ marginTop: "5%" }}>
                 <Button severity="danger" onClick={confirm} icon="pi pi-times" label="Delete" raised />
                 <Button onClick={editHandler} style={{ marginLeft: "4%" }} label="Edit" icon="pi pi-file-edit" severity="info" raised />

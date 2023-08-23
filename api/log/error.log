@@ -25,3 +25,11 @@
 {"level":"error","message":"Duplicate entry 'd' for key 'users.email_UNIQUE'","service":"api"}
 {"level":"error","message":"Duplicate entry 'd' for key 'users.email_UNIQUE'","service":"api"}
 {"level":"error","message":"Duplicate entry 'd' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Column 'vacationId' in field list is ambiguous","service":"api"}
+{"level":"error","message":"Column 'vacationId' in field list is ambiguous","service":"api"}
+{"level":"error","message":"Unknown column 'v.vacationId' in 'field list'","service":"api"}
+{"level":"error","message":"Unknown column 'v.vacationId' in 'field list'","service":"api"}
+{"level":"error","message":"Unknown column 'v.vacationId' in 'field list'","service":"api"}
+{"level":"error","message":"Unknown column 'v.vacationId' in 'field list'","service":"api"}
+{"level":"error","message":"Column 'vacationId' in field list is ambiguous","service":"api"}
+{"level":"error","message":"Column 'vacationId' in field list is ambiguous","service":"api"}

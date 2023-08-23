@@ -17,6 +17,7 @@ import { Image } from 'primereact/image';
 import logoImage from '../src/assets/logo1.png';
 import { Avatar } from 'primereact/avatar';
 import EditVacationPage from './app/components/pages/adminVacations/editVacation';
+import ReportsPage from './app/components/pages/reports';
 
 
 console.log("test")
@@ -39,7 +40,7 @@ const routes: Array<IRoute> = [
   },
   {
     path: "/reports",
-    component: <ProtectedRoute><AddVacation /></ProtectedRoute>,
+    component: <ProtectedRoute><ReportsPage /></ProtectedRoute>,
     key: "reports",
     label: "Reports",
     icon: "pi pi-chart-bar",
