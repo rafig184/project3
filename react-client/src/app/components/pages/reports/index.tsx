@@ -5,15 +5,16 @@ import { Chart } from 'primereact/chart';
 import { useAppDispatch } from "../../../hooks";
 import { RootState } from "../../../store";
 import { useSelector } from "react-redux";
-import { fetchFollowersAsync } from '../adminVacations/vacationSlice';
 import { CSVLink } from "react-csv";
+import { fetchFollowersAsync } from './followersSlice';
+
 
 
 export default function ReportsPage() {
 
 
     const dispatch = useAppDispatch();
-    const followers = useSelector((state: RootState) => state.vacations.followers);
+    const followers = useSelector((state: RootState) => state.followers.followers);
     // const navigate = useNavigate()
 
 
@@ -81,13 +82,15 @@ export default function ReportsPage() {
     return (
         <div style={{ backgroundColor: "#EFF3F8", padding: "4%", borderRadius: "10px" }} >
             <CSVLink {...csvReport}>Export to CSV</CSVLink>
-            <Chart style={{ minWidth: "700px" }} type="bar" data={chartData} options={chartOptions} />
+            <Chart style={{ minWidth: "700px", marginTop: "5%" }} type="bar" data={chartData} options={chartOptions} />
         </div>
+
     )
 }
 
 
 
 
-
+{/* <div style={{ backgroundColor: "#EFF3F8", padding: "4%", borderRadius: "10px" }} ></div>
+</div> */}
 

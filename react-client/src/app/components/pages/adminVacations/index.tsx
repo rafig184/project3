@@ -38,7 +38,7 @@ export default function AdminVacationsPage() {
     const navigate = useNavigate()
 
 
-    return <div >
+    return <div>
         <WithLoading isLoading={isVacationsLoading}>
             <div style={{ backgroundColor: "#C0C0C0", color: "#495057", paddingTop: "1%", paddingBottom: "1%", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}>
                 <Button onClick={() => { navigate("/add-vacation") }} severity="info" raised>Add new vacation</Button>

@@ -16,7 +16,6 @@
 }
 
 .top-container {
-  min-width: 100%;
   position: sticky;
   top: 0;
   background-color: #d0dfec;

@@ -1,22 +1,29 @@
 import axios from "axios";
 import { InputText } from "primereact/inputtext";
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { Calendar } from 'primereact/calendar';
 import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
+import { useLocation } from 'react-router-dom';
+import { getVacationsByIdService } from "./api";
 
 
-const EditVacationPage = (vacationId: any) => {
+const EditVacationPage = () => {
     const [destination, setDestination] = useState("");
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
     const [price, setPrice] = useState(0);
-    const [desc, setDesc] = useState("");
+    const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
 
     const toast = useRef<Toast>(null);
+
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const numberParam = queryParams.get('vid');
+    console.log(numberParam);
 
 
 
@@ -36,18 +43,40 @@ const EditVacationPage = (vacationId: any) => {
         setPrice(e.target.value)
     }, [price])
 
-    const handlerDescCallback = useCallback((e: any) => {
-        setDesc(e.target.value)
-    }, [desc])
+    const handlerDescriptionCallback = useCallback((e: any) => {
+        setDescription(e.target.value)
+    }, [description])
 
     const handlerImageCallback = useCallback((e: any) => {
         setImage(e.target.value)
     }, [image])
 
     const show = () => {
-        toast.current?.show({ severity: 'success', summary: 'Success', detail: 'Vacation added', life: 3000 });
-
+        toast.current?.show({ severity: 'success', summary: 'Success', detail: 'Vacation Edited', life: 3000 });
     }
+
+    const showError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "Something went wrong!", life: 3000 });
+    }
+
+    async function getVacationByIdAction(vacationId: any) {
+        try {
+            const result = await getVacationsByIdService(vacationId)
+            setDestination(result[0].destination)
+            setPrice(result[0].price)
+            setDescription(result[0].description)
+            setImage(result[0].image)
+            console.log(result);
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        getVacationByIdAction(numberParam)
+    }, []);
+
 
     async function addVacationService() {
         const vacationPayload = {
@@ -55,30 +84,35 @@ const EditVacationPage = (vacationId: any) => {
             startDate,
             endDate,
             price,
-            desc,
+            description,
             image
         }
 
         console.log(vacationPayload);
         try {
-            const result = await axios.post(`http://localhost:4000/vacations/edit-vacation/${vacationId}`, vacationPayload)
-            // added(result.data.message);
+            const result = await axios.put(`http://localhost:4000/vacations/edit-vacation?q=${numberParam}`, vacationPayload, {
+                headers: {
+                    authorization: localStorage.getItem("token")
+                }
+            })
             show()
             setDestination("")
             setStartDate("")
             setEndDate("")
             setPrice(0)
-            setDesc("")
+            setDescription("")
             setImage("")
 
         } catch (err) {
-            alert("Something went wrong!")
+            showError()
             console.log(err);
         }
     }
 
     return (
+
         <div style={{ backgroundColor: "grey", padding: "4%", borderRadius: "10px" }}>
+
             <form >
                 <h2>Edit vacation</h2>
                 <div>
@@ -120,7 +154,7 @@ const EditVacationPage = (vacationId: any) => {
                     <div>
                         <label htmlFor="text">Description:</label>
                     </div>
-                    <InputTextarea value={desc} onChange={handlerDescCallback} rows={5} cols={30} />
+                    <InputTextarea value={description} onChange={handlerDescriptionCallback} rows={5} cols={30} />
                 </div>
                 <div>
                     <div>

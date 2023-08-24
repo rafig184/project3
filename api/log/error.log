@@ -33,3 +33,37 @@
 {"level":"error","message":"Unknown column 'v.vacationId' in 'field list'","service":"api"}
 {"level":"error","message":"Column 'vacationId' in field list is ambiguous","service":"api"}
 {"level":"error","message":"Column 'vacationId' in field list is ambiguous","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1692790967559@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'r@r' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1692791145971@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1692791173689@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'r@r' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1692791360117@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1692791732691@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1692791761610@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1692791960707@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1692792042794@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1692792211365@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Cannot delete or update a parent row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`))","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"connect ECONNREFUSED ::1:3306","service":"api"}
+{"level":"error","message":"connect ECONNREFUSED ::1:3306","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"jwt must be provided","service":"api"}

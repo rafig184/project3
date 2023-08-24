@@ -1,19 +1,19 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState, AppThunk } from "../../../store"
 import { getVacationsService } from "./api"
-import { getFollowersService } from "./api/followers"
+
 // import { fetchCount } from "./counterAPI"
 
 export interface IVacationsAdmin {
   vacationsData: Array<any>
-  followers: Array<any>
+  // followers: Array<any>
 }
 
 
 
 const initialState: IVacationsAdmin = {
   vacationsData: [],
-  followers: []
+  // followers: []
 }
 
 export const fetchVacationsAsync = createAsyncThunk(
@@ -24,14 +24,14 @@ export const fetchVacationsAsync = createAsyncThunk(
     return response
   }
 )
-export const fetchFollowersAsync = createAsyncThunk(
-  "adminVacations/getFollowersService",
-  async () => {
-    const response = await getFollowersService()
-    console.log(response);
-    return response
-  }
-)
+// export const fetchFollowersAsync = createAsyncThunk(
+//   "adminVacations/getFollowersService",
+//   async () => {
+//     const response = await getFollowersService()
+//     console.log(response);
+//     return response
+//   }
+// )
 
 export const vacationSlice = createSlice({
   name: "vacations",
@@ -68,20 +68,20 @@ export const vacationSlice = createSlice({
 
       })
 
-    builder.addCase(fetchFollowersAsync.pending, (state) => {
-      state.followers = []
-    })
-      .addCase(fetchFollowersAsync.fulfilled, (state, action) => {
+    // builder.addCase(fetchFollowersAsync.pending, (state) => {
+    //   state.followers = []
+    // })
+    //   .addCase(fetchFollowersAsync.fulfilled, (state, action) => {
 
-        // state.value += action.payload
-        state.followers = action.payload
+    //     // state.value += action.payload
+    //     state.followers = action.payload
 
-      })
-      .addCase(fetchFollowersAsync.rejected, (state) => {
+    //   })
+    //   .addCase(fetchFollowersAsync.rejected, (state) => {
 
-        state.followers = []
+    //     state.followers = []
 
-      })
+    //   })
   },
 
 })

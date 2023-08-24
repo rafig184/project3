@@ -13,7 +13,7 @@ const AddVacation = () => {
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
     const [price, setPrice] = useState(0);
-    const [desc, setDesc] = useState("");
+    const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
 
     const toast = useRef<Toast>(null);
@@ -36,9 +36,9 @@ const AddVacation = () => {
         setPrice(e.target.value)
     }, [price])
 
-    const handlerDescCallback = useCallback((e: any) => {
-        setDesc(e.target.value)
-    }, [desc])
+    const handlerDescriptionCallback = useCallback((e: any) => {
+        setDescription(e.target.value)
+    }, [description])
 
     const handlerImageCallback = useCallback((e: any) => {
         setImage(e.target.value)
@@ -49,30 +49,38 @@ const AddVacation = () => {
 
     }
 
+    const showError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "Something went wrong!", life: 3000 });
+    }
+
     async function addVacationService() {
         const vacationPayload = {
             destination,
             startDate,
             endDate,
             price,
-            desc,
+            description,
             image
         }
 
         console.log(vacationPayload);
         try {
-            const result = await axios.post("http://localhost:4000/vacations/new-vacation", vacationPayload)
+            const result = await axios.post("http://localhost:4000/vacations/new-vacation", vacationPayload, {
+                headers: {
+                    authorization: localStorage.getItem("token")
+                }
+            })
             // added(result.data.message);
             show()
             setDestination("")
             setStartDate("")
             setEndDate("")
             setPrice(0)
-            setDesc("")
+            setDescription("")
             setImage("")
 
         } catch (err) {
-            alert("Something went wrong!")
+            showError()
             console.log(err);
         }
     }
@@ -120,7 +128,7 @@ const AddVacation = () => {
                     <div>
                         <label htmlFor="text">Description:</label>
                     </div>
-                    <InputTextarea value={desc} onChange={handlerDescCallback} rows={5} cols={30} />
+                    <InputTextarea value={description} onChange={handlerDescriptionCallback} rows={5} cols={30} />
                 </div>
                 <div>
                     <div>

@@ -16,11 +16,11 @@ export default function AdminVacationList(props: { vacations: Array<IVacationsAd
 
     return <div>
         <div style={{ display: "flex", flexDirection: "row", alignItems: "flex-start", justifyContent: "center", flexWrap: "wrap" }}>
-            {displayedVacations.map((vacation: { image: string, destination: string, startDate: Date, endDate: Date, price: number, desc: string, vacationId: number }) => {
+            {displayedVacations.map((vacation: { image: string, destination: string, startDate: Date, endDate: Date, price: number, description: string, vacationId: number }) => {
                 return <AdminVacationCard key={vacation?.destination + vacation.startDate}
                     image={vacation.image}
                     destination={vacation?.destination}
-                    desc={vacation?.desc}
+                    description={vacation?.description}
                     startDate={vacation.startDate}
                     endDate={vacation.endDate}
                     price={vacation.price}

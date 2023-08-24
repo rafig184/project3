@@ -11,18 +11,18 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 import { fetchVacationsAsync } from "../vacationSlice";
 import { format } from "date-fns";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import EditVacationPage from "../editVacation";
 
 
 export interface IVacationsAdmin {
     vacationId: number,
     destination: string,
-    desc: string,
+    description: string,
     startDate: Date,
     endDate: Date,
     price: number,
-    image: string
+    image: string,
 }
 
 
@@ -33,12 +33,15 @@ export function AdminVacationCard(props: IVacationsAdmin) {
     const navigate = useNavigate();
 
     const accept = () => {
-        toast.current?.show({ severity: 'success', summary: 'Confirmed', detail: 'Vacation Deleted', life: 3000 });
         handleRemoveVacation()
     }
 
     const reject = () => {
         toast.current?.show({ severity: 'warn', summary: 'Rejected', detail: 'You have rejected', life: 3000 });
+    }
+
+    const showError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "Something went wrong!", life: 3000 });
     }
 
     const confirm = () => {
@@ -48,24 +51,27 @@ export function AdminVacationCard(props: IVacationsAdmin) {
             icon: 'pi pi-info-circle',
             acceptClassName: 'p-button-danger',
             accept,
-            reject
+            reject,
         });
     };
 
     async function handleRemoveVacation() {
         try {
             const result = await deleteVacationsService(props.vacationId);
+            toast.current?.show({ severity: 'success', summary: 'Confirmed', detail: 'Vacation Deleted', life: 3000 });
             console.log(result)
             dispatch(fetchVacationsAsync())
         } catch (error) {
+            showError()
             console.error(error);
         }
     };
 
     function editHandler() {
-        navigate("/edit-vacation")
-
+        navigate(`/edit-vacation/?vid=${props.vacationId}`)
     }
+
+
 
     const formatedStartDate = format(new Date(props.startDate), "dd/MM/yyyy")
     const formatedEndtDate = format(new Date(props.endDate), "dd/MM/yyyy")
@@ -91,7 +97,7 @@ export function AdminVacationCard(props: IVacationsAdmin) {
                         {formatedStartDate} - {formatedEndtDate}</span>
                 </div>
                 <ScrollPanel style={{ position: "relative", marginTop: "-8px", width: '101%', height: '130px', backgroundColor: "silver", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", zIndex: 2 }} className="custombar1">
-                    <p>{props.desc}</p>
+                    <p>{props.description}</p>
                 </ScrollPanel>
 
             </div>
@@ -101,7 +107,7 @@ export function AdminVacationCard(props: IVacationsAdmin) {
             <Toast ref={toast} />
             <div style={{ marginTop: "5%" }}>
                 <Button severity="danger" onClick={confirm} icon="pi pi-times" label="Delete" raised />
-                <Button onClick={editHandler} style={{ marginLeft: "4%" }} label="Edit" icon="pi pi-file-edit" severity="info" raised />
+                <Button onClick={editHandler} style={{ marginLeft: "4%" }} label="Edit" icon="pi pi-file-edit" severity="info" raised > </Button >
             </div>
 
 
@@ -109,3 +115,6 @@ export function AdminVacationCard(props: IVacationsAdmin) {
     </div>
 
 }
+
+
+{/* <Link style={{ color: "white" }} to={`/edit-vacation/:vacationId=${props.vacationId}`}> Edit</Link> */ }

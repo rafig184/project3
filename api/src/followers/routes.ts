@@ -21,7 +21,6 @@ followerRouter.get("/", async function (req, res, next) {
 })
 
 followerRouter.delete("/", async function (req: Request, res: Response, next: NextFunction) {
-
     try {
         const results = await removeFollower(req.body);
         res.json({ message: "Follower removed successfully", results });

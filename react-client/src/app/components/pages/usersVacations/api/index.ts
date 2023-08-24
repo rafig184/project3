@@ -3,7 +3,7 @@ import axios from "axios"
 export interface IVacations {
     // vacationId: number,
     destination: string,
-    desc: string,
+    description: string,
     startDate: string,
     endDate: string,
     price: number,

@@ -1,5 +1,8 @@
 #root {
-  max-width: 1280px;
+  max-width: 70vw;
+  max-width: 70dvw;
+  min-width: 70vw;
+  min-width: 70dvw;
   margin: auto;
   padding: 1em;
   text-align: center;

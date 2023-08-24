@@ -1,10 +1,12 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit"
 import vacationSlice from "./components/pages/adminVacations/vacationSlice"
+import followersSlice from "./components/pages/reports/followersSlice"
 
 
 export const store = configureStore({
   reducer: {
-    vacations: vacationSlice
+    vacations: vacationSlice,
+    followers: followersSlice
   },
 })
 

@@ -8,19 +8,25 @@ import { logger } from "./logger"
 import { authRouter } from "./auth/route"
 import { vacationsRouter } from "./vacations/routes"
 import { followerRouter } from "./followers/routes"
+import { addRequestStarted } from "./middleware/addRequestStarted"
+import { addRequestFinished } from "./middleware/addRequestFinished"
+import { addRequestId } from "./middleware/addRequestId"
 
 dotenv.config()
 
 const app = express();
 app.use(express.json())
 app.use(cors())
+app.use(addRequestId)
+app.use(addRequestStarted)
+app.use(addRequestFinished)
 
 app.get("/health-check", function (req, res, next) {
     res.send(`API IS OK ${new Date().toISOString()}`)
 })
 
 app.use("/auth", authRouter)
-// app.use(verifyAuthentication)
+app.use(verifyAuthentication)
 app.use("/vacations", vacationsRouter)
 app.use("/followers", followerRouter)
 
@@ -36,21 +42,21 @@ app.listen(process.env.PORT, () => {
     console.log({ message: `Api is running on Port ${process.env.PORT}` })
 })
 
-// function verifyAuthentication(req: Request, res: Response, next) {
-//     const { authorization: token } = req.headers
-//     jsonwebtoken.verify(token, process.env.SECRET, function (err, decoded) {
-//         if (err) {
-//             console.log(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User Token invalid ${err.message}`)
-//             // logger.error({ message: err.message })
+function verifyAuthentication(req: Request, res: Response, next: NextFunction) {
+    const { authorization: token } = req.headers
+    jsonwebtoken.verify(token as string, "PASSWORD123456789", function (err: any, decoded: any) {
+        if (err) {
+            console.log(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User Token invalid ${err.message}`)
+            logger.error({ message: err.message })
 
-//             return res.status(401).send("Authentication error")
-//         } else {
-//             (req as any).currentUserEmail = decoded.email;
-//             (req as any).currentUserId = decoded.userId;
-//             (req as any).currentUserFirstName = decoded.firstName;
-//             (req as any).currentUserRole = decoded.role;
-//             logger.error(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User authenticated Successfully`)
-//             return next()
-//         }
-//     });
-// }
+            return res.status(401).send("Authentication error")
+        } else {
+            (req as any).currentEmail = decoded.email;
+            (req as any).currentUserId = decoded.userId;
+            (req as any).currentRole = decoded.role;
+            (req as any).currentFirstName = decoded.firstName;
+            console.log(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User authenticated Successfully`)
+            return next()
+        }
+    });
+}

@@ -6,6 +6,7 @@ import { ToggleButton } from 'primereact/togglebutton';
 import { useState } from "react";
 import { Image } from "primereact/image";
 import { format } from "date-fns";
+import { IVacationsAdmin } from "../../adminVacations/card";
 
 export function VacationCard(props: IVacations) {
     const [checked, setChecked] = useState(false);
@@ -35,7 +36,7 @@ export function VacationCard(props: IVacations) {
                         {formatedStartDate} - {formatedEndtDate}</span>
                 </div>
                 <ScrollPanel style={{ position: "relative", marginTop: "-8px", width: '101%', height: '130px', backgroundColor: "silver", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", zIndex: 2 }} className="custombar1">
-                    <p>{props.desc}</p>
+                    <p>{props.description}</p>
                 </ScrollPanel>
 
             </div>

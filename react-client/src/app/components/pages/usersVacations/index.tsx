@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { fetchVacationsAsync } from "../adminVacations/vacationSlice";
 import { Checkbox } from 'primereact/checkbox';
 import { WithLoading } from "../../ui-components/withLoading";
+import { fetchFollowersAsync } from "../reports/followersSlice";
 
 
 export default function UserVacationsPage() {
@@ -29,12 +30,14 @@ export default function UserVacationsPage() {
 
     const dispatch = useAppDispatch();
     const vacations = useSelector((state: RootState) => state.vacations.vacationsData);
+    const followers = useSelector((state: RootState) => state.followers.followers);
     const navigate = useNavigate()
 
 
     useEffect(() => {
         try {
             dispatch(fetchVacationsAsync());
+            dispatch(fetchFollowersAsync());
 
         } catch (error) {
             alert("error")
@@ -54,7 +57,6 @@ export default function UserVacationsPage() {
             setFilteredVacations(vacations);
         }
     }, [vacations, futureChecked]);
-
 
 
 

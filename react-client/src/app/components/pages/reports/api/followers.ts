@@ -1,11 +1,11 @@
 import axios from "axios";
 
-export interface IFollowers {
+export interface IFollower {
     vacationId: number,
     vacationCount: number
 }
 
-async function getFollowersService(): Promise<Array<IFollowers>> {
+async function getFollowersService(): Promise<Array<IFollower>> {
     const { data, headers } = await axios.get(`http://localhost:4000/followers/`, {
         headers: {
             authorization: localStorage.getItem("token")
