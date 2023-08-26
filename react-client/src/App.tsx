@@ -18,9 +18,10 @@ import logoImage from '../src/assets/logo1.png';
 import { Avatar } from 'primereact/avatar';
 import EditVacationPage from './app/components/pages/adminVacations/editVacation';
 import ReportsPage from './app/components/pages/followers';
+import NotFound from './app/components/pages/not-found';
 
 
-console.log("test")
+
 interface IRoute {
   path: string,
   key: string,
@@ -89,11 +90,12 @@ const routes: Array<IRoute> = [
     onlyAdmin: false
   },
 
-  // {
-  //   path: "*",
-  //   component: <NotFound />,
-  //   key: "not found",
-  // }
+  {
+    path: "*",
+    component: <NotFound />,
+    key: "not found",
+    onlyAdmin: false
+  }
 
 ]
 

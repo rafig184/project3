@@ -4,7 +4,7 @@ import { IVacationsAdmin } from "../card";
 
 
 async function getVacationsService(): Promise<Array<IVacationsAdmin>> {
-    console.log(localStorage.getItem("token"));
+    // console.log(localStorage.getItem("token"));
 
     const { data, headers } = await axios.get(`http://localhost:4000/vacations/`, {
         headers: {

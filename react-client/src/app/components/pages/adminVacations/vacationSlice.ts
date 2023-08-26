@@ -20,7 +20,7 @@ export const fetchVacationsAsync = createAsyncThunk(
   "adminVacations/getVacationsService",
   async () => {
     const response = await getVacationsService()
-    console.log(response);
+    // console.log(response);
     return response
   }
 )

@@ -4,7 +4,8 @@ import zod from "zod"
 import { addNewFollower } from "./handlers/addNewFollower"
 import { removeFollower } from "./handlers/deleteFollower"
 import { getAllFollowersReports } from "./handlers/getAllFollowers"
-import { getFollowersById } from "./handlers/getFollowersById"
+import { getFollowerById } from "./handlers/getFollowersById"
+import { getFollowersCountById } from "./handlers/getFollowersCountById"
 
 
 
@@ -13,7 +14,16 @@ const followerRouter = express.Router()
 followerRouter.get("/reports", async function (req, res, next) {
     try {
         const result = await getAllFollowersReports()
-        console.log(result);
+        return res.json(result)
+    } catch (error) {
+        console.log(error);
+        return next(error)
+    }
+})
+
+followerRouter.get("/followers-count", async function (req, res, next) {
+    try {
+        const result = await getFollowersCountById()
         return res.json(result)
     } catch (error) {
         console.log(error);
@@ -43,7 +53,6 @@ export const newFollowerSchema = zod.object({
 function middlewareNewFollower(req: Request, res: Response, next: NextFunction) {
     try {
         newFollowerSchema.parse(req.body)
-        console.log(req.body);
         return next()
     } catch (error) {
         console.log(error)
@@ -56,7 +65,6 @@ followerRouter.post("/new-follower", middlewareNewFollower, async function (req,
         const { vacationId } = req.body
         const userId = (req as any).currentUserId
         const result = await addNewFollower(userId, vacationId)
-        console.log(result)
         return res.json({ message: "Follower successfully added!" })
     } catch (error) {
         console.log(error)
@@ -67,8 +75,7 @@ followerRouter.post("/new-follower", middlewareNewFollower, async function (req,
 followerRouter.get("/user-id", async function (req, res, next) {
     try {
         const userId = (req as any).currentUserId
-        const result = await getFollowersById(userId)
-        console.log(result);
+        const result = await getFollowerById(userId)
         return res.json(result)
     } catch (error) {
         console.log(error);

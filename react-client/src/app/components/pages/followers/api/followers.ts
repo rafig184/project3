@@ -2,7 +2,7 @@ import axios from "axios";
 
 export interface IFollower {
     vacationId: number,
-    vacationCount: number,
+    amountOfFollowers: number,
     destionation: string
 }
 
@@ -12,6 +12,11 @@ export interface IFollowerByUser {
     vacationId: number
 }
 
+export interface IFollowerByVacationId {
+    vacationId: number
+    amountOfFollowers: number,
+}
+
 async function getFollowersReportService(): Promise<Array<IFollower>> {
     const { data, headers } = await axios.get(`http://localhost:4000/followers/reports`, {
         headers: {
@@ -19,9 +24,11 @@ async function getFollowersReportService(): Promise<Array<IFollower>> {
         }
     })
     if (!Array.isArray(data)) throw new Error(`Error Please contact support ${headers["x-request-id"]}`)
-    console.log(data);
+    // console.log(data);
     return data;
 }
+
+
 async function getFollowersByUserIdService(): Promise<Array<IFollowerByUser>> {
     const { data, headers } = await axios.get(`http://localhost:4000/followers/user-id`, {
         headers: {
@@ -29,7 +36,19 @@ async function getFollowersByUserIdService(): Promise<Array<IFollowerByUser>> {
         }
     })
     if (!Array.isArray(data)) throw new Error(`Error Please contact support ${headers["x-request-id"]}`)
-    console.log(data);
+    // console.log(data);
+    return data;
+}
+
+
+async function getFollowersCountByVacationIdService(): Promise<Array<IFollowerByVacationId>> {
+    const { data, headers } = await axios.get(`http://localhost:4000/followers/followers-count`, {
+        headers: {
+            authorization: localStorage.getItem("token")
+        }
+    })
+    if (!Array.isArray(data)) throw new Error(`Error Please contact support ${headers["x-request-id"]}`)
+    // console.log(data);
     return data;
 }
 
@@ -64,4 +83,4 @@ async function deleteFollowerService(vacationId: number) {
 
 
 
-export { getFollowersReportService, addFollowService, deleteFollowerService, getFollowersByUserIdService }
+export { getFollowersReportService, addFollowService, deleteFollowerService, getFollowersByUserIdService, getFollowersCountByVacationIdService }

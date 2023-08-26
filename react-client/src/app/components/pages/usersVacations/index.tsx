@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import { fetchVacationsAsync } from "../adminVacations/vacationSlice";
 import { Checkbox } from 'primereact/checkbox';
 import { WithLoading } from "../../ui-components/withLoading";
-import { fetchFollowersReportsAsync } from "../followers/followersSlice";
+import { fetchFollowersAmountAsync, fetchFollowersReportsAsync } from "../followers/followersSlice";
 import { getFollowersByUserIdService } from "../followers/api/followers";
 
 
@@ -38,8 +38,6 @@ export default function UserVacationsPage() {
     useEffect(() => {
         try {
             dispatch(fetchVacationsAsync());
-
-
         } catch (error) {
             alert("error")
             navigate("/login")

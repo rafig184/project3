@@ -25,7 +25,7 @@ export default function ReportsPage() {
 
     const destinations = followers.map((e: any) => e.destination.toUpperCase())
     console.log(followers);
-    const followersData = followers.map((e: any) => e.vacationCount)
+    const followersData = followers.map((e: any) => e.amountOfFollowers)
 
 
 
@@ -83,7 +83,7 @@ export default function ReportsPage() {
 
     const csvData = followers.map((follower: any) => ({
         Destination: follower.destination,
-        Followers: follower.vacationCount
+        Followers: follower.amountOfFollowers
     }));
 
     const csvHeaders = [
