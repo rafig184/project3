@@ -87,6 +87,7 @@ const RegistrationComponent = () => {
                             value={methods.getValues("password")} // Set the initial value
                             onChange={(e) => methods.setValue("password", e.target.value)} // Update the value
                             toggleMask header={header} footer={footer} // Toggle password visibility
+                            minLength={4}
                         />
                     </div>
                     <Toast ref={toast} />

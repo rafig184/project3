@@ -10,7 +10,8 @@ import { useSelector } from "react-redux";
 import { fetchVacationsAsync } from "../adminVacations/vacationSlice";
 import { Checkbox } from 'primereact/checkbox';
 import { WithLoading } from "../../ui-components/withLoading";
-import { fetchFollowersAsync } from "../reports/followersSlice";
+import { fetchFollowersReportsAsync } from "../followers/followersSlice";
+import { getFollowersByUserIdService } from "../followers/api/followers";
 
 
 export default function UserVacationsPage() {
@@ -30,20 +31,23 @@ export default function UserVacationsPage() {
 
     const dispatch = useAppDispatch();
     const vacations = useSelector((state: RootState) => state.vacations.vacationsData);
-    const followers = useSelector((state: RootState) => state.followers.followers);
+    // const followers = useSelector((state: RootState) => state.followers.followers);
     const navigate = useNavigate()
 
 
     useEffect(() => {
         try {
             dispatch(fetchVacationsAsync());
-            dispatch(fetchFollowersAsync());
+
 
         } catch (error) {
             alert("error")
             navigate("/login")
         }
     }, [dispatch]);
+
+    // const displayFollowers = followers.filter(f => f.vacationCount + f.vacationId)
+    // console.log(displayFollowers);
 
     useEffect(() => {
         if (futureChecked) {
@@ -57,6 +61,25 @@ export default function UserVacationsPage() {
             setFilteredVacations(vacations);
         }
     }, [vacations, futureChecked]);
+
+    useEffect(() => {
+        async function getFollowByUser() {
+            try {
+                const result = await getFollowersByUserIdService()
+                const vacationIdperUser = result.map(f => f.vacationId)
+
+                if (followingChecked) {
+                    const filterFollowing = vacations.filter(v => vacationIdperUser.includes(v.vacationId))
+                    console.log(filterFollowing);
+
+                    return setFilteredVacations(filterFollowing)
+                } else setFilteredVacations(vacations)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getFollowByUser()
+    }, [followingChecked])
 
 
 

@@ -1,15 +1,44 @@
-import { Button } from "primereact/button";
+
 import { IVacations } from "../api";
 import { Card } from 'primereact/card';
 import { ScrollPanel } from "primereact/scrollpanel";
-import { ToggleButton } from 'primereact/togglebutton';
-import { useState } from "react";
+import { ToggleButton, ToggleButtonChangeEvent } from 'primereact/togglebutton';
+import { useEffect, useState } from "react";
 import { Image } from "primereact/image";
 import { format } from "date-fns";
-import { IVacationsAdmin } from "../../adminVacations/card";
+import { addFollowService, deleteFollowerService, getFollowersByUserIdService } from "../../followers/api/followers";
+
+
+
 
 export function VacationCard(props: IVacations) {
-    const [checked, setChecked] = useState(false);
+    const [checked, setChecked] = useState<boolean>(false);
+
+    const handleToggle = async (e: ToggleButtonChangeEvent) => {
+        setChecked(e.value);
+        if (e.value) {
+            await addFollowService(props.vacationId);
+        } else {
+            deleteFollowerService(props.vacationId)
+        }
+    };
+
+
+
+    useEffect(() => {
+        async function getFollowByUser() {
+            try {
+                const result = await getFollowersByUserIdService()
+                console.log(result);
+
+                if (result.find(f => f.vacationId === props.vacationId)) setChecked(true)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getFollowByUser()
+    }, [])
+
 
     const header = (
         <div style={{ position: "relative" }}>
@@ -17,11 +46,7 @@ export function VacationCard(props: IVacations) {
             <h2 style={{ position: "absolute", top: "10px", left: "10px", color: "white", zIndex: 1, textShadow: "3px 3px 5px rgba(0, 0, 0, 0.6)" }}>{props.destination.toUpperCase()}</h2>
         </div>
     );
-    const footer = (
-        <div className="flex flex-wrap justify-content-left gap-2">
-            <Button label="" icon="pi pi-heart" severity="danger" />
-        </div>
-    );
+
 
     const formatedStartDate = format(new Date(props.startDate), "dd/MM/yyyy")
     const formatedEndtDate = format(new Date(props.endDate), "dd/MM/yyyy")
@@ -45,7 +70,10 @@ export function VacationCard(props: IVacations) {
             </div>
             <div style={{ marginTop: "5%", textAlign: "left" }}>
                 <ToggleButton style={{ borderRadius: "50px", border: "0px", backgroundColor: checked ? "#EB3D3D" : "" }} onLabel="" offLabel="" onIcon="pi pi-heart-fill" offIcon="pi pi-heart"
-                    checked={checked} onChange={(e) => setChecked(e.value)} />
+                    checked={checked} onChange={handleToggle} />
+            </div>
+            <div>
+
             </div>
 
 

@@ -3,15 +3,16 @@ import express, { NextFunction, Request, Response } from "express"
 import zod from "zod"
 import { addNewFollower } from "./handlers/addNewFollower"
 import { removeFollower } from "./handlers/deleteFollower"
-import { getAllFollowers } from "./handlers/getAllFollowers"
+import { getAllFollowersReports } from "./handlers/getAllFollowers"
+import { getFollowersById } from "./handlers/getFollowersById"
 
 
 
 const followerRouter = express.Router()
 
-followerRouter.get("/", async function (req, res, next) {
+followerRouter.get("/reports", async function (req, res, next) {
     try {
-        const result = await getAllFollowers()
+        const result = await getAllFollowersReports()
         console.log(result);
         return res.json(result)
     } catch (error) {
@@ -21,8 +22,11 @@ followerRouter.get("/", async function (req, res, next) {
 })
 
 followerRouter.delete("/", async function (req: Request, res: Response, next: NextFunction) {
+
     try {
-        const results = await removeFollower(req.body);
+        const vacationId: any = req.query.q;
+        const userId = (req as any).currentUserId
+        const results = await removeFollower(vacationId, userId);
         res.json({ message: "Follower removed successfully", results });
     } catch (error) {
         console.error(error);
@@ -32,7 +36,6 @@ followerRouter.delete("/", async function (req: Request, res: Response, next: Ne
 
 
 export const newFollowerSchema = zod.object({
-    userId: zod.number(),
     vacationId: zod.number(),
 })
 
@@ -50,7 +53,9 @@ function middlewareNewFollower(req: Request, res: Response, next: NextFunction) 
 
 followerRouter.post("/new-follower", middlewareNewFollower, async function (req, res, next) {
     try {
-        const result = await addNewFollower(req.body)
+        const { vacationId } = req.body
+        const userId = (req as any).currentUserId
+        const result = await addNewFollower(userId, vacationId)
         console.log(result)
         return res.json({ message: "Follower successfully added!" })
     } catch (error) {
@@ -59,17 +64,17 @@ followerRouter.post("/new-follower", middlewareNewFollower, async function (req,
     }
 })
 
-// vacationsRouter.get("/search", async function (req: Request, res: Response, next: NextFunction) {
-//     try {
-//         const groupName = req.query.q
-//         const result = await getMeetingSearch(groupName)
-//         return res.json(result)
-//     } catch (error) {
-//         console.log(error);
-//         return next(error)
-//     }
-// })
-
+followerRouter.get("/user-id", async function (req, res, next) {
+    try {
+        const userId = (req as any).currentUserId
+        const result = await getFollowersById(userId)
+        console.log(result);
+        return res.json(result)
+    } catch (error) {
+        console.log(error);
+        return next(error)
+    }
+})
 
 
 

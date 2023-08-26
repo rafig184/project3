@@ -1,5 +1,5 @@
 import './App.css'
-import { createContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, Link, useNavigate } from "react-router-dom"
 import { TabMenu } from 'primereact/tabmenu';
 import 'primeicons/primeicons.css';
@@ -17,7 +17,7 @@ import { Image } from 'primereact/image';
 import logoImage from '../src/assets/logo1.png';
 import { Avatar } from 'primereact/avatar';
 import EditVacationPage from './app/components/pages/adminVacations/editVacation';
-import ReportsPage from './app/components/pages/reports';
+import ReportsPage from './app/components/pages/followers';
 
 
 console.log("test")
@@ -124,6 +124,7 @@ function App() {
     localStorage.setItem("token", "")
     localStorage.setItem("role", "")
     localStorage.setItem("firstName", "")
+    setActiveIndex(0)
   }
   function loginHandler() {
     navigate("/login")
@@ -131,12 +132,15 @@ function App() {
   }
   function signinHandler() {
     navigate("/signup")
-
   }
 
   useEffect(() => {
     const route = routes[activeIndex];
-    navigate(route.path);
+    if (route.onlyAdmin === true) {
+      return navigate(route.component);
+    } else {
+      navigate("/user-vacations")
+    }
   }, [activeIndex]);
 
   const items = routes
@@ -181,7 +185,7 @@ function App() {
         </div>
 
 
-        <div className='tabMenu' >
+        <div  >
           <div style={{ marginBottom: "3%", marginTop: "1%" }}>
             <Image src={logoImage} alt="Image" width="180" />
           </div>

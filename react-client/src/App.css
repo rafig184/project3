@@ -21,10 +21,8 @@
   color: #888;
 }
 
-/* .tabMenu {
-  position: fixed;
-  top: 10%;
-  z-index: 100;
+/* .tabMenu .p-menuitem-text {
+  color: #3B82F6
 } */
 
 /* .tabMenu::after {

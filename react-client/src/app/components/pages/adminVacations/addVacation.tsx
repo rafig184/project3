@@ -70,7 +70,6 @@ const AddVacation = () => {
                     authorization: localStorage.getItem("token")
                 }
             })
-            // added(result.data.message);
             show()
             setDestination("")
             setStartDate("")
@@ -105,13 +104,13 @@ const AddVacation = () => {
                     <div>
                         <label htmlFor="text">Start Date:</label>
                     </div>
-                    <Calendar value={startDate} minDate={new Date()} onChange={handlersStartDateCallback} dateFormat="dd/mm/yy" />
+                    <Calendar value={startDate} minDate={new Date()} onChange={handlersStartDateCallback} dateFormat="dd/mm/yy" required />
                 </div>
                 <div>
                     <div>
                         <label htmlFor="text">End date:</label>
                     </div>
-                    <Calendar value={endDate} minDate={new Date(startDate)} onChange={handlerEndDateCallback} dateFormat="dd/mm/yy" />
+                    <Calendar value={endDate} minDate={new Date(startDate)} onChange={handlerEndDateCallback} dateFormat="dd/mm/yy" required />
                 </div>
                 <div>
                     <div>
@@ -128,7 +127,7 @@ const AddVacation = () => {
                     <div>
                         <label htmlFor="text">Description:</label>
                     </div>
-                    <InputTextarea value={description} onChange={handlerDescriptionCallback} rows={5} cols={30} />
+                    <InputTextarea value={description} onChange={handlerDescriptionCallback} rows={5} cols={30} required />
                 </div>
                 <div>
                     <div>

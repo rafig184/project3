@@ -1,6 +1,5 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { RootState, AppThunk } from "../../../store"
-import { getFollowersService } from "./api/followers"
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { getFollowersReportService } from "./api/followers"
 
 
 export interface IFollowers {
@@ -13,10 +12,19 @@ const initialState: IFollowers = {
 }
 
 
-export const fetchFollowersAsync = createAsyncThunk(
-    "reports/getFollowersService",
+// export const fetchFollowersAsync = createAsyncThunk(
+//     "followers/getFollowersService",
+//     async () => {
+//         // const response = await getFollowersService()
+//         console.log(response);
+//         return response
+//     }
+// )
+
+export const fetchFollowersReportsAsync = createAsyncThunk(
+    "followers/getFollowersService",
     async () => {
-        const response = await getFollowersService()
+        const response = await getFollowersReportService()
         console.log(response);
         return response
     }
@@ -40,16 +48,16 @@ export const followersSlice = createSlice({
 
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchFollowersAsync.pending, (state) => {
+        builder.addCase(fetchFollowersReportsAsync.pending, (state) => {
             state.followers = []
         })
-            .addCase(fetchFollowersAsync.fulfilled, (state, action) => {
+            .addCase(fetchFollowersReportsAsync.fulfilled, (state, action) => {
 
                 // state.value += action.payload
                 state.followers = action.payload
 
             })
-            .addCase(fetchFollowersAsync.rejected, (state) => {
+            .addCase(fetchFollowersReportsAsync.rejected, (state) => {
 
                 state.followers = []
 

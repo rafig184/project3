@@ -1,18 +1,17 @@
 import { Button } from "primereact/button";
 import { Card } from 'primereact/card';
 import { deleteVacationsService } from "../api";
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { confirmDialog } from 'primereact/confirmdialog';
 import { Toast } from 'primereact/toast';
 import { Image } from 'primereact/image';
 import { ScrollPanel } from 'primereact/scrollpanel';
 import { useAppDispatch } from "../../../../hooks";
-import { useSelector } from "react-redux";
-import { RootState } from "../../../../store";
+
 import { fetchVacationsAsync } from "../vacationSlice";
 import { format } from "date-fns";
-import { Link, useNavigate } from "react-router-dom";
-import EditVacationPage from "../editVacation";
+import { useNavigate } from "react-router-dom";
+
 
 
 export interface IVacationsAdmin {

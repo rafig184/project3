@@ -1,8 +1,7 @@
 import { pool } from "../../database";
-import { IFollower } from "./addNewFollower";
 
-async function removeFollower(follower: IFollower) {
-    const { vacationId, userId } = follower
+
+async function removeFollower(vacationId: number, userId: number) {
     const query = `DELETE FROM vacationsapp.followers WHERE vacationId = ? AND userId = ?`;
     const results = await pool.execute(query, [vacationId, userId]);
     return results;

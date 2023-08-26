@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react"
-import { Paginator, PaginatorPageChangeEvent } from 'primereact/paginator';
 import { useNavigate } from "react-router-dom";
-import VacationList from "./vacationsList";
 import AdminVacationList from "./vacationsList";
-import { IVacationsAdmin } from "./card";
-import { getVacationsService } from "./api";
 import { ConfirmDialog } from "primereact/confirmdialog";
 import { Button } from "primereact/button";
 import { useSelector } from "react-redux";
@@ -39,6 +35,11 @@ export default function AdminVacationsPage() {
 
 
     return <div>
+        <div className="w-full md:w-6 p-3">
+
+
+
+        </div>
         <WithLoading isLoading={isVacationsLoading}>
             <div style={{ backgroundColor: "#C0C0C0", color: "#495057", paddingTop: "1%", paddingBottom: "1%", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}>
                 <Button onClick={() => { navigate("/add-vacation") }} severity="info" raised>Add new vacation</Button>

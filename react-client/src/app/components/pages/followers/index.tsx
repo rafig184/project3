@@ -6,7 +6,8 @@ import { useAppDispatch } from "../../../hooks";
 import { RootState } from "../../../store";
 import { useSelector } from "react-redux";
 import { CSVLink } from "react-csv";
-import { fetchFollowersAsync } from './followersSlice';
+import { fetchFollowersReportsAsync } from './followersSlice';
+import { WithLoading } from '../../ui-components/withLoading';
 
 
 
@@ -18,22 +19,39 @@ export default function ReportsPage() {
     // const navigate = useNavigate()
 
 
-
+    const [isReportLoading, setIsReportLoading] = useState(false)
     const [chartData, setChartData] = useState({});
     const [chartOptions, setChartOptions] = useState({});
 
-    const destinations = followers.map((e: any) => e.destination)
+    const destinations = followers.map((e: any) => e.destination.toUpperCase())
     console.log(followers);
     const followersData = followers.map((e: any) => e.vacationCount)
 
 
+
+    function dataDispatchAction() {
+        try {
+            setIsReportLoading(true)
+            dispatch(fetchFollowersReportsAsync());
+        } catch (error) {
+            console.log(error);
+
+        } finally {
+            setIsReportLoading(false)
+        }
+    }
+
+
+
     useEffect(() => {
-        dispatch(fetchFollowersAsync());
+
+        dataDispatchAction()
+
         const data = {
             labels: [...destinations],
             datasets: [
                 {
-                    label: "Destinations",
+                    label: "Followers",
                     data: [...followersData],
                     backgroundColor: [
                         'rgba(255, 159, 64, 0.2)',
@@ -80,10 +98,13 @@ export default function ReportsPage() {
     };
 
     return (
-        <div style={{ backgroundColor: "#EFF3F8", padding: "4%", borderRadius: "10px" }} >
-            <CSVLink {...csvReport}>Export to CSV</CSVLink>
-            <Chart style={{ minWidth: "700px", marginTop: "5%" }} type="bar" data={chartData} options={chartOptions} />
-        </div>
+        <WithLoading isLoading={isReportLoading}>
+            <div style={{ backgroundColor: "#EFF3F8", padding: "4%", borderRadius: "10px" }} >
+                <CSVLink {...csvReport}>Export to CSV</CSVLink>
+                <Chart style={{ minWidth: "700px", marginTop: "5%" }} type="bar" data={chartData} options={chartOptions} />
+            </div>
+        </WithLoading>
+
 
     )
 }

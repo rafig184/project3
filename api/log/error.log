@@ -67,3 +67,7 @@
 {"level":"error","message":"jwt must be provided","service":"api"}
 {"level":"error","message":"jwt must be provided","service":"api"}
 {"level":"error","message":"jwt must be provided","service":"api"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`INSERT INTO `vacationsapp`.`followers` (`userId`, `vacationId`) VALUES (?,?)' at line 1","service":"api"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`INSERT INTO `vacationsapp`.`followers` (`userId`, `vacationId`) VALUES (?,?)' at line 1","service":"api"}
+{"level":"error","message":"Unknown database 'vacationsweb'","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}

@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export interface IVacations {
-    // vacationId: number,
+    vacationId: number,
     destination: string,
     description: string,
     startDate: string,
@@ -21,7 +21,6 @@ async function getVacationsService(): Promise<Array<IVacations>> {
     console.log(data);
     return data;
 }
-
 
 
 
