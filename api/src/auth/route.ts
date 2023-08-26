@@ -3,7 +3,6 @@ import express, { Request, Response, NextFunction } from "express"
 import jsonwebtoken from "jsonwebtoken"
 import zod from "zod"
 import dotenv from "dotenv"
-import { logger } from "../logger"
 import signUp from "./handlers/signup"
 import { login } from "./handlers/login"
 dotenv.config()
@@ -15,8 +14,8 @@ const authRouter = express.Router();
 export const signupSchema = zod.object({
     firstName: zod.string().max(100),
     lastName: zod.string().max(100),
-    email: zod.string(),
-    password: zod.string(),
+    email: zod.string().email(),
+    password: zod.string().min(4),
 })
 
 

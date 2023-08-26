@@ -120,6 +120,7 @@ const AddVacation = () => {
                         id="price"
                         value={price}
                         onValueChange={handlerPriceCallback}
+                        max={10000}
                         required
                     />
                 </div>

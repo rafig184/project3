@@ -84,9 +84,9 @@ const RegistrationComponent = () => {
                         {methods.formState.errors.lastName && <span>{methods.formState.errors.lastName.message}</span>}
                         Password:
                         <Password
-                            value={methods.getValues("password")} // Set the initial value
-                            onChange={(e) => methods.setValue("password", e.target.value)} // Update the value
-                            toggleMask header={header} footer={footer} // Toggle password visibility
+                            value={methods.getValues("password")}
+                            onChange={(e) => methods.setValue("password", e.target.value)}
+                            toggleMask header={header} footer={footer}
                             minLength={4}
                         />
                     </div>

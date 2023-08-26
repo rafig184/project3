@@ -12,8 +12,8 @@ import { getVacationsByIdService } from "./api";
 
 const EditVacationPage = () => {
     const [destination, setDestination] = useState("");
-    const [startDate, setStartDate] = useState(new Date);
-    const [endDate, setEndDate] = useState(new Date);
+    const [startDate, setStartDate] = useState("");
+    const [endDate, setEndDate] = useState("");
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
@@ -64,8 +64,8 @@ const EditVacationPage = () => {
         try {
             const result = await getVacationsByIdService(vacationId)
             setDestination(result[0].destination)
-            setStartDate(new Date(result[0].startDate))
-            setEndDate(new Date(result[0].endDate))
+            setStartDate("")
+            setEndDate("")
             setPrice(result[0].price)
             setDescription(result[0].description)
             setImage(result[0].image)
@@ -111,17 +111,17 @@ const EditVacationPage = () => {
         }
     }
 
-    function endDateCheck() {
-        if (endDate < startDate) {
-            return startDate
-        } else return endDate
-    }
+    // function endDateCheck() {
+    //     if (endDate < startDate) {
+    //         return startDate
+    //     } else return endDate
+    // }
 
-    function StartDateCheck() {
-        if (endDate < startDate) {
-            return endDate
-        } else return startDate
-    }
+    // function StartDateCheck() {
+    //     if (endDate < startDate) {
+    //         return endDate
+    //     } else return startDate
+    // }
 
     return (
 
@@ -145,13 +145,13 @@ const EditVacationPage = () => {
                     <div>
                         <label htmlFor="text">Start Date:</label>
                     </div>
-                    <Calendar value={StartDateCheck()} minDate={new Date()} onChange={handlersStartDateCallback} dateFormat="dd/mm/yy" required />
+                    <Calendar value={startDate} minDate={new Date()} onChange={handlersStartDateCallback} dateFormat="dd/mm/yy" required />
                 </div>
                 <div>
                     <div>
                         <label htmlFor="text">End date:</label>
                     </div>
-                    <Calendar value={endDateCheck()} minDate={new Date(startDate)} onChange={handlerEndDateCallback} dateFormat="dd/mm/yy" required />
+                    <Calendar value={endDate} minDate={new Date(startDate)} onChange={handlerEndDateCallback} dateFormat="dd/mm/yy" required />
                 </div>
                 <div>
                     <div>
@@ -161,6 +161,7 @@ const EditVacationPage = () => {
                         id="price"
                         value={price}
                         onValueChange={handlerPriceCallback}
+                        max={10000}
                         required
                     />
                 </div>

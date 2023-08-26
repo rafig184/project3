@@ -41,7 +41,7 @@ export const newVacationSchema = zod.object({
     destination: zod.string(),
     startDate: zod.string(),
     endDate: zod.string(),
-    price: zod.number(),
+    price: zod.number().max(10000),
     description: zod.string(),
     image: zod.string()
 })
@@ -73,7 +73,7 @@ vacationsRouter.post("/new-vacation", middlewareNewVacation, async function (req
     }
 })
 
-vacationsRouter.put("/edit-vacation", async function (req: Request, res: Response, next: NextFunction) {
+vacationsRouter.put("/edit-vacation", middlewareNewVacation, async function (req: Request, res: Response, next: NextFunction) {
     if ((req as any).currentRole !== "admin") return res.status(401).send("Authentication error")
     const vacationId: any = req.query.q;
     const { destination, description, startDate, endDate, price, image } = req.body;
