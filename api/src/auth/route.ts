@@ -64,7 +64,7 @@ authRouter.post("/login", middlewareLogin, async function (req, res, next) {
         console.log(userRecord[0].role);
         console.log(`first name is : ${userRecord[0].firstName}`);
 
-        const signedToken = jsonwebtoken.sign({ email: userRecord[0].email, userId: userRecord[0].userId, role: userRecord[0].role, firstName: userRecord[0].firstName }, "PASSWORD123456789", { expiresIn: '60h' })
+        const signedToken = jsonwebtoken.sign({ email: userRecord[0].email, userId: userRecord[0].userId, role: userRecord[0].role, firstName: userRecord[0].firstName }, process.env.SECRET as string, { expiresIn: '60h' })
         res.json({ token: signedToken, role: userRecord[0].role, firstName: userRecord[0].firstName })
     } catch (error) {
         console.log(error);

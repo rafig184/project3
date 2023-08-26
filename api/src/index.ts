@@ -44,7 +44,7 @@ app.listen(process.env.PORT, () => {
 
 function verifyAuthentication(req: Request, res: Response, next: NextFunction) {
     const { authorization: token } = req.headers
-    jsonwebtoken.verify(token as string, "PASSWORD123456789", function (err: any, decoded: any) {
+    jsonwebtoken.verify(token as string, process.env.SECRET as string, function (err: any, decoded: any) {
         if (err) {
             console.log(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User Token invalid ${err.message}`)
             logger.error({ message: err.message })

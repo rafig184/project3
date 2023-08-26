@@ -90,12 +90,12 @@ const routes: Array<IRoute> = [
     onlyAdmin: false
   },
 
-  {
-    path: "*",
-    component: <NotFound />,
-    key: "not found",
-    onlyAdmin: false
-  }
+  // {
+  //   path: "*",
+  //   component: <NotFound />,
+  //   key: "not found",
+  //   onlyAdmin: false
+  // }
 
 ]
 

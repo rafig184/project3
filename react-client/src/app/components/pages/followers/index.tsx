@@ -29,10 +29,10 @@ export default function ReportsPage() {
 
 
 
-    function dataDispatchAction() {
+    async function dataDispatchAction() {
         try {
             setIsReportLoading(true)
-            dispatch(fetchFollowersReportsAsync());
+            await dispatch(fetchFollowersReportsAsync());
         } catch (error) {
             console.log(error);
 
@@ -41,12 +41,13 @@ export default function ReportsPage() {
         }
     }
 
+    useEffect(() => {
+        dataDispatchAction();
+    }, []);
+
 
 
     useEffect(() => {
-
-        dataDispatchAction()
-
         const data = {
             labels: [...destinations],
             datasets: [
@@ -79,7 +80,7 @@ export default function ReportsPage() {
 
         setChartData(data);
         setChartOptions(options);
-    }, []);
+    }, [followers]);
 
     const csvData = followers.map((follower: any) => ({
         Destination: follower.destination,

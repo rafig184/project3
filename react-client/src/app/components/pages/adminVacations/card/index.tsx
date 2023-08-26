@@ -95,7 +95,7 @@ export function AdminVacationCard(props: IVacationsAdmin) {
                         <i className={"pi pi-calendar"}></i><span> </span>
                         {formatedStartDate} - {formatedEndtDate}</span>
                 </div>
-                <ScrollPanel style={{ position: "relative", marginTop: "-8px", width: '101%', height: '130px', backgroundColor: "silver", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", zIndex: 2 }} className="custombar1">
+                <ScrollPanel style={{ position: "relative", marginTop: "-8px", width: '100.4%', height: '130px', backgroundColor: "silver", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", zIndex: 2 }} className="custombar1">
                     <p>{props.description}</p>
                 </ScrollPanel>
 
@@ -116,4 +116,3 @@ export function AdminVacationCard(props: IVacationsAdmin) {
 }
 
 
-{/* <Link style={{ color: "white" }} to={`/edit-vacation/:vacationId=${props.vacationId}`}> Edit</Link> */ }
