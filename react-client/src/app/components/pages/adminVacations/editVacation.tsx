@@ -10,6 +10,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { getVacationsByIdService } from "./api";
 
 
+
 const EditVacationPage = () => {
     const [destination, setDestination] = useState("");
     const [startDate, setStartDate] = useState("");
@@ -56,6 +57,21 @@ const EditVacationPage = () => {
         toast.current?.show({ severity: 'success', summary: 'Success', detail: 'Vacation Edited', life: 3000 });
     }
 
+    const destinationError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to pick a destination!", life: 3000 });
+    }
+    const starDateError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to pick a start date!", life: 3000 });
+    }
+    const endDateError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to pick a end date!", life: 3000 });
+    }
+    const priceError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to pick a price!", life: 3000 });
+    }
+    const descriptionError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to add a description!", life: 3000 });
+    }
     const showError = () => {
         toast.current?.show({ severity: 'error', summary: 'Error', detail: "Something went wrong!", life: 3000 });
     }
@@ -81,7 +97,13 @@ const EditVacationPage = () => {
     }, []);
 
 
-    async function addVacationService() {
+    async function editVacationService() {
+        if (destination === "") return destinationError()
+        if (startDate === "") return starDateError()
+        if (endDate === "") return endDateError()
+        if (price === null) return priceError()
+        if (description === "") return descriptionError()
+
         const vacationPayload = {
             destination,
             startDate,
@@ -180,11 +202,11 @@ const EditVacationPage = () => {
                         id="image"
                         value={image}
                         onChange={handlerImageCallback}
-                        required
+
                     />
                 </div>
                 <Toast ref={toast} />
-                <Button severity="info" style={{ marginTop: "5%" }} type="button" onClick={addVacationService} raised>Edit Vacation</Button>
+                <Button severity="info" style={{ marginTop: "5%" }} type="button" onClick={editVacationService} raised>Edit Vacation</Button>
             </form>
         </div>
 

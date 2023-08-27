@@ -105,7 +105,6 @@ const RegistrationComponent = () => {
                             value={methods.getValues("password")}
                             onChange={(e) => methods.setValue("password", e.target.value)}
                             toggleMask header={header} footer={footer}
-                            minLength={4}
                         />
                         {methods.formState.errors.password && <span>{methods.formState.errors.password.message}</span>}
                     </div>

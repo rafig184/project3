@@ -6,7 +6,7 @@ import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
-import { FileUpload } from 'primereact/fileupload';
+
 
 
 const AddVacation = () => {
@@ -47,14 +47,33 @@ const AddVacation = () => {
 
     const show = () => {
         toast.current?.show({ severity: 'success', summary: 'Success', detail: 'Vacation added', life: 3000 });
-
     }
-
+    const destinationError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to pick a destination!", life: 3000 });
+    }
+    const starDateError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to pick a start date!", life: 3000 });
+    }
+    const endDateError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to pick a end date!", life: 3000 });
+    }
+    const priceError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to pick a price!", life: 3000 });
+    }
+    const descriptionError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to add a description!", life: 3000 });
+    }
     const showError = () => {
         toast.current?.show({ severity: 'error', summary: 'Error', detail: "Something went wrong!", life: 3000 });
     }
 
     async function addVacationService() {
+        if (destination === "") return destinationError()
+        if (startDate === "") return starDateError()
+        if (endDate === "") return endDateError()
+        if (price === null) return priceError()
+        if (description === "") return descriptionError()
+
         const vacationPayload = {
             destination,
             startDate,
@@ -85,9 +104,7 @@ const AddVacation = () => {
         }
     }
 
-    const onUpload = () => {
-        toast.current?.show({ severity: 'info', summary: 'Success', detail: 'File Uploaded' });
-    };
+
 
     return (
         <div style={{ backgroundColor: "grey", padding: "4%", borderRadius: "10px" }}>
@@ -144,7 +161,6 @@ const AddVacation = () => {
                         id="image"
                         value={image}
                         onChange={handlerImageCallback}
-                        required
                     />
                 </div>
                 <Toast ref={toast} />
