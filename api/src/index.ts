@@ -46,8 +46,8 @@ function verifyAuthentication(req: Request, res: Response, next: NextFunction) {
     const { authorization: token } = req.headers
     jsonwebtoken.verify(token as string, process.env.SECRET as string, function (err: any, decoded: any) {
         if (err) {
-            console.log(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User Token invalid ${err.message}`)
-            logger.error({ message: err.message })
+            // console.log(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User Token invalid ${err.message}`)
+            logger.error(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User Token invalid ${err.message}`)
 
             return res.status(401).send("Authentication error")
         } else {
@@ -55,7 +55,7 @@ function verifyAuthentication(req: Request, res: Response, next: NextFunction) {
             (req as any).currentUserId = decoded.userId;
             (req as any).currentRole = decoded.role;
             (req as any).currentFirstName = decoded.firstName;
-            console.log(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User authenticated Successfully`)
+            logger.info(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User authenticated Successfully`)
             return next()
         }
     });

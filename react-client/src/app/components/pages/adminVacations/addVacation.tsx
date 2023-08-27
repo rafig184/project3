@@ -6,6 +6,7 @@ import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
+import { FileUpload } from 'primereact/fileupload';
 
 
 const AddVacation = () => {
@@ -16,7 +17,7 @@ const AddVacation = () => {
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
 
-    const toast = useRef<Toast>(null);
+    const toast = useRef<Toast>(null)
 
 
 
@@ -84,6 +85,10 @@ const AddVacation = () => {
         }
     }
 
+    const onUpload = () => {
+        toast.current?.show({ severity: 'info', summary: 'Success', detail: 'File Uploaded' });
+    };
+
     return (
         <div style={{ backgroundColor: "grey", padding: "4%", borderRadius: "10px" }}>
             <form >
@@ -143,6 +148,7 @@ const AddVacation = () => {
                     />
                 </div>
                 <Toast ref={toast} />
+
                 <Button severity="info" style={{ marginTop: "5%" }} type="button" onClick={addVacationService} raised>Add Vacation</Button>
             </form>
         </div>

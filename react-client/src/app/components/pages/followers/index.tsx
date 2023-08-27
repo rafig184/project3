@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from 'react';
-// import { useNavigate } from "react-router-dom";
 import { Chart } from 'primereact/chart';
 import { useAppDispatch } from "../../../hooks";
 import { RootState } from "../../../store";
@@ -73,7 +72,7 @@ export default function ReportsPage() {
         const options = {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
                 }
             }
         };

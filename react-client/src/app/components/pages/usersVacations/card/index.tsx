@@ -14,7 +14,6 @@ import { useSelector } from "react-redux";
 
 
 
-
 export function VacationCard(props: IVacations) {
     const [checked, setChecked] = useState<boolean>(false);
     const [amountOfFollower, setAmountOfFollower] = useState<number | undefined>(0);

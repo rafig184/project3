@@ -31,7 +31,6 @@ export default function UserVacationsPage() {
 
     const dispatch = useAppDispatch();
     const vacations = useSelector((state: RootState) => state.vacations.vacationsData);
-    // const followers = useSelector((state: RootState) => state.followers.followers);
     const navigate = useNavigate()
 
 
@@ -44,8 +43,6 @@ export default function UserVacationsPage() {
         }
     }, [dispatch]);
 
-    // const displayFollowers = followers.filter(f => f.vacationCount + f.vacationId)
-    // console.log(displayFollowers);
 
     useEffect(() => {
         if (futureChecked) {

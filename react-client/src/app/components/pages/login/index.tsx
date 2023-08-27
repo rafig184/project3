@@ -32,7 +32,6 @@ const LoginComponent = () => {
 
         try {
             const result = await axios.post("http://localhost:4000/auth/login", loginPayload)
-            // alert("User logged in succesfully")
             showSuccess(result.data.message)
             console.log(result.data.firstName);
             localStorage.setItem("token", result.data.token)
@@ -45,7 +44,6 @@ const LoginComponent = () => {
         } catch (ex) {
             console.log(ex);
             showError()
-            // alert("Something went wrong!")
         }
 
     }
@@ -54,7 +52,7 @@ const LoginComponent = () => {
         toast.current?.show({ severity: 'success', summary: 'Login Success', detail: result, life: 3000 });
     }
     const showError = () => {
-        toast.current?.show({ severity: 'error', summary: 'Error', detail: "Something went wrong!", life: 3000 });
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "Email or password incorrect!", life: 3000 });
     }
 
 
@@ -75,8 +73,9 @@ const LoginComponent = () => {
                     <Toast ref={toast} />
                     <Button style={{ marginTop: "7%" }} type="button" raised onClick={logInService} severity="info">Log In</Button>
                     <div style={{ marginTop: "3%" }}>
-                        <span>Not a user? <Link style={{ cursor: "pointer", color: "darkblue" }} to="/signup"> Sign Up!</Link></span>
+                        <span>Dont have an account? </span>
                     </div>
+                    <Link style={{ cursor: "pointer", color: "darkblue" }} to="/signup"> Sign Up!</Link>
                 </form>
             </div>
         </FormProvider>

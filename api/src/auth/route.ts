@@ -5,6 +5,7 @@ import zod from "zod"
 import dotenv from "dotenv"
 import signUp from "./handlers/signup"
 import { login } from "./handlers/login"
+import { logger } from "../logger"
 dotenv.config()
 
 
@@ -14,8 +15,8 @@ const authRouter = express.Router();
 export const signupSchema = zod.object({
     firstName: zod.string().max(100),
     lastName: zod.string().max(100),
-    email: zod.string().email(),
-    password: zod.string().min(4),
+    email: zod.string().email("Incorrect Email"),
+    password: zod.string().min(4, "Password is less than 4 characters"),
 })
 
 
@@ -24,6 +25,7 @@ function middlewareSignIn(req: Request, res: Response, next: NextFunction) {
         signupSchema.parse(req.body)
         return next()
     } catch (error) {
+        console.log(error)
         return res.status(400).send("Error")
     }
 }
@@ -32,8 +34,9 @@ authRouter.post("/sign-up", middlewareSignIn, async function (req, res, next) {
     try {
         const result = await signUp(req.body)
         console.log("User added id", result)
-        return res.json({ message: "user successfully added!" })
+        return res.json({ message: "User successfully added!" })
     } catch (error) {
+        console.log(error)
         return next(error)
     }
 })
@@ -49,6 +52,7 @@ function middlewareLogin(req: Request, res: Response, next: NextFunction) {
         loginSchema.parse(req.body)
         return next()
     } catch (error) {
+        console.log(error)
         return res.status(400).send("Error")
     }
 }
@@ -66,6 +70,7 @@ authRouter.post("/login", middlewareLogin, async function (req, res, next) {
         const signedToken = jsonwebtoken.sign({ email: userRecord[0].email, userId: userRecord[0].userId, role: userRecord[0].role, firstName: userRecord[0].firstName }, process.env.SECRET as string, { expiresIn: '60h' })
         res.json({ token: signedToken, role: userRecord[0].role, firstName: userRecord[0].firstName })
     } catch (error) {
+        // logger.error({ message: error.message })
         console.log(error);
         return res.status(401).send("User is unauthorized")
     }

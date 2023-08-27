@@ -72,3 +72,126 @@
 {"level":"error","message":"Unknown database 'vacationsweb'","service":"api"}
 {"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
 {"level":"error","message":"Cannot delete or update a parent row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`))","service":"api"}
+{"level":"error","message":"Duplicate entry 'rafi@rafi.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693124789764@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T08:26:30.075Z => requestId: a9adbc9d-6574-42d1-a9d4-a617c0b189b0 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-08-27T08:26:30.080Z => requestId: 7782ee5c-10a3-4280-a507-777d55908963 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-08-27T08:26:30.089Z => requestId: fa7b69de-ad44-49fc-8e82-53f558ec57b2 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693125080255@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T08:31:20.547Z => requestId: 372e31f4-206b-4713-a3a5-2402dace6902 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-08-27T08:31:20.551Z => requestId: f06256a9-c16b-47cc-a723-2a721f5f4694 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693125142768@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T08:32:23.046Z => requestId: 4d1256ee-2a96-4c2f-9904-54a314bb5b76 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-08-27T08:32:23.050Z => requestId: 0de3d3bc-8cc1-4b39-8b69-e7cf7beb4315 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693125223522@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T08:33:43.807Z => requestId: e959d078-7367-4aaa-a5a9-0da4a860a3b5 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693125250295@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T08:34:10.591Z => requestId: d2f294cb-df86-41ec-8413-1513c279ffe3 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693125673563@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T08:41:13.851Z => requestId: 4d3843e0-60e3-4a1d-ba45-c72f80fa96e4 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-08-27T08:41:13.857Z => requestId: 4aa5d275-8ed5-4d37-a2b8-90b602aa3ce8 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693125767655@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T08:42:47.951Z => requestId: ff0548ab-20c5-4b6e-863e-77db20b95068 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-08-27T08:42:47.954Z => requestId: 9c175f49-8d85-4248-a2dc-d977bdea27f4 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-08-27T08:42:47.957Z => requestId: 180bc781-0f52-49d9-beb8-793ba52e4f32 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693126479216@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T08:54:39.509Z => requestId: b4263ecc-bf28-4d8b-a2f8-92155a8f2267 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693126639406@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T08:57:19.699Z => requestId: 4864881a-8a47-4d27-8686-58b273ebc05f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693127422772@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T09:10:23.064Z => requestId: b13d4535-cf36-424e-a5e6-d1d927929f35 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693127438018@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T09:10:38.309Z => requestId: d7fc9f9a-614d-4b88-81ee-36ae4765fb79 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693127570204@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T09:12:50.495Z => requestId: 2306bcca-d60b-409f-9506-3f3de323fed5 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693127594931@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T09:13:15.236Z => requestId: 64b61bb7-0d7e-4061-a093-aa3bcd3e2113 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-08-27T09:13:15.376Z => requestId: 6b10befb-ea52-4c5b-9790-bc53dd2c1a2b | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693127757105@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T09:15:57.407Z => requestId: 6ee0abd0-4c19-4d1b-80ea-aa13e771c28f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693131134701@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T10:12:14.993Z => requestId: 7a060975-e806-4d14-8d29-5e798ceddfcd | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693131267683@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T10:14:28.117Z => requestId: 137fa5d1-bdd4-4c2c-8fd9-39488e4c5d25 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693131365376@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693131456695@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693131491662@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T10:18:12.104Z => requestId: be629f0f-290c-4fba-ba44-fd7ed6324a16 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693132867405@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T10:41:07.821Z => requestId: c769e170-889e-45c2-86f0-5da2efaa4871 | User Token invalid jwt malformed","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693132913002@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T10:41:53.447Z => requestId: 96b9f5f0-7be0-47b9-9268-e3d4b0bfcc2a | User Token invalid jwt malformed","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693132960626@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T10:42:41.048Z => requestId: 87118d2d-736c-4fce-bdda-b21356c0de83 | User Token invalid invalid token","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693132977944@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693133017334@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693133059641@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693133167778@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T10:46:08.086Z => requestId: 3a439f9d-5b6b-4466-b7e1-f91704e7b0f0 | User Token invalid jwt malformed","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693133226953@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T10:47:07.261Z => requestId: 559f5d1a-1a14-4157-9629-f6ed78311747 | User Token invalid jwt malformed","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693133351508@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T10:49:11.786Z => requestId: 2e73cbad-46f7-43a0-aeb9-7fb92bc27dd7 | User Token invalid jwt malformed","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693133430841@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693133489566@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693133668248@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T10:54:28.567Z => requestId: 64aabf4f-1320-40d8-a361-81e2ab1b791d | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693133750559@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T10:55:50.860Z => requestId: 7235422e-9870-4757-a99e-222a26a0cf4f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693134044577@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T11:00:44.878Z => requestId: efe517b2-aeb9-4385-acae-4566902de377 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693134377488@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T11:06:18.326Z => requestId: 2ccab787-5cb2-4770-ab58-059cfd7701a7 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693134717756@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693134778386@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T11:12:59.240Z => requestId: 91ee8c9a-5995-4be4-94c0-da45c896fce2 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693134869358@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T11:14:30.221Z => requestId: 6e700d2f-2031-4a71-be55-ce5388f7ad10 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693135565484@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T11:26:06.314Z => requestId: 3b9438e3-5834-4fa7-9381-8d8eebed0a4f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693136011591@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T11:33:32.150Z => requestId: 81586707-27f4-4435-8007-ac680f64c86f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693136086487@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693136189393@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693137321458@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693137922364@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693137988332@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693138029211@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693138073676@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693138134874@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693138155592@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693138196525@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693138208212@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693138325384@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693138372190@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693138382401@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693138393170@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693138957038@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693138987522@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693139183061@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693139299949@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693139321879@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `vacationId` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"2023-08-27T12:28:42.942Z => requestId: 4a51a48b-43e2-49d8-92c0-0725d67aae02 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693139658727@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-27T12:34:19.785Z => requestId: de411468-80ac-4c8d-af20-cff36994930d | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693139757485@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693139857367@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693139927235@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693140060429@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693140285603@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693140402121@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693140427670@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693140443580@gmail.com' for key 'users.email_UNIQUE'","service":"api"}

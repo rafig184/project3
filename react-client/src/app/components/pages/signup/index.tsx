@@ -27,10 +27,20 @@ const RegistrationComponent = () => {
         resolver: zodResolver(registrationSchema),
     });
 
+    function isValidEmail(email: string) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+
 
     async function signUpService() {
+        if (methods.getValues("password").length < 4) return passwordError()
+        const emailValue = methods.getValues("email");
+        if (!isValidEmail(emailValue)) {
+            return emailError();
+        }
         const signUpPayload = {
-            email: methods.getValues("email"),
+            email: emailValue,
             firstName: methods.getValues("firstName"),
             password: methods.getValues("password"),
             lastName: methods.getValues("lastName"),
@@ -52,14 +62,22 @@ const RegistrationComponent = () => {
 
     }
     const showError = () => {
-        toast.current?.show({ severity: 'error', summary: 'Error', detail: "Something went wrong!", life: 3000 });
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "Something went wrong", life: 3000 });
+    }
+
+    const emailError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "Your email is not valid", life: 3000 });
+    }
+
+    const passwordError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "Your password is less than 4 characters", life: 3000 });
     }
 
     const header = <div className="font-bold mb-3">Pick a password</div>;
     const footer = (
         <>
             <Divider />
-            <p className="mt-2">Suggestions</p>
+            <p className="mt-2">Requierments :</p>
             <ul className="pl-2 ml-2 mt-0 line-height-3">
                 <li>Minimum 4 characters</li>
             </ul>
@@ -89,12 +107,15 @@ const RegistrationComponent = () => {
                             toggleMask header={header} footer={footer}
                             minLength={4}
                         />
+                        {methods.formState.errors.password && <span>{methods.formState.errors.password.message}</span>}
                     </div>
                     <Toast ref={toast} />
                     <Button style={{ marginTop: "5%" }} raised type="button" onClick={signUpService} severity="info">Sign Up</Button>
                     <div style={{ marginTop: "3%" }}>
-                        <span>Already a user? <Link style={{ cursor: "pointer", color: "darkblue" }} to="/login"> Log in!</Link></span>
+                        <span>Already a user? </span>
+
                     </div>
+                    <Link style={{ cursor: "pointer", color: "darkblue" }} to="/login"> Log in!</Link>
                 </form>
             </div>
         </FormProvider>

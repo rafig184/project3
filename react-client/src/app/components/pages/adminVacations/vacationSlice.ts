@@ -1,26 +1,23 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { RootState, AppThunk } from "../../../store"
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+
 import { getVacationsService } from "./api"
 
-// import { fetchCount } from "./counterAPI"
 
 export interface IVacationsAdmin {
   vacationsData: Array<any>
-  // followers: Array<any>
 }
 
 
 
 const initialState: IVacationsAdmin = {
   vacationsData: [],
-  // followers: []
+
 }
 
 export const fetchVacationsAsync = createAsyncThunk(
   "adminVacations/getVacationsService",
   async () => {
     const response = await getVacationsService()
-    // console.log(response);
     return response
   }
 )
@@ -56,32 +53,14 @@ export const vacationSlice = createSlice({
 
         state.vacationsData = []
       })
+
       .addCase(fetchVacationsAsync.fulfilled, (state, action) => {
-
-        // state.value += action.payload
         state.vacationsData = action.payload
-
       })
+
       .addCase(fetchVacationsAsync.rejected, (state) => {
-
         state.vacationsData = []
-
       })
-
-    // builder.addCase(fetchFollowersAsync.pending, (state) => {
-    //   state.followers = []
-    // })
-    //   .addCase(fetchFollowersAsync.fulfilled, (state, action) => {
-
-    //     // state.value += action.payload
-    //     state.followers = action.payload
-
-    //   })
-    //   .addCase(fetchFollowersAsync.rejected, (state) => {
-
-    //     state.followers = []
-
-    //   })
   },
 
 })

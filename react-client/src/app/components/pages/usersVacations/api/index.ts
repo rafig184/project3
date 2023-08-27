@@ -12,6 +12,7 @@ export interface IVacations {
 
 
 async function getVacationsService(): Promise<Array<IVacations>> {
+
     const { data, headers } = await axios.get(`http://localhost:4000/vacations/`, {
         headers: {
             authorization: localStorage.getItem("token")
