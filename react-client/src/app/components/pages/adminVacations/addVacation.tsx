@@ -94,6 +94,8 @@ const AddVacation = () => {
                     authorization: localStorage.getItem("token")
                 }
             })
+            console.log((result));
+
             show()
             setDestination("")
             setStartDate("")
