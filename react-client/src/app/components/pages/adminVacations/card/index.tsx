@@ -1,7 +1,7 @@
 import { Button } from "primereact/button";
-import { Card } from 'primereact/card';
+// import { Card } from 'primereact/card';
 import { deleteVacationsService } from "../api";
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { confirmDialog } from 'primereact/confirmdialog';
 import { Toast } from 'primereact/toast';
 import { Image } from 'primereact/image';
@@ -11,8 +11,7 @@ import { useAppDispatch } from "../../../../hooks";
 import { fetchVacationsAsync } from "../vacationSlice";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
-
-
+import { WithLoading } from "../../../ui-components/withLoading";
 
 export interface IVacationsAdmin {
     vacationId: number,
@@ -27,7 +26,7 @@ export interface IVacationsAdmin {
 
 export function AdminVacationCard(props: IVacationsAdmin) {
     const toast = useRef<Toast>(null);
-
+    const [isVacationsLoading, setIsVacationsLoading] = useState<boolean>(false);
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
@@ -56,6 +55,7 @@ export function AdminVacationCard(props: IVacationsAdmin) {
 
     async function handleRemoveVacation() {
         try {
+            setIsVacationsLoading(true)
             const result = await deleteVacationsService(props.vacationId);
             toast.current?.show({ severity: 'success', summary: 'Confirmed', detail: 'Vacation Deleted', life: 3000 });
             console.log(result)
@@ -63,6 +63,8 @@ export function AdminVacationCard(props: IVacationsAdmin) {
         } catch (error) {
             showError()
             console.error(error);
+        } finally {
+            setIsVacationsLoading(false)
         }
     };
 
@@ -77,40 +79,50 @@ export function AdminVacationCard(props: IVacationsAdmin) {
 
 
 
-    const header = (
-        <div style={{ position: "relative" }}>
-            <Image src={props.image} alt="Destination" style={{ height: "200px", width: "350px", borderRadius: "10px 10px 0 0" }} width="350" height="200" preview />
-            <h2 style={{ position: "absolute", top: "10px", left: "10px", color: "white", zIndex: 1, textShadow: "3px 3px 5px rgba(0, 0, 0, 0.6)" }}>{props.destination.toUpperCase()}</h2>
-        </div>
-    );
+    // const header = (
+    //     <div style={{ position: "relative" }}>
+    //         <Image src={props.image} alt="Destination" style={{ height: "200px", width: "350px", borderRadius: "10px 10px 0 0" }} width="350" height="200" preview />
+    //         <h2 style={{ position: "absolute", top: "10px", left: "10px", color: "white", zIndex: 1, textShadow: "3px 3px 5px rgba(0, 0, 0, 0.6)" }}>{props.destination.toUpperCase()}</h2>
+    //     </div>
+    // );
 
 
 
 
     return <div style={{ margin: "2%" }}>
-        <Card header={header} style={{ width: "350px", height: "560px" }}>
-            <div style={{ borderBottomRightRadius: "10px" }}>
-                <div style={{ position: "relative", marginBottom: "1%", backgroundColor: "#495057", paddingTop: "2%", paddingBottom: "2%", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", zIndex: 1 }}>
-                    <span style={{ color: "white" }}>
-                        <i className={"pi pi-calendar"}></i><span> </span>
-                        {formatedStartDate} - {formatedEndtDate}</span>
+        <WithLoading isLoading={isVacationsLoading}>
+            {/* <Card header={header} style={{ width: "350px", height: "560px" }}>
+
+            </Card> */}
+            <div style={{ backgroundColor: "#FFFFFF", height: "550px", borderRadius: "10px", boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.2)" }}>
+                <div style={{ position: "relative" }}>
+                    <Image src={props.image} alt="Destination" style={{ height: "200px", width: "350px", borderRadius: "10px 10px 0 0" }} width="350" height="200" preview />
+                    <h2 style={{ position: "absolute", top: "10px", left: "10px", color: "white", zIndex: 1, textShadow: "3px 3px 5px rgba(0, 0, 0, 0.6)" }}>{props.destination.toUpperCase()}</h2>
                 </div>
-                <ScrollPanel style={{ position: "relative", marginTop: "-8px", width: '100.4%', height: '130px', backgroundColor: "silver", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", zIndex: 2 }} className="custombar1">
-                    <p>{props.description}</p>
-                </ScrollPanel>
+                <div style={{ marginTop: "-4%" }}>
+                    <div style={{ borderBottomRightRadius: "10px" }}>
+                        <div style={{ position: "relative", marginBottom: "1%", backgroundColor: "#B4E3FF", paddingTop: "2%", paddingBottom: "2%", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", zIndex: 1 }}>
+                            <span >
+                                <i className={"pi pi-calendar"}></i><span> </span>
+                                {formatedStartDate} - {formatedEndtDate}</span>
+                        </div>
+                        <ScrollPanel style={{ paddingLeft: "5%", textAlign: "left", position: "relative", marginTop: "-8px", width: '350px', height: '160px', backgroundColor: "#FFFFFF", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", zIndex: 2 }}>
+                            <p>{props.description}</p>
+                        </ScrollPanel>
 
-            </div>
-            <div style={{ borderRadius: "10px", padding: "1px", marginTop: "1%", backgroundColor: "#3B82F6" }} >
-                <h3 style={{ color: "white" }}>{`${props.price} $`}</h3>
-            </div>
-            <Toast ref={toast} />
-            <div style={{ marginTop: "5%" }}>
-                <Button severity="danger" onClick={confirm} icon="pi pi-times" label="Delete" raised />
-                <Button onClick={editHandler} style={{ marginLeft: "4%" }} label="Edit" icon="pi pi-file-edit" severity="info" raised > </Button >
+                    </div>
+                    <div style={{ borderRadius: "10px", padding: "1px", marginTop: "1%", backgroundColor: "#3B82F6", marginRight: "3%", marginLeft: "3%" }} >
+                        <h3 style={{ color: "white" }}>{`${props.price} $`}</h3>
+                    </div>
+                    <Toast ref={toast} />
+                    <div style={{ marginTop: "5%" }}>
+                        <Button severity="danger" onClick={confirm} icon="pi pi-times" label="Delete" raised />
+                        <Button onClick={editHandler} style={{ marginLeft: "4%" }} label="Edit" icon="pi pi-file-edit" severity="info" raised > </Button >
+                    </div>
+                </div>
             </div>
 
-
-        </Card>
+        </WithLoading>
     </div>
 
 }

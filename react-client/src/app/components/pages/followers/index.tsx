@@ -34,7 +34,6 @@ export default function ReportsPage() {
             await dispatch(fetchFollowersReportsAsync());
         } catch (error) {
             console.log(error);
-
         } finally {
             setIsReportLoading(false)
         }
@@ -101,7 +100,7 @@ export default function ReportsPage() {
         <WithLoading isLoading={isReportLoading}>
             <div style={{ backgroundColor: "#EFF3F8", padding: "4%", borderRadius: "10px" }} >
                 <CSVLink {...csvReport}>Export to CSV</CSVLink>
-                <Chart style={{ minWidth: "700px", marginTop: "5%" }} type="bar" data={chartData} options={chartOptions} />
+                <Chart className='chart' style={{ marginTop: "5%" }} type="bar" data={chartData} options={chartOptions} />
             </div>
         </WithLoading>
 

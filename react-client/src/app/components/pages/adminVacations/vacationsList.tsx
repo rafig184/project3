@@ -27,6 +27,6 @@ export default function AdminVacationList(props: { vacations: Array<IVacationsAd
                     vacationId={vacation.vacationId} />
             })}
         </div>
-        <Paginator style={{ backgroundColor: "#EFF3F8" }} first={first} rows={9} totalRecords={props.vacations.length} onPageChange={onPageChange} />
+        <Paginator style={{ backgroundColor: "#E8E8E8" }} first={first} rows={9} totalRecords={props.vacations.length} onPageChange={onPageChange} />
     </div>
 }

@@ -195,3 +195,4 @@
 {"level":"error","message":"Duplicate entry 'email1693140402121@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
 {"level":"error","message":"Duplicate entry 'email1693140427670@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
 {"level":"error","message":"Duplicate entry 'email1693140443580@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"Duplicate entry 'email1693205639239@gmail.com' for key 'users.email_UNIQUE'","service":"api"}

@@ -1,7 +1,6 @@
 
 import { useCallback, useEffect, useState } from "react"
-import { IVacations, getVacationsService } from "./api"
-import { Paginator, PaginatorPageChangeEvent } from 'primereact/paginator';
+import { IVacations } from "./api"
 import { useNavigate } from "react-router-dom";
 import VacationList from "./vacationsList";
 import { useAppDispatch } from "../../../hooks";
@@ -10,22 +9,34 @@ import { useSelector } from "react-redux";
 import { fetchVacationsAsync } from "../adminVacations/vacationSlice";
 import { Checkbox } from 'primereact/checkbox';
 import { WithLoading } from "../../ui-components/withLoading";
-import { fetchFollowersAmountAsync, fetchFollowersReportsAsync } from "../followers/followersSlice";
-import { getFollowersByUserIdService } from "../followers/api/followers";
+import { IFollowerByUser, getFollowersByUserIdService } from "../followers/api/followers";
 
 
 export default function UserVacationsPage() {
     const [futureChecked, setfutureChecked] = useState<boolean>(false);
+    const [isVacationsLoading, setIsVacationsLoading] = useState<boolean>(false);
     const [followingChecked, setFollowingChecked] = useState<boolean>(false);
+    const [onGoingVacationCecked, setOnGoingVacationCecked] = useState<boolean>(false);
     const [filteredVacations, setFilteredVacations] = useState<IVacations[]>([]);
+    const [followers, setFollowers] = useState<IFollowerByUser[]>([])
 
     const handlerFutureChecked = useCallback((e: any) => {
         setfutureChecked(e.checked)
+        if (e.checked) {
+            setOnGoingVacationCecked(false);
+        }
     }, [futureChecked])
 
     const handlerFollowingChecked = useCallback((e: any) => {
         setFollowingChecked(e.checked)
     }, [followingChecked])
+
+    const handlerOngoingChecked = useCallback((e: any) => {
+        setOnGoingVacationCecked(e.checked);
+        if (e.checked) {
+            setfutureChecked(false);
+        }
+    }, []);
 
     const currentDate = new Date()
 
@@ -36,66 +47,79 @@ export default function UserVacationsPage() {
 
     useEffect(() => {
         try {
+            setIsVacationsLoading(true)
             dispatch(fetchVacationsAsync());
         } catch (error) {
             alert("error")
             navigate("/login")
+        } finally {
+            setIsVacationsLoading(false)
         }
     }, [dispatch]);
 
-
     useEffect(() => {
-        if (futureChecked) {
-            const futureVacations = vacations.filter(vacation => {
-                const startDate = new Date(vacation.startDate);
-                return startDate > currentDate;
-            });
-            console.log("Filtered Vacations:", futureVacations);
-            setFilteredVacations(futureVacations);
-        } else {
-            setFilteredVacations(vacations);
-        }
-    }, [vacations, futureChecked]);
-
-    useEffect(() => {
-        async function getFollowByUser() {
+        async function fetchFollowers() {
             try {
-                const result = await getFollowersByUserIdService()
-                const vacationIdperUser = result.map(f => f.vacationId)
-
-                if (followingChecked) {
-                    const filterFollowing = vacations.filter(v => vacationIdperUser.includes(v.vacationId))
-                    console.log(filterFollowing);
-
-                    return setFilteredVacations(filterFollowing)
-                } else setFilteredVacations(vacations)
+                const followersData = await getFollowersByUserIdService();
+                setFollowers(followersData);
             } catch (error) {
-                console.log(error);
+                console.error("Error fetching followers:", error);
             }
         }
-        getFollowByUser()
-    }, [followingChecked])
+
+        fetchFollowers();
+    }, []);
+
+
+    useEffect(() => {
+        const filteredFutureVacations = futureChecked
+            ? vacations.filter(vacation => new Date(vacation.startDate) > currentDate)
+            : vacations;
+
+        const filteredOngoingVacations = onGoingVacationCecked
+            ? vacations.filter(
+                vacation =>
+                    new Date(vacation.startDate) <= currentDate &&
+                    new Date(vacation.endDate) >= currentDate
+            )
+            : filteredFutureVacations;
+
+        if (followingChecked) {
+            const followedVacationIds = followers.map(f => f.vacationId);
+            const filteredFollowedVacations = filteredOngoingVacations.filter(
+                vacation => followedVacationIds.includes(vacation.vacationId)
+            );
+            setFilteredVacations(filteredFollowedVacations);
+        } else {
+            setFilteredVacations(filteredOngoingVacations);
+        }
+    }, [vacations, futureChecked, onGoingVacationCecked, followingChecked, followers]);
+
+
 
 
 
 
     return <div>
-        {/* <WithLoading isLoading={isCountriesLoading}> */}
-        <div style={{ paddingTop: "2%", paddingBottom: "2%", backgroundColor: "#C0C0C0", color: "#495057", display: "flex", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }} className="card flex justify-content-center">
-            <div style={{ margin: "auto" }}>
-                <Checkbox onChange={handlerFutureChecked} checked={futureChecked}></Checkbox>
-                <label htmlFor="ingredient1" className="ml-2">Show only future vacations</label>
+        <WithLoading isLoading={isVacationsLoading}>
+            <div style={{ paddingTop: "2%", paddingBottom: "2%", backgroundColor: "#C0C0C0", color: "#495057", display: "flex", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }} className="card flex justify-content-center">
+                <div style={{ margin: "auto" }}>
+                    <Checkbox onChange={handlerFutureChecked} checked={futureChecked}></Checkbox>
+                    <label htmlFor="ingredient1" className="ml-2">Show only future vacations</label>
+                </div>
+                <div style={{ margin: "auto" }}>
+                    <Checkbox onChange={handlerFollowingChecked} checked={followingChecked}></Checkbox>
+                    <label htmlFor="ingredient1" className="ml-2">Show only my following vacations</label>
+                </div>
+                <div style={{ margin: "auto" }}>
+                    <Checkbox onChange={handlerOngoingChecked} checked={onGoingVacationCecked}></Checkbox>
+                    <label htmlFor="ingredient1" className="ml-2">On going vacations</label>
+                </div>
             </div>
-            <div style={{ margin: "auto" }}>
-                <Checkbox onChange={handlerFollowingChecked} checked={followingChecked}></Checkbox>
-                <label htmlFor="ingredient1" className="ml-2">Show only my following vacations</label>
+            <div style={{ backgroundColor: "#EFF3F8" }}>
+                <VacationList vacations={filteredVacations} />
             </div>
-        </div>
-        <div style={{ backgroundColor: "#EFF3F8" }}>
-            <VacationList vacations={filteredVacations} />
-        </div>
-
-        {/* </WithLoading> */}
+        </WithLoading>
     </div >
 }
 

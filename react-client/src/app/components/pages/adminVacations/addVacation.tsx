@@ -60,6 +60,9 @@ const AddVacation = () => {
     const priceError = () => {
         toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to pick a price!", life: 3000 });
     }
+    const amountPriceError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "The price cannot be more than 10000$", life: 3000 });
+    }
     const descriptionError = () => {
         toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to add a description!", life: 3000 });
     }
@@ -72,6 +75,7 @@ const AddVacation = () => {
         if (startDate === "") return starDateError()
         if (endDate === "") return endDateError()
         if (price === null) return priceError()
+        if (price > 10000) return amountPriceError()
         if (description === "") return descriptionError()
 
         const vacationPayload = {
@@ -142,7 +146,6 @@ const AddVacation = () => {
                         id="price"
                         value={price}
                         onValueChange={handlerPriceCallback}
-                        max={10000}
                         required
                     />
                 </div>

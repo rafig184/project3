@@ -35,12 +35,12 @@ const RegistrationComponent = () => {
 
     async function signUpService() {
         if (methods.getValues("password").length < 4) return passwordError()
-        const emailValue = methods.getValues("email");
-        if (!isValidEmail(emailValue)) {
+        // const emailValue = methods.getValues("email");
+        if (!isValidEmail(methods.getValues("email"))) {
             return emailError();
         }
         const signUpPayload = {
-            email: emailValue,
+            email: methods.getValues("email"),
             firstName: methods.getValues("firstName"),
             password: methods.getValues("password"),
             lastName: methods.getValues("lastName"),
@@ -112,7 +112,6 @@ const RegistrationComponent = () => {
                     <Button style={{ marginTop: "5%" }} raised type="button" onClick={signUpService} severity="info">Sign Up</Button>
                     <div style={{ marginTop: "3%" }}>
                         <span>Already a user? </span>
-
                     </div>
                     <Link style={{ cursor: "pointer", color: "darkblue" }} to="/login"> Log in!</Link>
                 </form>

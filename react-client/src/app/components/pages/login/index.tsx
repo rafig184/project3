@@ -7,6 +7,7 @@ import { InputText } from 'primereact/inputtext';
 import { Button } from "primereact/button";
 import { useRef } from "react";
 import { Toast } from "primereact/toast";
+import { Password } from "primereact/password";
 
 const loginSchema = object({
     email: string().email("Invalid email"),
@@ -67,7 +68,11 @@ const LoginComponent = () => {
                         <InputText type="email" {...methods.register("email")} />
                         {methods.formState.errors.email && <span>{methods.formState.errors.email.message}</span>}
                         Password:
-                        <InputText type="password" {...methods.register("password")} />
+                        <Password
+                            value={methods.getValues("password")}
+                            onChange={(e) => methods.setValue("password", e.target.value)}
+                            toggleMask feedback={false}
+                        />
                         {methods.formState.errors.password && <span>{methods.formState.errors.password.message}</span>}
                     </div>
                     <Toast ref={toast} />

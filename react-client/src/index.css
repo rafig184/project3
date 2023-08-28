@@ -15,12 +15,7 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.top-container {
-  position: sticky;
-  top: 0;
-  background-color: #d0dfec;
-  z-index: 100;
-}
+
 
 a {
   font-weight: 500;

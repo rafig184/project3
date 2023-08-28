@@ -1,6 +1,6 @@
 import './App.css'
 import { useEffect, useState } from 'react'
-import { Routes, Route, Link, useNavigate } from "react-router-dom"
+import { Routes, Route, useNavigate } from "react-router-dom"
 import { TabMenu } from 'primereact/tabmenu';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
@@ -132,7 +132,7 @@ function App() {
     navigate("/login")
 
   }
-  function signinHandler() {
+  function signUpHandler() {
     navigate("/signup")
   }
 
@@ -170,18 +170,18 @@ function App() {
         <div >
           {userToken ? (
             <div style={{ display: "flex", justifyContent: "space-between", margin: "auto" }}>
-              <div>
-                <Avatar icon="pi pi-user" size="large" style={{ backgroundColor: '#2196F3', color: '#ffffff' }} shape="circle" /><span style={{ color: "#808080", fontSize: "larger" }}> Welcome back {userFirstName}</span>
+              <div >
+                <Avatar icon="pi pi-user" size="normal" style={{ backgroundColor: '#2196F3', color: '#ffffff' }} shape="circle" /><span className='welcome' style={{ color: "#808080", fontSize: "larger" }}> Welcome back {userFirstName}</span>
               </div>
               <div>
-                <Button onClick={logoutHandler} severity="info" raised icon="pi pi-sign-out" label="Log Out" />
+                <Button className='logoutB' onClick={logoutHandler} severity="info" raised icon="pi pi-sign-out" label="Log Out" />
               </div>
             </div>
           ) : (
             <span>
               <Button onClick={loginHandler} severity="info" raised icon="pi pi-user" label="Log In" />
               <span> </span>
-              <Button onClick={signinHandler} severity="info" raised icon="pi pi-sign-in" label="Sign In" />
+              <Button onClick={signUpHandler} severity="info" raised icon="pi pi-sign-in" label="Sign Up" />
             </span>
           )}
         </div>
@@ -189,7 +189,7 @@ function App() {
 
         <div  >
           <div style={{ marginBottom: "3%", marginTop: "1%" }}>
-            <Image src={logoImage} alt="Image" width="180" />
+            <img className='logoImg' src={logoImage} alt="Image" width="180" />
           </div>
           {userRole === "admin" && (
             <TabMenu style={{ borderRadius: "10px" }} model={items} activeIndex={activeIndex} onTabChange={onTabChange} />

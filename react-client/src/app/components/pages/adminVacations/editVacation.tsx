@@ -56,7 +56,6 @@ const EditVacationPage = () => {
     const show = () => {
         toast.current?.show({ severity: 'success', summary: 'Success', detail: 'Vacation Edited', life: 3000 });
     }
-
     const destinationError = () => {
         toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to pick a destination!", life: 3000 });
     }
@@ -68,6 +67,9 @@ const EditVacationPage = () => {
     }
     const priceError = () => {
         toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to pick a price!", life: 3000 });
+    }
+    const amountPriceError = () => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "The price cannot be more than 10000$", life: 3000 });
     }
     const descriptionError = () => {
         toast.current?.show({ severity: 'error', summary: 'Error', detail: "You forgot to add a description!", life: 3000 });
@@ -102,6 +104,7 @@ const EditVacationPage = () => {
         if (startDate === "") return starDateError()
         if (endDate === "") return endDateError()
         if (price === null) return priceError()
+        if (price > 10000) return amountPriceError()
         if (description === "") return descriptionError()
 
         const vacationPayload = {
@@ -133,17 +136,6 @@ const EditVacationPage = () => {
         }
     }
 
-    // function endDateCheck() {
-    //     if (endDate < startDate) {
-    //         return startDate
-    //     } else return endDate
-    // }
-
-    // function StartDateCheck() {
-    //     if (endDate < startDate) {
-    //         return endDate
-    //     } else return startDate
-    // }
 
     return (
 
@@ -183,7 +175,6 @@ const EditVacationPage = () => {
                         id="price"
                         value={price}
                         onValueChange={handlerPriceCallback}
-                        max={10000}
                         required
                     />
                 </div>
