@@ -98,20 +98,18 @@ export default function UserVacationsPage() {
 
 
 
-
-
     return <div>
         <WithLoading isLoading={isVacationsLoading}>
-            <div style={{ paddingTop: "2%", paddingBottom: "2%", backgroundColor: "#C0C0C0", color: "#495057", display: "flex", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }} className="card flex justify-content-center">
-                <div style={{ margin: "auto" }}>
+            <div style={{ padding: "2%", backgroundColor: "#C0C0C0", color: "#495057", display: "flex", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }} className="vacations ">
+                <div style={{ margin: "auto", paddingRight: "2%" }}>
                     <Checkbox onChange={handlerFutureChecked} checked={futureChecked}></Checkbox>
                     <label htmlFor="ingredient1" className="ml-2">Show only future vacations</label>
                 </div>
-                <div style={{ margin: "auto" }}>
+                <div style={{ margin: "auto", paddingRight: "2%" }}>
                     <Checkbox onChange={handlerFollowingChecked} checked={followingChecked}></Checkbox>
                     <label htmlFor="ingredient1" className="ml-2">Show only my following vacations</label>
                 </div>
-                <div style={{ margin: "auto" }}>
+                <div style={{ margin: "auto", paddingRight: "2%" }}>
                     <Checkbox onChange={handlerOngoingChecked} checked={onGoingVacationCecked}></Checkbox>
                     <label htmlFor="ingredient1" className="ml-2">On going vacations</label>
                 </div>

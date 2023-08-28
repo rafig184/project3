@@ -40,11 +40,19 @@
   min-width: 700px;
 }
 
+.vacations {
+  min-width: 1350px;
+}
+
 @media (max-width: 768px) {
   .top-container {
     margin-left: -20%;
     margin-right: -20%;
 
+  }
+
+  .vacations {
+    min-width: 350px;
   }
 
   .chart {
