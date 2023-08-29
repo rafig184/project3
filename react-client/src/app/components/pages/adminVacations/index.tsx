@@ -33,14 +33,14 @@ export default function AdminVacationsPage() {
     const navigate = useNavigate()
 
 
-    return <div>
-        <div className="w-full md:w-6 p-3">
+    return <div className="mainVacation" >
+        <div style={{ marginTop: "-4%" }}>
         </div>
         <WithLoading isLoading={isVacationsLoading}>
             <div style={{ backgroundColor: "#C0C0C0", color: "#495057", paddingTop: "1%", paddingBottom: "1%", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}>
                 <Button onClick={() => { navigate("/add-vacation") }} severity="info" raised>Add new vacation</Button>
             </div>
-            <div style={{ backgroundColor: "#E8E8E8", color: "#495057", display: "flex" }}>
+            <div className="vacationsAdmin" >
                 <ConfirmDialog />
                 <AdminVacationList vacations={vacations} />
             </div>

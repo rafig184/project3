@@ -1,6 +1,5 @@
 
 import { IVacations } from "../api";
-import { Card } from 'primereact/card';
 import { ScrollPanel } from "primereact/scrollpanel";
 import { ToggleButton, ToggleButtonChangeEvent } from 'primereact/togglebutton';
 import { useEffect, useState } from "react";

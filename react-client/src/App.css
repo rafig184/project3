@@ -1,13 +1,13 @@
 #root {
-  max-width: 80vw;
-  max-width: 80dvw;
-  min-width: 80vw;
-  min-width: 80dvw;
+  max-width: 70vw;
+  max-width: 70dvw;
+  min-width: 70vw;
+  min-width: 70dvw;
+  min-height: 100vw;
   margin: auto;
   text-align: center;
+  margin-bottom: 2%;
 }
-
-
 
 
 .top-container {
@@ -16,12 +16,6 @@
   background-color: #d0dfec;
   padding-top: 1em;
   z-index: 100;
-  /* max-width: 80vw;
-  max-width: 80dvw; */
-  /* min-width: 70vw;
-  min-width: 70dvw; */
-
-
 }
 
 .read-the-docs {
@@ -35,7 +29,6 @@
 
 .logoImg {
   width: 180px;
-  /* margin-top: -2%; */
 }
 
 .chart {
@@ -43,7 +36,7 @@
 }
 
 .filters {
-  min-width: 1450px;
+  min-width: 70vw;
 }
 
 .vacations {
@@ -53,6 +46,16 @@
 
 .paginator {
   background-color: #EFF3F8;
+}
+
+.mainVacation {
+  width: 70vw;
+}
+
+.vacationsAdmin {
+  background-color: #E8E8E8;
+  color: #495057;
+  display: flex
 }
 
 @media (max-width: 768px) {
@@ -77,6 +80,16 @@
 
   .vacations {
     background-color: #D0DFEC;
+  }
+
+  .vacationsAdmin {
+    background-color: #D0DFEC;
+    color: #495057;
+    display: flex
+  }
+
+  .mainVacation {
+    width: 100vw;
   }
 
   .paginator {

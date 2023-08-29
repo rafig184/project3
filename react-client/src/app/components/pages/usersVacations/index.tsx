@@ -98,7 +98,7 @@ export default function UserVacationsPage() {
 
 
 
-    return <div>
+    return <div className="mainVacation">
         <WithLoading isLoading={isVacationsLoading}>
             <div style={{ padding: "2%", backgroundColor: "#C0C0C0", color: "#495057", display: "flex", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }} className="filters ">
                 <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
