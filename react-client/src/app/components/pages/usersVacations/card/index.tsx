@@ -12,7 +12,6 @@ import { fetchFollowersAmountAsync } from "../../followers/followersSlice";
 import { RootState } from "../../../../store";
 import { useSelector } from "react-redux";
 import { WithLoading } from "../../../ui-components/withLoading";
-import { color } from "chart.js/helpers";
 
 
 
@@ -70,12 +69,12 @@ export function VacationCard(props: IVacations) {
     const formatedEndtDate = format(new Date(props.endDate), "dd/MM/yyyy")
 
 
-    return <div style={{ margin: "2%" }}>
+    return <div style={{ margin: "2%" }} className="vacations">
         <WithLoading isLoading={isVacationsLoading}>
 
             <div style={{ backgroundColor: "#FFFFFF", height: "550px", borderRadius: "10px", boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.2)" }}>
                 <div style={{ position: "relative" }}>
-                    <Image src={props.image} alt="Destination" style={{ height: "200px", width: "350px", borderRadius: "10px 10px 0 0" }} width="350" height="200" preview />
+                    <Image src={props.image} alt="Destination" style={{ height: "200px", width: "350px" }} width="350" height="200" preview />
                     <h2 style={{ position: "absolute", top: "10px", left: "10px", color: "white", zIndex: 1, textShadow: "3px 3px 5px rgba(0, 0, 0, 0.6)" }}>{props.destination.toUpperCase()}</h2>
                 </div>
                 <div style={{ marginTop: "-4%" }}>

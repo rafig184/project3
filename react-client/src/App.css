@@ -1,23 +1,14 @@
 #root {
-  max-width: 70vw;
-  max-width: 70dvw;
-  min-width: 70vw;
-  min-width: 70dvw;
+  max-width: 80vw;
+  max-width: 80dvw;
+  min-width: 80vw;
+  min-width: 80dvw;
   margin: auto;
   text-align: center;
 }
 
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
-
-.read-the-docs {
-  color: #888;
-}
 
 .top-container {
   position: sticky;
@@ -25,6 +16,16 @@
   background-color: #d0dfec;
   padding-top: 1em;
   z-index: 100;
+  /* max-width: 80vw;
+  max-width: 80dvw; */
+  /* min-width: 70vw;
+  min-width: 70dvw; */
+
+
+}
+
+.read-the-docs {
+  color: #888;
 }
 
 .avatar {
@@ -34,25 +35,63 @@
 
 .logoImg {
   width: 180px;
+  /* margin-top: -2%; */
 }
 
 .chart {
   min-width: 700px;
 }
 
+.filters {
+  min-width: 1450px;
+}
+
 .vacations {
-  min-width: 1350px;
+  background-color: #EFF3F8;
+
+}
+
+.paginator {
+  background-color: #EFF3F8;
 }
 
 @media (max-width: 768px) {
+  #root {
+    max-width: 70vw;
+    max-width: 70dvw;
+    min-width: 70vw;
+    min-width: 70dvw;
+    margin: auto;
+    text-align: center;
+  }
+
   .top-container {
     margin-left: -20%;
     margin-right: -20%;
-
+    position: sticky;
+    top: 0;
+    background-color: #d0dfec;
+    padding-top: 1em;
+    z-index: 100;
   }
 
   .vacations {
+    background-color: #D0DFEC;
+  }
+
+  .paginator {
+    background-color: #D0DFEC;
+  }
+
+  .filters {
     min-width: 350px;
+    font-size: 70%;
+    display: flex;
+  }
+
+  .checkbox {
+    display: flex;
+    align-items: center
   }
 
   .chart {

@@ -100,21 +100,21 @@ export default function UserVacationsPage() {
 
     return <div>
         <WithLoading isLoading={isVacationsLoading}>
-            <div style={{ padding: "2%", backgroundColor: "#C0C0C0", color: "#495057", display: "flex", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }} className="vacations ">
-                <div style={{ margin: "auto", paddingRight: "2%" }}>
+            <div style={{ padding: "2%", backgroundColor: "#C0C0C0", color: "#495057", display: "flex", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }} className="filters ">
+                <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
                     <Checkbox onChange={handlerFutureChecked} checked={futureChecked}></Checkbox>
-                    <label htmlFor="ingredient1" className="ml-2">Show only future vacations</label>
+                    <label htmlFor="ingredient1" className="ml-2">Future vacations</label>
                 </div>
-                <div style={{ margin: "auto", paddingRight: "2%" }}>
+                <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
                     <Checkbox onChange={handlerFollowingChecked} checked={followingChecked}></Checkbox>
-                    <label htmlFor="ingredient1" className="ml-2">Show only my following vacations</label>
+                    <label htmlFor="ingredient1" className="ml-2">Following vacations</label>
                 </div>
-                <div style={{ margin: "auto", paddingRight: "2%" }}>
+                <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
                     <Checkbox onChange={handlerOngoingChecked} checked={onGoingVacationCecked}></Checkbox>
                     <label htmlFor="ingredient1" className="ml-2">On going vacations</label>
                 </div>
             </div>
-            <div style={{ backgroundColor: "#EFF3F8" }}>
+            <div className="vacations">
                 <VacationList vacations={filteredVacations} />
             </div>
         </WithLoading>

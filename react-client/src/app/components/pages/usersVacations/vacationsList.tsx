@@ -19,7 +19,7 @@ export default function VacationList(props: { vacations: Array<IVacations> }) {
 
     const displayedVacations = props.vacations.slice(first, first + 9);
 
-    return <div>
+    return <div >
         <div style={{ display: "flex", flexDirection: "row", alignItems: "flex-start", justifyContent: "center", flexWrap: "wrap" }}>
             {
                 displayedVacations.map((vacation: { vacationId: number, image: string, destination: string, startDate: string, endDate: string, price: number, description: string }) => {
