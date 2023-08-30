@@ -64,8 +64,10 @@
     max-width: 70dvw;
     min-width: 70vw;
     min-width: 70dvw;
+    min-height: 1000px;
     margin: auto;
     text-align: center;
+    margin-bottom: 2%;
   }
 
   .top-container {
@@ -76,6 +78,10 @@
     background-color: #d0dfec;
     padding-top: 1em;
     z-index: 100;
+  }
+
+  .addNewVacation {
+    margin-top: 2%;
   }
 
   .vacations {
@@ -108,7 +114,7 @@
   }
 
   .chart {
-    min-width: 300px;
+    min-width: 370px;
   }
 
   .logoImg {

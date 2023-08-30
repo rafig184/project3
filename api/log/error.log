@@ -196,3 +196,9 @@
 {"level":"error","message":"Duplicate entry 'email1693140427670@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
 {"level":"error","message":"Duplicate entry 'email1693140443580@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
 {"level":"error","message":"Duplicate entry 'email1693205639239@gmail.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-08-29T15:22:07.310Z => requestId: 5250af60-185f-4d2c-b1bd-bf37ed640aad | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-08-29T15:22:07.314Z => requestId: 51f1c76b-03cc-44b6-9acb-b4713489ac28 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-08-29T15:22:14.375Z => requestId: 5e1f734b-b7b0-4e90-a9dd-2676d39afabe | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-08-29T15:22:14.380Z => requestId: 5cc7d7de-aba9-48b2-ae63-eee6f1f8c7c1 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-08-29T15:36:31.838Z => requestId: 35af94ae-9283-4c3f-831e-5998c3a5089f | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-08-29T15:36:31.849Z => requestId: 7232cd63-4ec3-4a14-9d50-26e0598e8b13 | User Token invalid jwt expired","service":"api"}

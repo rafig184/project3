@@ -183,8 +183,6 @@ function App() {
             </span>
           )}
         </div>
-
-
         <div  >
           <div style={{ marginBottom: "3%", marginTop: "1%" }}>
             <img className='logoImg' src={logoImage} alt="Image" width="180" />
@@ -210,14 +208,6 @@ function App() {
 
   )
 }
-
-// function showRoutesPerRole(route: IRoute) {
-
-//   // check only users that have admin OR regular users.
-
-//   if (localStorage.getItem("role") !== "admin") return true
-//   return route.onlyAdmin && localStorage.getItem("role") === "admin"
-// }
 
 
 

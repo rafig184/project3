@@ -12,6 +12,7 @@ import { getFollowersCountById } from "./handlers/getFollowersCountById"
 const followerRouter = express.Router()
 
 followerRouter.get("/reports", async function (req, res, next) {
+    if ((req as any).currentRole !== "admin") return res.status(401).send("Authentication error")
     try {
         const result = await getAllFollowersReports()
         return res.json(result)
