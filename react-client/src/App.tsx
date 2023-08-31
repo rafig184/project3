@@ -150,7 +150,7 @@ function App() {
           {userToken ? (
             <div style={{ display: "flex", justifyContent: "space-between", margin: "auto" }}>
               <div >
-                <Avatar icon="pi pi-user" size="normal" style={{ backgroundColor: '#2196F3', color: '#ffffff' }} shape="circle" /><span className='welcome' style={{ color: "#808080", fontSize: "larger" }}> Welcome back {userFirstName}</span>
+                <Avatar icon="pi pi-user" size="normal" style={{ backgroundColor: '#2196F3', color: '#ffffff' }} shape="circle" /><span className='welcome' style={{ color: "#808080" }}> Welcome back {userFirstName}</span>
               </div>
               <img style={{ marginBottom: "3%", marginTop: "1%", marginRight: "6%" }} className='logoImg' src={logoImage} alt="Image" width="180" />
               <div>

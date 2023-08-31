@@ -91,27 +91,24 @@ export function AdminVacationCard(props: IVacationsAdmin) {
 
     return <div style={{ margin: "2%" }}>
         <WithLoading isLoading={isVacationsLoading}>
-            {/* <Card header={header} style={{ width: "350px", height: "560px" }}>
-
-            </Card> */}
-            <div style={{ backgroundColor: "#FFFFFF", height: "550px", borderRadius: "10px", boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.2)" }}>
+            <div className="vacationCard">
                 <div style={{ position: "relative" }}>
                     <Image src={props.image} alt="Destination" style={{ height: "200px", width: "350px", borderRadius: "10px 10px 0 0" }} width="350" height="200" preview />
-                    <h2 style={{ position: "absolute", top: "10px", left: "10px", color: "white", zIndex: 1, textShadow: "3px 3px 5px rgba(0, 0, 0, 0.6)" }}>{props.destination.toUpperCase()}</h2>
+                    <h2 className="destination">{props.destination.toUpperCase()}</h2>
                 </div>
                 <div style={{ marginTop: "-4%" }}>
                     <div style={{ borderBottomRightRadius: "10px" }}>
-                        <div style={{ position: "relative", marginBottom: "1%", backgroundColor: "#B4E3FF", paddingTop: "2%", paddingBottom: "2%", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", zIndex: 1 }}>
+                        <div className="cardDate">
                             <span >
                                 <i className={"pi pi-calendar"}></i><span> </span>
                                 {formatedStartDate} - {formatedEndtDate}</span>
                         </div>
-                        <ScrollPanel style={{ paddingLeft: "5%", textAlign: "left", position: "relative", marginTop: "-8px", width: '350px', height: '160px', backgroundColor: "#FFFFFF", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", zIndex: 2 }}>
+                        <ScrollPanel className="scroller">
                             <p>{props.description}</p>
                         </ScrollPanel>
 
                     </div>
-                    <div style={{ borderRadius: "10px", padding: "1px", marginTop: "1%", backgroundColor: "#3B82F6", marginRight: "3%", marginLeft: "3%" }} >
+                    <div className="vacationPrice">
                         <h3 style={{ color: "white" }}>{`${props.price} $`}</h3>
                     </div>
                     <Toast ref={toast} />

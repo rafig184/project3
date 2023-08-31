@@ -15,7 +15,7 @@ export default function AdminVacationList(props: { vacations: Array<IVacationsAd
 
 
     return <div>
-        <div style={{ display: "flex", flexDirection: "row", alignItems: "flex-start", justifyContent: "center", flexWrap: "wrap" }}>
+        <div className="vacationList">
             {displayedVacations.map((vacation: { image: string, destination: string, startDate: Date, endDate: Date, price: number, description: string, vacationId: number }) => {
                 return <AdminVacationCard key={vacation?.destination + vacation.startDate}
                     image={vacation.image}

@@ -106,7 +106,7 @@ export default function UserVacationsPage() {
 
     return <div className="mainVacationUser">
         <WithLoading isLoading={isVacationsLoading}>
-            <div style={{ padding: "2%", backgroundColor: "#C0C0C0", color: "#495057", display: "flex", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }} className="filters ">
+            <div className="filters ">
                 <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
                     <Checkbox onChange={handlerFutureChecked} checked={futureChecked}></Checkbox>
                     <label htmlFor="ingredient1" className="ml-2">Future vacations</label>

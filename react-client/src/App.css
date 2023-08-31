@@ -32,16 +32,89 @@
 }
 
 .chart {
-  min-width: 700px;
+  min-width: 50vw;
 }
 
 .filters {
+  padding: 2%;
+  background-color: #C0C0C0;
+  color: #495057;
   min-width: 70vw;
+  display: flex;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .vacations {
   background-color: #EFF3F8;
+}
 
+.vacationCard {
+  background-color: #FFFFFF;
+  height: 550px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2)
+}
+
+.destination {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  z-index: 1;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6)
+}
+
+.cardDate {
+  position: relative;
+  margin-bottom: 1%;
+  background-color: #B4E3FF;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: 1;
+}
+
+.scroller {
+  padding-left: 5%;
+  text-align: left;
+  color: #495057;
+  position: relative;
+  margin-top: -8px;
+  width: 350px;
+  height: 160px;
+  background-color: #FFFFFF;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: 2;
+}
+
+.vacationPrice {
+  border-radius: 10px;
+  padding: 1px;
+  margin-top: 1%;
+  background-color: #3B82F6;
+  margin-right: 3%;
+  margin-left: 3%;
+}
+
+.followerDiv {
+  padding-left: 7%;
+  padding-right: 5%;
+  margin-top: 7%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vacationList {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap
 }
 
 .paginator {
@@ -75,6 +148,7 @@
     margin-bottom: 2%;
   }
 
+
   .top-container {
     margin-left: -20%;
     margin-right: -20%;
@@ -85,9 +159,16 @@
     z-index: 100;
   }
 
-  .addNewVacation {
+  .addNewVacationDiv {
     margin-top: 2%;
+    /* background-color: #C0C0C0;
+    color: #495057;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
   }
+
 
   .vacations {
     background-color: #D0DFEC;
@@ -103,15 +184,26 @@
     width: 100vw;
   }
 
+  .mainVacationUser {
+    width: 100vw;
+  }
+
   .paginator {
     background-color: #D0DFEC;
   }
 
   .filters {
+    padding: 2%;
+    background-color: #C0C0C0;
+    color: #495057;
     min-width: 350px;
+    /* min-width: 80vw; */
     font-size: 70%;
     display: flex;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
+
 
   .checkbox {
     display: flex;
@@ -127,20 +219,18 @@
   }
 
   .welcome {
-    font-size: x-small;
+    font-size: small;
   }
 
   .avatar {
     font-size: 1.5rem;
     width: 50%;
-    /* Adjust the avatar icon size */
+
   }
 
   .logoutB {
-    font-size: 0.2rem;
     width: 100%;
-    height: 60%;
-    /* Adjust the button font size */
+    height: 50%;
   }
 
   .tabMenu {
