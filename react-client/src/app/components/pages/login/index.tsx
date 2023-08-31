@@ -53,7 +53,7 @@ const LoginComponent = () => {
         toast.current?.show({ severity: 'success', summary: 'Login Success', detail: result, life: 3000 });
     }
     const showError = () => {
-        toast.current?.show({ severity: 'error', summary: 'Error', detail: "Email or password incorrect!", life: 3000 });
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: "Incorrect Email or password!", life: 3000 });
     }
 
 

@@ -21,14 +21,9 @@ export const fetchVacationsAsync = createAsyncThunk(
     return response
   }
 )
-// export const fetchFollowersAsync = createAsyncThunk(
-//   "adminVacations/getFollowersService",
-//   async () => {
-//     const response = await getFollowersService()
-//     console.log(response);
-//     return response
-//   }
-// )
+
+
+
 
 export const vacationSlice = createSlice({
   name: "vacations",
@@ -50,7 +45,6 @@ export const vacationSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchVacationsAsync.pending, (state) => {
-
         state.vacationsData = []
       })
 

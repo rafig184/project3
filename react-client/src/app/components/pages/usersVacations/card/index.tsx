@@ -14,6 +14,7 @@ import { WithLoading } from "../../../ui-components/withLoading";
 
 
 
+
 export function VacationCard(props: IVacations) {
     const [checked, setChecked] = useState<boolean>(false);
     const [isVacationsLoading, setIsVacationsLoading] = useState<boolean>(false);
@@ -29,8 +30,8 @@ export function VacationCard(props: IVacations) {
         } catch (error) {
             alert("error")
         }
-
     }, [dispatch, amountOfFollower]);
+
 
     const handleToggle = async (e: ToggleButtonChangeEvent) => {
         setChecked(e.value);
@@ -40,8 +41,10 @@ export function VacationCard(props: IVacations) {
         } else {
             await deleteFollowerService(props.vacationId)
             setAmountOfFollower((prevAmount) => (prevAmount || 0) - 1);
+
         }
     };
+
 
     const amountOfFollowers = followers.find(f => f.vacationId === props.vacationId)?.amountOfFollowers
 
@@ -51,8 +54,6 @@ export function VacationCard(props: IVacations) {
             try {
                 setIsVacationsLoading(true)
                 const result = await getFollowersByUserIdService()
-                // console.log(result);
-
                 if (result.find(f => f.vacationId === props.vacationId)) setChecked(true)
             } catch (error) {
                 console.log(error);
@@ -62,6 +63,7 @@ export function VacationCard(props: IVacations) {
         }
         getFollowByUser()
     }, [])
+
 
 
     const formatedStartDate = format(new Date(props.startDate), "dd/MM/yyyy")

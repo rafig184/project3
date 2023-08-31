@@ -37,7 +37,7 @@ authRouter.post("/sign-up", middlewareSignIn, async function (req, res, next) {
         return res.json({ message: "User successfully added!" })
     } catch (error) {
         console.log(error)
-        return next(error)
+        return res.json({ message: "Email already exists", errorCode: 1062 })
     }
 })
 

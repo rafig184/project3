@@ -5,12 +5,14 @@ import { getFollowersCountByVacationIdService, getFollowersReportService } from 
 export interface IFollowers {
     followers: Array<any>
     followerCount: Array<any>
+    // followersCheck: Array<any>
 }
 
 
 const initialState: IFollowers = {
     followers: [],
-    followerCount: []
+    followerCount: [],
+    // followersCheck: []
 }
 
 
@@ -33,6 +35,16 @@ export const fetchFollowersAmountAsync = createAsyncThunk(
         return response
     }
 )
+// export const fetchFollowersByUserIdAsync = createAsyncThunk(
+//     "followers/getFollowersByUserIdService",
+//     async () => {
+//         const response = await getFollowersByUserIdService()
+//         // console.log(response);
+//         return response
+//     }
+// )
+
+
 
 export const followersSlice = createSlice({
     name: "followers",
@@ -81,9 +93,26 @@ export const followersSlice = createSlice({
                 state.followerCount = []
 
             })
+
+        // builder.addCase(fetchFollowersByUserIdAsync.pending, (state) => {
+        //     state.followersCheck = []
+        // })
+        //     .addCase(fetchFollowersByUserIdAsync.fulfilled, (state, action) => {
+
+        //         // state.value += action.payload
+        //         state.followersCheck = action.payload
+
+        //     })
+        //     .addCase(fetchFollowersByUserIdAsync.rejected, (state) => {
+
+        //         state.followersCheck = []
+
+        //     })
     },
 
 })
+
+
 
 // export const { addLike } = followersSlice.actions
 

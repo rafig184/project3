@@ -6,6 +6,7 @@ import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
+import { cleanup } from "@testing-library/react";
 
 
 
@@ -70,6 +71,15 @@ const AddVacation = () => {
         toast.current?.show({ severity: 'error', summary: 'Error', detail: "Something went wrong!", life: 3000 });
     }
 
+    const clearState = () => {
+        setDestination(""),
+            setStartDate(""),
+            setEndDate(""),
+            setPrice(0),
+            setDescription(""),
+            setImage("")
+    };
+
     async function addVacationService() {
         if (destination === "") return destinationError()
         if (startDate === "") return starDateError()
@@ -97,12 +107,8 @@ const AddVacation = () => {
             console.log((result));
 
             show()
-            setDestination("")
-            setStartDate("")
-            setEndDate("")
-            setPrice(0)
-            setDescription("")
-            setImage("")
+            clearState()
+
 
         } catch (err) {
             showError()

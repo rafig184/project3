@@ -35,10 +35,11 @@ const RegistrationComponent = () => {
 
     async function signUpService() {
         if (methods.getValues("password").length < 4) return passwordError()
-        // const emailValue = methods.getValues("email");
         if (!isValidEmail(methods.getValues("email"))) {
             return emailError();
         }
+
+
         const signUpPayload = {
             email: methods.getValues("email"),
             firstName: methods.getValues("firstName"),
@@ -48,10 +49,16 @@ const RegistrationComponent = () => {
 
         try {
             const result = await axios.post("http://localhost:4000/auth/sign-up", signUpPayload)
+            if (result.data.errorCode === 1062) {
+                emailExistError(result.data.message)
+                return
+            }
+            console.log(result.data.message)
             showSuccess(result.data.message)
             setTimeout(() => { navigate("/login") }, 1000)
-        } catch (ex) {
-            console.log(ex);
+        } catch (err) {
+
+            console.log(err);
             showError()
         }
 
@@ -67,6 +74,10 @@ const RegistrationComponent = () => {
 
     const emailError = () => {
         toast.current?.show({ severity: 'error', summary: 'Error', detail: "Your email is not valid", life: 3000 });
+    }
+
+    const emailExistError = (message: string) => {
+        toast.current?.show({ severity: 'error', summary: 'Error', detail: message, life: 3000 });
     }
 
     const passwordError = () => {

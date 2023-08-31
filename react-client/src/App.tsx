@@ -50,8 +50,6 @@ const routes: Array<IRoute> = [
     path: "/user-vacations",
     component: <ProtectedRoute><UserVacationsPage /></ProtectedRoute>,
     key: "user-vacations",
-    // label: "Vacations",
-    // icon: "pi pi-globe",
     onlyAdmin: false
   },
 
@@ -59,52 +57,41 @@ const routes: Array<IRoute> = [
     path: "/add-vacation",
     component: <ProtectedRoute><AddVacation /></ProtectedRoute>,
     key: "add-vacation",
-    // label: "Add Vacations",
-    // icon: "pi pi-user"
     onlyAdmin: true
   },
   {
     path: "/edit-vacation",
     component: <ProtectedRoute><EditVacationPage /></ProtectedRoute>,
     key: "edit-vacation",
-    // label: "Add Vacations",
-    // icon: "pi pi-user"
     onlyAdmin: true
   },
   {
     path: "/signup",
     component: <RegistrationComponent />,
     key: "signup",
-    // label: "Sign-up",
-    // icon: "pi pi-sign-in",
     onlyAdmin: false
   },
   {
     path: "/login",
     component: <LoginComponent />,
     key: "login",
-    // label: "Log-In",
-    // icon: "pi pi-user",
     onlyAdmin: false
   },
 
-  // {
-  //   path: "*",
-  //   component: <NotFound />,
-  //   key: "not found",
-  //   onlyAdmin: false
-  // }
+  {
+    path: "/",
+    component: <LoginComponent />,
+    key: "login",
+    onlyAdmin: false
+  },
+  {
+    path: "*",
+    component: <NotFound />,
+    key: "not found",
+    onlyAdmin: false
+  }
 
 ]
-
-// function OnlyAdmin(props: any) {
-//   const { Component } = props
-//   if (localStorage.getItem("role") === "admin") {
-//     return <Component />
-//   } else {
-//     return <></>
-//   }
-// }
 
 
 
@@ -126,13 +113,7 @@ function App() {
     localStorage.setItem("firstName", "")
     setActiveIndex(0)
   }
-  function loginHandler() {
-    navigate("/login")
 
-  }
-  function signUpHandler() {
-    navigate("/signup")
-  }
 
   useEffect(() => {
     const route = routes[activeIndex];
@@ -171,22 +152,19 @@ function App() {
               <div >
                 <Avatar icon="pi pi-user" size="normal" style={{ backgroundColor: '#2196F3', color: '#ffffff' }} shape="circle" /><span className='welcome' style={{ color: "#808080", fontSize: "larger" }}> Welcome back {userFirstName}</span>
               </div>
+              <img style={{ marginBottom: "3%", marginTop: "1%", marginRight: "6%" }} className='logoImg' src={logoImage} alt="Image" width="180" />
               <div>
                 <Button className='logoutB' onClick={logoutHandler} severity="info" raised icon="pi pi-sign-out" label="Log Out" />
               </div>
             </div>
           ) : (
             <span>
-              <Button onClick={loginHandler} severity="info" raised icon="pi pi-user" label="Log In" />
-              <span> </span>
-              <Button onClick={signUpHandler} severity="info" raised icon="pi pi-sign-in" label="Sign Up" />
+              <img style={{ marginBottom: "3%", marginTop: "1%", marginLeft: "1%" }} className='logoImg' src={logoImage} alt="Image" width="180" />
             </span>
           )}
         </div>
         <div  >
-          <div style={{ marginBottom: "3%", marginTop: "1%" }}>
-            <img className='logoImg' src={logoImage} alt="Image" width="180" />
-          </div>
+
           {userRole === "admin" && (
             <TabMenu style={{ borderRadius: "10px" }} model={items} activeIndex={activeIndex} onTabChange={onTabChange} />
           )}

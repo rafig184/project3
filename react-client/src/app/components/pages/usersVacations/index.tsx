@@ -12,6 +12,7 @@ import { WithLoading } from "../../ui-components/withLoading";
 import { IFollowerByUser, getFollowersByUserIdService } from "../followers/api/followers";
 
 
+
 export default function UserVacationsPage() {
     const [futureChecked, setfutureChecked] = useState<boolean>(false);
     const [isVacationsLoading, setIsVacationsLoading] = useState<boolean>(false);
@@ -29,6 +30,7 @@ export default function UserVacationsPage() {
 
     const handlerFollowingChecked = useCallback((e: any) => {
         setFollowingChecked(e.checked)
+        fetchFollowers()
     }, [followingChecked])
 
     const handlerOngoingChecked = useCallback((e: any) => {
@@ -45,6 +47,19 @@ export default function UserVacationsPage() {
     const navigate = useNavigate()
 
 
+    async function fetchFollowers() {
+        try {
+            setIsVacationsLoading(true)
+            const followersData = await getFollowersByUserIdService();
+            setFollowers(followersData);
+        } catch (error) {
+            console.error("Error fetching followers:", error);
+        } finally {
+            setIsVacationsLoading(false)
+        }
+    }
+
+
     useEffect(() => {
         try {
             setIsVacationsLoading(true)
@@ -58,15 +73,6 @@ export default function UserVacationsPage() {
     }, [dispatch]);
 
     useEffect(() => {
-        async function fetchFollowers() {
-            try {
-                const followersData = await getFollowersByUserIdService();
-                setFollowers(followersData);
-            } catch (error) {
-                console.error("Error fetching followers:", error);
-            }
-        }
-
         fetchFollowers();
     }, []);
 
@@ -93,12 +99,12 @@ export default function UserVacationsPage() {
         } else {
             setFilteredVacations(filteredOngoingVacations);
         }
-    }, [vacations, futureChecked, onGoingVacationCecked, followingChecked, followers]);
+    }, [vacations, futureChecked, onGoingVacationCecked, followingChecked, followers,]);
 
 
 
 
-    return <div className="mainVacation">
+    return <div className="mainVacationUser">
         <WithLoading isLoading={isVacationsLoading}>
             <div style={{ padding: "2%", backgroundColor: "#C0C0C0", color: "#495057", display: "flex", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }} className="filters ">
                 <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
