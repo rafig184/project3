@@ -119,11 +119,11 @@ const RegistrationComponent = () => {
                         {methods.formState.errors.password && <span>{methods.formState.errors.password.message}</span>}
                     </div>
                     <Toast ref={toast} />
-                    <Button style={{ marginTop: "5%" }} raised type="button" onClick={signUpService} severity="info">Sign Up</Button>
+                    <button className="buttons" style={{ marginTop: "5%" }} type="button" onClick={signUpService} >Sign Up</button>
                     <div style={{ marginTop: "3%" }}>
                         <span>Already a user? </span>
                     </div>
-                    <Link style={{ cursor: "pointer", color: "darkblue" }} to="/login"> Log in!</Link>
+                    <Link className="links" to="/login"> Log in!</Link>
                 </form>
             </div>
         </FormProvider>

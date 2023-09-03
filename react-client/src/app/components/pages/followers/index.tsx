@@ -98,7 +98,7 @@ export default function ReportsPage() {
 
     return (
         <WithLoading isLoading={isReportLoading}>
-            <div style={{ backgroundColor: "#EFF3F8", padding: "4%", borderRadius: "10px" }} >
+            <div className='chartDiv' >
                 <CSVLink {...csvReport}>Export to CSV</CSVLink>
                 <Chart className='chart' style={{ marginTop: "5%" }} type="bar" data={chartData} options={chartOptions} />
             </div>

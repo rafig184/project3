@@ -4,18 +4,26 @@
   min-width: 70vw;
   min-width: 70dvw;
   min-height: 100vh;
+  max-height: 230vh;
   margin: auto;
   text-align: center;
   margin-bottom: 2%;
+}
+
+.appsize {
+  transform: scale(0.75);
+  transform-origin: top left;
+  width: 133.33%;
 }
 
 
 .top-container {
   position: sticky;
   top: 0;
-  background-color: #d0dfec;
+  background-color: #EEEEEE;
   padding-top: 1em;
   z-index: 100;
+
 }
 
 .read-the-docs {
@@ -31,18 +39,31 @@
   width: 180px;
 }
 
+.chartDiv {
+  background-color: #EFF3F8;
+  padding: 4%;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
 .chart {
-  min-width: 50vw;
+  /* min-width: 50vw; */
+  width: 70vw;
+  display: flex;
+  justify-content: center;
+
 }
 
 .filters {
   padding: 2%;
-  background-color: #C0C0C0;
-  color: #495057;
+  background-color: #053B50;
+  color: white;
   min-width: 70vw;
   display: flex;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+
 }
 
 .vacations {
@@ -68,7 +89,7 @@
 .cardDate {
   position: relative;
   margin-bottom: 1%;
-  background-color: #B4E3FF;
+  background-color: #64CCC5;
   padding-top: 2%;
   padding-bottom: 2%;
   border-top-left-radius: 10px;
@@ -94,9 +115,10 @@
   border-radius: 10px;
   /* padding: 0.1%; */
   margin-top: 1%;
-  background-color: #3B82F6;
+  background-color: #176B87;
   margin-right: 3%;
   margin-left: 3%;
+  font-weight: 300;
 }
 
 .followerDiv {
@@ -114,27 +136,90 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  /* max-width: 100vw;
+  max-width: 100dvw;
+  min-width: 100vw;
+  min-width: 100dvw;
+  margin: auto;
+  transform-origin: top left; */
+
 }
 
+
 .paginator {
-  background-color: #EFF3F8;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .mainVacation {
-  width: 70vw;
+  width: 100vw;
+
 }
 
 .mainVacationUser {
   margin-top: -3%;
-  width: 70vw;
+  width: 100vw;
 }
 
 .vacationsAdmin {
-  background-color: #E8E8E8;
+  background-color: #EFF3F8;
   color: #495057;
   display: flex
 }
+
+.logoutB {
+  background-color: #176B87;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  color: white;
+  border: 0px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+}
+
+.logoutB:hover {
+  background-color: #104557;
+}
+
+.links {
+  color: #053B50;
+  cursor: pointer;
+}
+
+.links:hover {
+  color: #075776;
+  cursor: pointer;
+}
+
+.buttons {
+  background-color: #176B87;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  color: white;
+  border: 0px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+}
+
+.buttons:hover {
+  background-color: #2f85a1;
+}
+
+.welcome {
+  font-size: medium;
+  font-weight: 400;
+}
+
+.addNewVacationDiv {
+  background-color: #053B50;
+  color: #495057;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 
 @media (max-width: 768px) {
   #root {
@@ -142,19 +227,30 @@
     max-width: 70dvw;
     min-width: 70vw;
     min-width: 70dvw;
-    min-height: 1000px;
+    max-height: 1000vh;
+    /* min-height: 100vh; */
     margin: auto;
     text-align: center;
     margin-bottom: 2%;
   }
 
+  .appsize {
+    transform: scale(1);
+    /* 75% scaling */
+    transform-origin: top left;
+    /* Maintain top-left corner as the scaling origin */
+    width: 100%;
+    /* Compensate for the scaling by increasing width */
+    /* height: 100%; */
+    /* Compensate for the scaling by increasing height */
+  }
 
   .top-container {
     margin-left: -20%;
     margin-right: -20%;
     position: sticky;
     top: 0;
-    background-color: #d0dfec;
+    background-color: #EEEEEE;
     padding-top: 1em;
     z-index: 100;
   }
@@ -188,14 +284,11 @@
     width: 100vw;
   }
 
-  .paginator {
-    background-color: #D0DFEC;
-  }
 
   .filters {
     padding: 2%;
-    background-color: #C0C0C0;
-    color: #495057;
+    background-color: #053B50;
+    color: white;
     min-width: 350px;
     /* min-width: 80vw; */
     font-size: 70%;
@@ -220,6 +313,7 @@
 
   .welcome {
     font-size: small;
+    font-weight: 300;
   }
 
   .avatar {

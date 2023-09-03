@@ -60,7 +60,7 @@ const LoginComponent = () => {
     return (
 
         <FormProvider {...methods}>
-            <div style={{ backgroundColor: " grey", padding: "20px", borderRadius: "10px" }}>
+            <div style={{ backgroundColor: "grey", padding: "20px", borderRadius: "10px" }}>
                 <h2>Log In</h2>
                 <form>
                     <div style={{ display: "flex", flexDirection: "column" }}>
@@ -76,11 +76,11 @@ const LoginComponent = () => {
                         {methods.formState.errors.password && <span>{methods.formState.errors.password.message}</span>}
                     </div>
                     <Toast ref={toast} />
-                    <Button style={{ marginTop: "7%" }} type="button" raised onClick={logInService} severity="info">Log In</Button>
+                    <button className="buttons" style={{ marginTop: "7%" }} type="button" onClick={logInService} >Log In</button>
                     <div style={{ marginTop: "3%" }}>
                         <span>Dont have an account? </span>
                     </div>
-                    <Link style={{ cursor: "pointer", color: "darkblue" }} to="/signup"> Sign Up!</Link>
+                    <Link className="links" to="/signup"> Sign Up!</Link>
                 </form>
             </div>
         </FormProvider>

@@ -79,12 +79,6 @@ export function AdminVacationCard(props: IVacationsAdmin) {
 
 
 
-    // const header = (
-    //     <div style={{ position: "relative" }}>
-    //         <Image src={props.image} alt="Destination" style={{ height: "200px", width: "350px", borderRadius: "10px 10px 0 0" }} width="350" height="200" preview />
-    //         <h2 style={{ position: "absolute", top: "10px", left: "10px", color: "white", zIndex: 1, textShadow: "3px 3px 5px rgba(0, 0, 0, 0.6)" }}>{props.destination.toUpperCase()}</h2>
-    //     </div>
-    // );
 
 
 
@@ -93,7 +87,12 @@ export function AdminVacationCard(props: IVacationsAdmin) {
         <WithLoading isLoading={isVacationsLoading}>
             <div className="vacationCard">
                 <div style={{ position: "relative" }}>
-                    <Image src={props.image} alt="Destination" style={{ height: "200px", width: "350px", borderRadius: "10px 10px 0 0" }} width="350" height="200" preview />
+                    <Image src={props.image} alt="Destination" style={{
+                        height: "200px", width: "350px", borderTopLeftRadius: 10, borderTopRightRadius: 10,
+                        overflow: "hidden",
+                        borderWidth: 3,
+                        borderColor: "red"
+                    }} width="350" height="200" preview />
                     <h2 className="destination">{props.destination.toUpperCase()}</h2>
                 </div>
                 <div style={{ marginTop: "-4%" }}>
@@ -109,7 +108,7 @@ export function AdminVacationCard(props: IVacationsAdmin) {
 
                     </div>
                     <div className="vacationPrice">
-                        <h3 style={{ color: "white", fontSize: "x-large" }}>{`${props.price} $`}</h3>
+                        <h3 style={{ color: "white", fontSize: "x-large", fontWeight: "400" }}>{`${props.price} $`}</h3>
                     </div>
                     <Toast ref={toast} />
                     <div style={{ marginTop: "5%" }}>
@@ -118,7 +117,6 @@ export function AdminVacationCard(props: IVacationsAdmin) {
                     </div>
                 </div>
             </div>
-
         </WithLoading>
     </div>
 

@@ -13,8 +13,8 @@ import { getVacationsByIdService } from "./api";
 
 const EditVacationPage = () => {
     const [destination, setDestination] = useState("");
-    const [startDate, setStartDate] = useState("");
-    const [endDate, setEndDate] = useState("");
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
@@ -24,8 +24,8 @@ const EditVacationPage = () => {
 
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
-    const numberParam = queryParams.get('vid');
-    console.log(numberParam);
+    const vacId = queryParams.get('vid');
+    console.log(vacId);
 
 
 
@@ -82,8 +82,8 @@ const EditVacationPage = () => {
         try {
             const result = await getVacationsByIdService(vacationId)
             setDestination(result[0].destination)
-            setStartDate("")
-            setEndDate("")
+            setStartDate(new Date(result[0].startDate))
+            setEndDate(new Date(result[0].endDate))
             setPrice(result[0].price)
             setDescription(result[0].description)
             setImage(result[0].image)
@@ -95,14 +95,14 @@ const EditVacationPage = () => {
     }
 
     useEffect(() => {
-        getVacationByIdAction(numberParam)
+        getVacationByIdAction(vacId)
     }, []);
 
 
     async function editVacationService() {
         if (destination === "") return destinationError()
-        if (startDate === "") return starDateError()
-        if (endDate === "") return endDateError()
+        if (startDate === null) return starDateError()
+        if (endDate === null) return endDateError()
         if (price === null) return priceError()
         if (price > 10000) return amountPriceError()
         if (description === "") return descriptionError()
@@ -118,7 +118,7 @@ const EditVacationPage = () => {
 
         console.log(vacationPayload);
         try {
-            const result = await axios.put(`http://localhost:4000/vacations/edit-vacation?q=${numberParam}`, vacationPayload, {
+            const result = await axios.put(`http://localhost:4000/vacations/edit-vacation?q=${vacId}`, vacationPayload, {
                 headers: {
                     authorization: localStorage.getItem("token")
                 }
@@ -197,7 +197,7 @@ const EditVacationPage = () => {
                     />
                 </div>
                 <Toast ref={toast} />
-                <Button severity="info" style={{ marginTop: "5%" }} type="button" onClick={editVacationService} raised>Edit Vacation</Button>
+                <button className="buttons" style={{ marginTop: "5%" }} type="button" onClick={editVacationService} >Edit Vacation</button>
             </form>
         </div>
 

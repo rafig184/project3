@@ -75,7 +75,12 @@ export function VacationCard(props: IVacations) {
 
             <div className="vacationCard" >
                 <div style={{ position: "relative" }}>
-                    <Image src={props.image} alt="Destination" style={{ height: "200px", width: "350px" }} width="350" height="200" preview />
+                    <Image src={props.image} alt="Destination" style={{
+                        height: "200px", width: "350px", borderTopLeftRadius: 10, borderTopRightRadius: 10,
+                        overflow: "hidden",
+                        borderWidth: 3,
+                        borderColor: "red"
+                    }} width="350" height="200" preview />
                     <h2 className="destination" >{props.destination.toUpperCase()}</h2>
                 </div>
                 <div style={{ marginTop: "-4%" }}>
@@ -91,7 +96,7 @@ export function VacationCard(props: IVacations) {
 
                     </div>
                     <div className="vacationPrice" >
-                        <h3 style={{ color: "white", fontSize: "x-large" }}>{`${props.price} $`}</h3>
+                        <h3 style={{ color: "white", fontSize: "x-large", fontWeight: "400" }}>{`${props.price} $`}</h3>
                     </div>
                     <div className="followerDiv">
                         <ToggleButton style={{ borderRadius: "50px", border: "0px", backgroundColor: checked ? "#EB3D3D" : "" }} onLabel="" offLabel="" onIcon="pi pi-heart-fill" offIcon="pi pi-heart"

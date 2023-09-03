@@ -109,15 +109,15 @@ export default function UserVacationsPage() {
             <div className="filters ">
                 <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
                     <Checkbox onChange={handlerFutureChecked} checked={futureChecked}></Checkbox>
-                    <label htmlFor="ingredient1" className="ml-2">Future vacations</label>
+                    <label htmlFor="ingredient1" className="ml-2">Future Vacations</label>
                 </div>
                 <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
                     <Checkbox onChange={handlerFollowingChecked} checked={followingChecked}></Checkbox>
-                    <label htmlFor="ingredient1" className="ml-2">Following vacations</label>
+                    <label htmlFor="ingredient1" className="ml-2">Following Vacations</label>
                 </div>
                 <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
                     <Checkbox onChange={handlerOngoingChecked} checked={onGoingVacationCecked}></Checkbox>
-                    <label htmlFor="ingredient1" className="ml-2">On going vacations</label>
+                    <label htmlFor="ingredient1" className="ml-2">On Going Vacations</label>
                 </div>
             </div>
             <div className="vacations">

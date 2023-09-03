@@ -145,17 +145,17 @@ function App() {
   });
 
   return (
-    <div >
+    <div className='appsize'>
       <div className='top-container'>
-        <div >
+        <div className='main'>
           {userToken ? (
             <div style={{ display: "flex", justifyContent: "space-between", margin: "auto" }}>
               <div >
-                <Avatar icon="pi pi-user" size="normal" style={{ backgroundColor: '#2196F3', color: '#ffffff' }} shape="circle" /><span className='welcome' style={{ color: "#808080" }}> Welcome back {userFirstName}</span>
+                <Avatar icon="pi pi-user" size="normal" style={{ backgroundColor: '#176B87', color: '#ffffff' }} shape="circle" /><span className='welcome' style={{ color: "#808080" }}> Welcome back {userFirstName}</span>
               </div>
               <img style={{ marginBottom: "3%", marginTop: "1%", marginRight: "6%" }} className='logoImg' src={logoImage} alt="Image" width="180" />
               <div>
-                <Button className='logoutB' onClick={logoutHandler} severity="info" raised icon="pi pi-sign-out" label="Log Out" />
+                <button className='logoutB' onClick={logoutHandler}> <i className="pi pi-sign-out"></i> Log Out</button>
               </div>
             </div>
           ) : (

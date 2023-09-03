@@ -175,8 +175,7 @@ const AddVacation = () => {
                     />
                 </div>
                 <Toast ref={toast} />
-
-                <Button severity="info" style={{ marginTop: "5%" }} type="button" onClick={addVacationService} raised>Add Vacation</Button>
+                <button className="buttons" style={{ marginTop: "5%" }} type="button" onClick={addVacationService}>Add Vacation</button>
             </form>
         </div>
 
