@@ -57,7 +57,6 @@ const RegistrationComponent = () => {
             showSuccess(result.data.message)
             setTimeout(() => { navigate("/login") }, 1000)
         } catch (err) {
-
             console.log(err);
             showError()
         }

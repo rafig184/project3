@@ -210,3 +210,7 @@
 {"level":"error","message":"Duplicate entry 'rafi@rafi.com' for key 'users.email_UNIQUE'","service":"api"}
 {"level":"error","message":{},"service":"api"}
 {"level":"error","message":"Duplicate entry 'rafi@rafi.com' for key 'users.email_UNIQUE'","service":"api"}
+{"level":"error","message":"2023-09-01T08:50:59.806Z => requestId: de92f78c-8019-4f12-ba9a-1c9aba40d741 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-01T08:50:59.862Z => requestId: e76d1d03-a9b0-45a2-8a78-a03eedf8056c | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-02T08:35:14.391Z => requestId: b016ed8e-6f77-40b9-b780-fbc75fe0e101 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-03T05:56:56.280Z => requestId: 4815e3a0-18f5-4209-8395-04101a5803e8 | User Token invalid jwt expired","service":"api"}

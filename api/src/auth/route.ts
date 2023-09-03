@@ -44,7 +44,6 @@ authRouter.post("/sign-up", middlewareSignIn, async function (req, res, next) {
 const loginSchema = zod.object({
     email: zod.string(),
     password: zod.string(),
-
 })
 
 function middlewareLogin(req: Request, res: Response, next: NextFunction) {

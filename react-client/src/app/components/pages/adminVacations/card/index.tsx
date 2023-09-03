@@ -109,11 +109,11 @@ export function AdminVacationCard(props: IVacationsAdmin) {
 
                     </div>
                     <div className="vacationPrice">
-                        <h3 style={{ color: "white" }}>{`${props.price} $`}</h3>
+                        <h3 style={{ color: "white", fontSize: "x-large" }}>{`${props.price} $`}</h3>
                     </div>
                     <Toast ref={toast} />
                     <div style={{ marginTop: "5%" }}>
-                        <Button severity="danger" onClick={confirm} icon="pi pi-times" label="Delete" raised />
+                        <Button severity="danger" onClick={confirm} icon="pi pi-trash" label="Delete" raised />
                         <Button onClick={editHandler} style={{ marginLeft: "4%" }} label="Edit" icon="pi pi-file-edit" severity="info" raised > </Button >
                     </div>
                 </div>

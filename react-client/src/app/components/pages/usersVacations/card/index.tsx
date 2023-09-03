@@ -91,7 +91,7 @@ export function VacationCard(props: IVacations) {
 
                     </div>
                     <div className="vacationPrice" >
-                        <h3 style={{ color: "white" }}>{`${props.price} $`}</h3>
+                        <h3 style={{ color: "white", fontSize: "x-large" }}>{`${props.price} $`}</h3>
                     </div>
                     <div className="followerDiv">
                         <ToggleButton style={{ borderRadius: "50px", border: "0px", backgroundColor: checked ? "#EB3D3D" : "" }} onLabel="" offLabel="" onIcon="pi pi-heart-fill" offIcon="pi pi-heart"
