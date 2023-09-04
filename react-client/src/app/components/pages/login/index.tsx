@@ -61,7 +61,7 @@ const LoginComponent = () => {
 
         <FormProvider {...methods}>
             <div style={{ backgroundColor: "grey", padding: "20px", borderRadius: "10px" }}>
-                <h2>Log In</h2>
+                <h2 style={{ fontWeight: "400" }}>Log In</h2>
                 <form>
                     <div style={{ display: "flex", flexDirection: "column" }}>
                         Email:

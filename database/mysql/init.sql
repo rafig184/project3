@@ -62,7 +62,7 @@ CREATE TABLE `users` (
   `salt` varchar(250) NOT NULL,
   PRIMARY KEY (`userId`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +71,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (2,'admin','admin','root@root.com','$2b$10$h8vppFcI/qB0aHRccnINSuYksIDJAhMs417Z6gVlWesj0tm7vbm.W','admin','$2b$10$h8vppFcI/qB0aHRccnINSu');
+INSERT INTO `users` VALUES (1,'admin','admin','root@root.com','$2b$10$h8vppFcI/qB0aHRccnINSuYksIDJAhMs417Z6gVlWesj0tm7vbm.W','admin','$2b$10$h8vppFcI/qB0aHRccnINSu'),(2,'user','user','user@user.com','$2b$10$irh34r70EqWMqUhelcDZaunFZyyB2x4beTKWiB2nhqFrtQN/MDd1C','user','$2b$10$irh34r70EqWMqUhelcDZau');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-28 14:17:34
-
-
-
+-- Dump completed on 2023-09-04 12:42:35

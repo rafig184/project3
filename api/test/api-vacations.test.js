@@ -1,19 +1,15 @@
 const { expect } = require("chai")
 const axios = require("axios")
+const { getTokenForAdmin, getTokenForNonAdmin, deleteVacationTest, insertVacationTest } = require("./utils")
 
 
 
 
 describe("GET /vacations/getAllVacations", function () {
     it("Get all vacation Success ", async function () {
-
-
-        const resultLogin = await axios.post("http://localhost:4000/auth/login", { email: "root@root.com", password: "admin" })
-        const token = resultLogin.data.token
-
         const result = await axios.get(`http://localhost:4000/vacations`, {
             headers: {
-                authorization: token
+                authorization: getTokenForNonAdmin()
             }
         })
         expect(result.status).equal(200)
@@ -24,11 +20,8 @@ describe("POST /vacations/new-vacation", function () {
 
     it("Create new vacation Success ", async function () {
 
-        const resultLogin = await axios.post("http://localhost:4000/auth/login", { email: "root@root.com", password: "admin" })
-        const token = resultLogin.data.token
-
         const dummyVacation = {
-            destination: "thailand",
+            destination: "thailand222",
             startDate: new Date(),
             endDate: new Date(),
             price: 1000,
@@ -38,10 +31,11 @@ describe("POST /vacations/new-vacation", function () {
         }
         const result = await axios.post("http://localhost:4000/vacations/new-vacation", dummyVacation, {
             headers: {
-                authorization: token
+                authorization: getTokenForAdmin()
             }
         })
         expect(result.status).equal(200)
+        await deleteVacationTest("thailand222")
     })
 
     it("Create new vacation  With bad request ", async function () {
@@ -54,49 +48,78 @@ describe("POST /vacations/new-vacation", function () {
                 description: "blabla",
                 image: "test.jpg"
             }
-            const result = await axios.post("http://localhost:4000/auth/sign-up", dummyVacation)
+            const result = await axios.post("http://localhost:4000/vacations/new-vacation", dummyVacation)
             throw new Error("TEST FAIELD")
         } catch (error) {
-            expect(error?.response.status).equal(400)
+            expect(error?.response.status).equal(401)
         }
     })
 })
 
 
 describe("DELETE /adminVacations/deleteVacationsService", function () {
-    // it("delete vacation with bad request ", async function () {
-    //     try {
-    //         const resultLogin = await axios.post("http://localhost:4000/auth/login", { email: "root@root.com", password: "admin" })
-    //         const token = resultLogin.data.token
+    it("delete vacation with bad request ", async function () {
+        try {
+            const vacationId = "100"
+            const result = await axios.delete(`http://localhost:4000/vacations/${vacationId}`, {
+                headers: {
+                    authorization: getTokenForAdmin()
+                }
+            })
+        } catch (error) {
+            expect(error?.response.status).equal(401)
+        }
+    })
 
-    //         const vacationId = "100"
-    //         const result = await axios.delete(`http://localhost:4000/vacations/${vacationId}`, {
-    //             headers: {
-    //                 authorization: token
-    //             }
-    //         })
-    //         if (result.status !== 400) {
-    //             throw new Error("Request should have failed with status 400");
-    //         }
-    //     } catch (error) {
-    //         console.error("Test error:", error);
-    //         throw error;
-    //     }
-    // })
-
-    it("delete vacation success ", async function () {
-
-        const resultLogin = await axios.post("http://localhost:4000/auth/login", { email: "root@root.com", password: "admin" })
-        const token = resultLogin.data.token
-
-        const vacationId = 10
+    it("Delete vacation success ", async function () {
+        await insertVacationTest()
+        const vacationId = "666"
         const result = await axios.delete(`http://localhost:4000/vacations/${vacationId}`, {
             headers: {
-                authorization: token
+                authorization: getTokenForAdmin()
             }
         })
         expect(result.status).equal(200)
     })
 
 
+})
+
+describe("PUT /vacations/edit-vacation", function () {
+
+    it("Edit vacation Success ", async function () {
+        await insertVacationTest()
+        const dummyVacation = {
+            destination: "thailandTest",
+            startDate: new Date(),
+            endDate: new Date(),
+            price: 1000,
+            description: "blabla",
+            image: "test.jpg",
+        }
+        const result = await axios.put(`http://localhost:4000/vacations/edit-vacation?q=${666}`, dummyVacation, {
+            headers: {
+                authorization: getTokenForAdmin()
+            }
+        })
+        expect(result.status).equal(200)
+        await deleteVacationTest("thailandTest")
+    })
+
+    it("Edit vacation With bad request ", async function () {
+        try {
+            const dummyVacation = {
+                destination: "TEST",
+                startDate: new Date(),
+                endDate: new Date(),
+                price: "1000",
+                description: "blabla",
+                image: "test.jpg"
+            }
+            const result = await axios.post("http://localhost:4000/vacations/edit-vacation", dummyVacation)
+            throw new Error("TEST FAIELD")
+        } catch (error) {
+            expect(error?.response.status).equal(401)
+        }
+    })
 })

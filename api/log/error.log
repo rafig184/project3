@@ -214,3 +214,267 @@
 {"level":"error","message":"2023-09-01T08:50:59.862Z => requestId: e76d1d03-a9b0-45a2-8a78-a03eedf8056c | User Token invalid jwt expired","service":"api"}
 {"level":"error","message":"2023-09-02T08:35:14.391Z => requestId: b016ed8e-6f77-40b9-b780-fbc75fe0e101 | User Token invalid jwt expired","service":"api"}
 {"level":"error","message":"2023-09-03T05:56:56.280Z => requestId: 4815e3a0-18f5-4209-8395-04101a5803e8 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-03T14:26:41.890Z => requestId: 23e88058-e042-4156-a338-71b4939a5a5c | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T14:26:42.152Z => requestId: f39377f6-b530-426b-afdb-0baaedb0efa8 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T14:26:59.938Z => requestId: d6934f9f-cab5-49a2-aa73-57887efdb107 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T14:27:00.138Z => requestId: 3a3927a2-6eab-43f2-82e0-1be96d9478e2 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T14:27:40.456Z => requestId: 2e496f44-6169-423f-8c17-4721b015c618 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T14:27:40.643Z => requestId: 13ecefc0-2fa4-4f61-9b27-3ff7263e8345 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T14:28:49.247Z => requestId: 0b5aefaf-efef-4a6d-b61a-d64ec36d5bb3 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T14:28:49.418Z => requestId: 211f4034-00df-4016-adc0-ba13afa3d0e6 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T14:30:27.274Z => requestId: ba61cfcb-779b-48b3-857c-58c42a4994a1 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T14:30:27.463Z => requestId: 72294426-5be2-4759-969a-a410ca3995e1 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T14:31:43.929Z => requestId: b76f7e3e-1739-4809-8448-d2f6d72fd8c7 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T14:31:44.154Z => requestId: c95ee12b-f52f-4423-8469-e96a07fc429f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T15:03:24.596Z => requestId: 76cfac46-89fa-4408-90a3-402ba2ada23c | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T15:03:24.806Z => requestId: 51f0e850-c244-43af-b5ff-c0c470e31b54 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T15:37:58.084Z => requestId: d445a930-cabd-436a-a0da-d40da1f4ed37 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T15:37:58.271Z => requestId: 714bd743-bfcc-4bc9-a2cf-a6a90bf79cca | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T15:38:43.818Z => requestId: 5db0ec34-2f73-4af9-821b-01c733d26f0d | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-03T15:38:44.009Z => requestId: e73db7d6-677a-46c5-ae5d-076360369097 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T06:35:12.502Z => requestId: 88f65c33-d51e-4e5a-bf10-a5612aac7585 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T06:35:12.540Z => requestId: a2dad1b6-c05b-4276-85b2-39d8dc6370ba | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T06:36:29.953Z => requestId: 90824db1-5a40-46e0-a99e-757d28ac3502 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T06:36:29.979Z => requestId: c2cf0482-504c-4d69-854b-94439195f152 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T06:37:46.818Z => requestId: 95280a9b-2e98-474a-89c6-3d301449de9b | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T06:37:46.848Z => requestId: 16ac023b-0e2c-4005-9dc4-76246ae2b296 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T06:37:59.650Z => requestId: 64bf5c8a-617d-4e7f-8348-4bd66cd52cd9 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-04T06:38:03.370Z => requestId: 0399e35e-c779-435d-976e-00db274fcb0e | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-04T06:38:04.068Z => requestId: b3b3a7a3-d68a-4532-bfdd-be53dd8b2639 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-04T06:38:05.545Z => requestId: ff8470ec-68dc-40ba-a00f-8cb595ff10d3 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-04T06:38:36.658Z => requestId: 235c8ade-bad2-42d6-88fa-cebc1690134a | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-04T06:38:39.082Z => requestId: dd38bcf6-dc8a-4df2-aba8-d165f8aba3a1 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-04T06:38:39.551Z => requestId: a29a22f8-cef9-4844-ac6b-ecf191f29179 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T06:40:23.024Z => requestId: f02f23f1-c778-41ad-ac12-3e593690e42e | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T06:40:23.058Z => requestId: d44601a6-7919-4470-a4a0-342babba15a0 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T06:41:34.397Z => requestId: 52ea380e-16e9-4c43-b6cb-44b55470e08a | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T06:41:34.425Z => requestId: 79642df3-c11b-4ef4-853d-fa79391c9cd5 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T06:43:47.815Z => requestId: cb8c4ae6-2f93-4fff-84b3-4ec8925d9a4a | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T06:43:47.843Z => requestId: a0a7f5e8-5aae-461d-b2bc-7202b724f1b2 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T06:46:33.849Z => requestId: 38c07e8c-007d-49b1-b271-baa88a21d7ca | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T06:46:33.889Z => requestId: b13c6e26-fdc3-4aba-a12c-747c9b2bc1c7 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T06:52:45.389Z => requestId: a73aa07b-b280-4835-8de3-bcf7927e843d | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T06:52:45.418Z => requestId: a79209a7-0360-412e-b23b-954d4d9dd4cb | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T07:05:23.790Z => requestId: 52a76446-0905-4e31-8581-0cec28f4bc10 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T07:05:23.825Z => requestId: aaab10a3-7b6e-4500-9634-de7b967af092 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T07:17:25.278Z => requestId: 4e00b950-090d-4deb-857f-5a1b010a8b05 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T07:17:25.306Z => requestId: 73c38208-7882-40ec-89e7-8cdf81b4b97c | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T07:31:26.678Z => requestId: 47e4b2ea-6302-4c9b-882a-8e3f4c8ca993 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T07:31:26.706Z => requestId: 40eb24c2-9ff9-4cf6-b76d-dd2574729016 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T07:33:29.456Z => requestId: 53d7d20a-411e-41cc-b2da-4bb00004809b | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T07:33:29.480Z => requestId: 7920e65a-490b-4a9e-9ea6-3ca230b90472 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T07:38:42.123Z => requestId: 0ae4c0dd-1cd8-4adf-b2a3-26bb1df9210e | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T07:38:42.148Z => requestId: 92d3ad01-b4e7-4365-8c12-036409ea63b5 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T07:42:56.428Z => requestId: a3340086-8e96-4d9b-bdd3-219ab6cb7b9f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T07:42:56.455Z => requestId: c28532c3-e0f5-45a1-853e-e8e427ca2408 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T07:48:16.220Z => requestId: c22e7b56-8a3a-479f-970c-c957fde851a6 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T07:48:16.244Z => requestId: 6b902d2c-ac1c-4951-9909-c8d762f3db0e | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T07:49:11.482Z => requestId: 38a1186e-04e1-4060-b901-b4723cd00766 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T07:49:11.534Z => requestId: a2d523b1-e788-4f4a-b664-af70c158d84f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T07:54:47.251Z => requestId: 39e2924e-aa6d-4fee-b7d1-440aee17540f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T07:54:47.321Z => requestId: ce192ac0-3600-4758-9ed5-08385b866de7 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T07:56:03.489Z => requestId: 4d866d59-6400-4caa-a33a-92869b09e503 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T07:56:03.502Z => requestId: b4777b3e-6e14-4e3b-a83c-a8b7c25b79b5 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T07:56:35.409Z => requestId: 4de9fe7c-0dfd-4a82-8dd9-b40d1b96d989 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T07:56:35.493Z => requestId: 08a8b9d1-7bdf-4a5a-9931-3610a4a878ec | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T07:59:12.533Z => requestId: d1ac6d53-7a04-43c6-845e-e1429c211460 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T07:59:12.545Z => requestId: 69c103d3-1c37-4176-874e-a04ce2807afe | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T07:59:51.017Z => requestId: 4bb2ea35-9e88-4d58-99f3-a4d95b763559 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T07:59:51.030Z => requestId: d7f114e8-f021-42c7-9425-189b65ed1812 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:01:38.863Z => requestId: 8f3620b2-5834-4927-a84e-22f5d05f8ad8 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:01:38.938Z => requestId: c9b86d6f-788b-46dc-8cf4-e40b40043987 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:03:27.940Z => requestId: eaf09648-f37a-4a2e-b07e-fdc5d6eb8259 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:03:28.023Z => requestId: a5bcff39-221c-4200-8333-f3fef1dcbde1 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:05:48.798Z => requestId: 74df7b13-5e2f-4a51-8bac-1dd6e3a7233f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:05:48.873Z => requestId: adf85b8b-d539-4cea-9ff8-88889ea7de19 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:11:48.516Z => requestId: be9629b9-c7c7-4519-ade1-86ae803d499d | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:11:48.611Z => requestId: 791c92de-021f-4730-a3a8-18755840581c | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:13:40.624Z => requestId: d2a686f4-9df2-4d3f-96dd-762dbc35b733 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:13:40.692Z => requestId: 91d8cebc-369f-4dab-9672-8f2d81701140 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:17:10.009Z => requestId: 93b4e718-81b0-4d88-8186-5d08f635f69a | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:17:10.145Z => requestId: 5f9e618e-a51b-4f52-a52f-901afac95f63 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:18:42.354Z => requestId: cf6491e5-ecaf-4604-b820-c8ba41fbe7b6 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:18:42.435Z => requestId: c7f2d51d-73b9-46f7-b5e5-d8c2dbad3d1e | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:23:51.293Z => requestId: bfdc68a3-30a2-4c99-bc67-a6c3d75ef27f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:23:51.372Z => requestId: ff168fd2-f494-4782-ae7f-b1e47527bdff | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:25:54.916Z => requestId: 87e6e298-978f-4a2f-bf4a-f8018f06fc54 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:25:55.005Z => requestId: 6f524964-fa41-444e-920c-efdee9fdad53 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:27:17.755Z => requestId: 00e80b90-8f5e-4417-af09-2e71e9e17206 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:27:17.848Z => requestId: ae0dd57a-aea0-4f4f-8e37-26d480da9f26 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:28:08.522Z => requestId: 42480637-e3f5-4fb7-93f2-143e3230545e | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:28:08.614Z => requestId: a81c38bb-e2f8-479f-a29e-c75f0922c3a9 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:28:51.642Z => requestId: 399554b9-7424-484d-8c16-8e8a9d39be0e | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:28:51.732Z => requestId: e7ebe626-ef98-4a59-a6a4-a74054bd2a05 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:29:37.503Z => requestId: bdbb4b32-bf3a-42d4-b7d4-9ff6265e0b3b | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:29:37.585Z => requestId: 23e068c0-6288-4c96-935f-3e8700422811 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:33:51.430Z => requestId: 5c75d3fc-f112-4fa3-90aa-457c0de9549b | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:33:51.505Z => requestId: ff8c8950-10a8-4da3-8d5c-3b20a9e6e4a9 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:34:26.180Z => requestId: ce72842e-99c3-4cef-9fa4-c6a9676de0bc | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:34:26.302Z => requestId: 75278cb1-8e53-4d89-a8ea-2e10a9c422a4 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:35:48.732Z => requestId: 68ddf511-e104-4d53-a6f0-84959c24a4e5 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:35:48.803Z => requestId: 6d830585-972a-4357-99dc-561ed0f57f3a | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:36:11.835Z => requestId: d2478825-6c5c-4ead-96a4-39c34b6c291d | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:36:11.923Z => requestId: 03416585-2aaf-47f3-9e4a-12a5e5963ebf | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"Bind parameters must not contain undefined. To pass SQL NULL specify JS null","service":"api"}
+{"level":"error","message":"2023-09-04T08:46:11.779Z => requestId: 7258a687-498d-45e5-a518-f00bf6fed600 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:46:11.854Z => requestId: 058ea1e3-1590-499c-96af-8aca0470d99c | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `userId` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"2023-09-04T08:48:52.031Z => requestId: f09bb604-079f-43d1-8086-fe230659ce01 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T08:48:52.166Z => requestId: 6c865ad7-fe04-46af-b5da-1a9346e4eba2 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `userId` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"2023-09-04T09:14:06.704Z => requestId: 3a065c27-d766-432a-b036-a703b42fb70f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T09:14:06.778Z => requestId: e00b8036-4c60-4a9d-856c-ded2adb2b28c | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T09:14:43.839Z => requestId: 2fa070ba-8f26-472b-b478-37126ed5d637 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T09:14:43.921Z => requestId: 240f94f0-c9a2-440b-ab95-58fed64a5e73 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `userId` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"2023-09-04T12:24:12.224Z => requestId: b0c08875-c67e-4f25-be70-b4c7bf0b3676 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:24:12.240Z => requestId: 43f9d065-f12c-462b-a544-370b0e40e39d | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `userId` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"2023-09-04T12:25:22.987Z => requestId: a91b9681-675f-4f90-ab01-811d9eaa8169 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:25:23.004Z => requestId: 1c6cf5cd-5a9e-4eb7-94ab-0402714070aa | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`vacationsapp`.`followers`, CONSTRAINT `userId` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE)","service":"api"}
+{"level":"error","message":"2023-09-04T12:26:24.898Z => requestId: 9c10a018-1e71-4e85-bc6b-f1cdd48f90a6 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:26:25.002Z => requestId: 73e6b271-e452-4932-aafb-0512bfbec1b9 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:27:24.272Z => requestId: 2ffe0756-e81a-42f0-b19b-847b86da4665 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:27:24.345Z => requestId: 7c3188c9-b3c6-4c60-aa08-0dd64ee0f448 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:27:47.533Z => requestId: e374b7e2-f220-4b16-bddf-a2993e94c27f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:27:47.632Z => requestId: a75cb3cc-4f3f-40bb-a521-da9dbf05a1e7 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:40:07.902Z => requestId: b3c9d408-4e37-499c-87c4-54f753f740e2 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:40:08.002Z => requestId: 33cb0119-ed3a-4653-b042-90017f9d333e | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:41:41.296Z => requestId: 62aa437e-dcf5-4659-9adf-fec5f0cffd2a | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:41:41.392Z => requestId: 9c225f1e-7594-4b0d-876c-fa52fdf7c805 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:42:24.269Z => requestId: e692f58d-31f1-43eb-b426-d281f36500db | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:42:24.372Z => requestId: 56b08ae5-6c16-40ef-a4fe-386e81297d2b | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:43:07.309Z => requestId: df7b40e1-755a-49a7-a87e-c1050458a20c | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:43:07.412Z => requestId: 0231e67b-d4b6-4c63-aee9-4883b4049f1a | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:43:31.077Z => requestId: 276fdcb8-8c76-4546-b594-d9e02cc22e02 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:43:31.184Z => requestId: 22c23275-248a-4120-81e6-863c5fde9b19 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:45:04.916Z => requestId: 9975bf5d-1a2c-45fe-814f-0929086182d7 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:45:05.012Z => requestId: 1b514b1b-22df-4eea-b7b0-2cba8f2847ad | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:45:51.011Z => requestId: 5f44d41e-6de1-494f-9c69-4a09e37cde8e | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:45:51.084Z => requestId: 71c5e7bb-9f14-406f-bcbb-78035c30f1ed | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:46:20.018Z => requestId: 14ce7bf0-a787-49f7-8929-6d3d865d8c25 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:46:20.106Z => requestId: 7af93e79-15e2-4837-9e61-c3135817a461 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:47:33.844Z => requestId: 71ccf14f-f0ff-44de-83d8-68f5c1d7689c | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:47:33.958Z => requestId: 5020b4da-c5c3-42ce-9ab9-e4e9d59b9c6f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:47:55.947Z => requestId: 446b0d1b-be15-4e7f-b779-0c5fe878287f | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:47:56.053Z => requestId: 956d6c0f-33f2-4937-8adc-c2ac67363ce8 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:50:26.108Z => requestId: 79fea67d-a3d2-4689-9975-334ba1cb0ba4 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:50:26.197Z => requestId: c8d195ea-2195-46f7-8acc-303f9b81aad2 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:52:19.383Z => requestId: e54f0b7e-a115-4c93-88cd-3ee97b31b8b3 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:52:19.471Z => requestId: 222c7fe8-1c51-4714-ad96-37f456370cee | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:55:39.052Z => requestId: 3f62cc7e-6ae0-43c8-b435-aa7de6e0dbc9 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T12:55:39.157Z => requestId: cb8a1ef2-2c25-4e5e-86a0-f1001571972e | User Token invalid jwt must be provided","service":"api"}

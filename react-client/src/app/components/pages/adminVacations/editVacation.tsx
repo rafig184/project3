@@ -139,13 +139,13 @@ const EditVacationPage = () => {
 
     return (
 
-        <div style={{ backgroundColor: "grey", padding: "4%", borderRadius: "10px" }}>
+        <div style={{ backgroundColor: "grey", padding: "2%", borderRadius: "10px" }}>
 
             <form >
-                <h2>Edit vacation</h2>
+                <h2 style={{ fontWeight: "400" }}>Edit Vacation</h2>
                 <div>
                     <div>
-                        <label htmlFor="text">Destination:</label>
+                        <label htmlFor="text">Destination :</label>
                     </div>
                     <InputText
                         type="text"
@@ -157,19 +157,19 @@ const EditVacationPage = () => {
                 </div>
                 <div>
                     <div>
-                        <label htmlFor="text">Start Date:</label>
+                        <label htmlFor="text">Start Date :</label>
                     </div>
                     <Calendar value={startDate} onChange={handlersStartDateCallback} dateFormat="dd/mm/yy" required />
                 </div>
                 <div>
                     <div>
-                        <label htmlFor="text">End date:</label>
+                        <label htmlFor="text">End date :</label>
                     </div>
                     <Calendar value={endDate} minDate={new Date(startDate)} onChange={handlerEndDateCallback} dateFormat="dd/mm/yy" required />
                 </div>
                 <div>
                     <div>
-                        <label htmlFor="text">Price:</label>
+                        <label htmlFor="text">Price :</label>
                     </div>
                     <InputNumber
                         id="price"
@@ -180,13 +180,13 @@ const EditVacationPage = () => {
                 </div>
                 <div>
                     <div>
-                        <label htmlFor="text">Description:</label>
+                        <label htmlFor="text">Description :</label>
                     </div>
                     <InputTextarea value={description} onChange={handlerDescriptionCallback} rows={5} cols={30} required />
                 </div>
                 <div>
                     <div>
-                        <label htmlFor="text">Image:</label>
+                        <label htmlFor="text">Image :</label>
                     </div>
                     <InputText
                         type="text"
