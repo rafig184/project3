@@ -44,7 +44,7 @@ export function AdminVacationCard(props: IVacationsAdmin) {
 
     const confirm = () => {
         confirmDialog({
-            message: 'Do you want to delete this record?',
+            message: 'Do you want to delete this vacation?',
             header: 'Delete Confirmation',
             icon: 'pi pi-info-circle',
             acceptClassName: 'p-button-danger',
@@ -72,16 +72,8 @@ export function AdminVacationCard(props: IVacationsAdmin) {
         navigate(`/edit-vacation/?vid=${props.vacationId}`)
     }
 
-
-
     const formatedStartDate = format(new Date(props.startDate), "dd/MM/yyyy")
     const formatedEndtDate = format(new Date(props.endDate), "dd/MM/yyyy")
-
-
-
-
-
-
 
     return <div style={{ margin: "2%" }}>
         <WithLoading isLoading={isVacationsLoading}>
@@ -107,11 +99,11 @@ export function AdminVacationCard(props: IVacationsAdmin) {
                         </ScrollPanel>
 
                     </div>
-                    <div className="vacationPrice">
-                        <h3 style={{ color: "white", fontSize: "x-large", fontWeight: "400" }}>{`${props.price} $`}</h3>
+                    <div >
+                        <h3 style={{ color: "black", fontSize: "xx-large", fontWeight: "600", textAlign: "right", paddingRight: "3%", margin: "4%" }}>{`${props.price} $`}</h3>
                     </div>
                     <Toast ref={toast} />
-                    <div style={{ marginTop: "5%" }}>
+                    <div style={{}}>
                         <Button severity="danger" onClick={confirm} icon="pi pi-trash" label="Delete" raised />
                         <Button onClick={editHandler} style={{ marginLeft: "4%" }} label="Edit" icon="pi pi-file-edit" severity="info" raised > </Button >
                     </div>

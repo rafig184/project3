@@ -96,17 +96,18 @@ export function VacationCard(props: IVacations) {
 
                     </div>
                     <div className="vacationPrice" >
-                        <h3 style={{ color: "white", fontSize: "x-large", fontWeight: "400" }}>{`${props.price} $`}</h3>
-                    </div>
-                    <div className="followerDiv">
                         <ToggleButton style={{ borderRadius: "50px", border: "0px", backgroundColor: checked ? "#EB3D3D" : "" }} onLabel="" offLabel="" onIcon="pi pi-heart-fill" offIcon="pi pi-heart"
-                            checked={checked} onChange={handleToggle} />
+                            checked={checked} onChange={handleToggle} className="heartBtn" />
+                        <h3 style={{ color: "black", fontSize: "xx-large", fontWeight: "600" }}>{`${props.price} $`}</h3>
+                    </div>
+                    <span className="followerDiv">
+
                         {amountOfFollowers !== undefined ? (
                             <span style={{ color: "#495057" }}>{`${amountOfFollowers} Liked this post`}</span>
                         ) : (
                             <span>0 Liked this post</span>
                         )}
-                    </div>
+                    </span>
                 </div>
             </div>
         </WithLoading>

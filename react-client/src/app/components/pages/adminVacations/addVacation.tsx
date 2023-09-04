@@ -119,7 +119,7 @@ const AddVacation = () => {
 
 
     return (
-        <div style={{ backgroundColor: "grey", padding: "2%", borderRadius: "10px" }}>
+        <div style={{ backgroundColor: "#053B50", padding: "2%", borderRadius: "10px" }}>
             <form >
                 <h2 style={{ fontWeight: "400" }}>Add New Vacation</h2>
                 <div>

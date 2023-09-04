@@ -8,6 +8,7 @@
   margin: auto;
   text-align: center;
   margin-bottom: 2%;
+
 }
 
 .appsize {
@@ -69,11 +70,18 @@
 
 .vacations {
   background-color: #EFF3F8;
+  /* background-image: url("../src/assets/background.png"); */
+  background-size: 100vw;
+  /* Adjust to your preferred size */
+  /* background-repeat: no-repeat; */
+  /* Prevent image repetition */
+  /* background-attachment: fixed; */
+
 }
 
 .vacationCard {
   background-color: #FFFFFF;
-  height: 550px;
+  height: 540px;
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2)
 }
@@ -112,20 +120,30 @@
   z-index: 2;
 }
 
+.heartBtn .pi {
+  font-size: 24px;
+}
+
 .vacationPrice {
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   /* padding: 0.1%; */
   margin-top: 1%;
-  background-color: #176B87;
+  text-align: right;
+  /* background-color: #176B87; */
   margin-right: 3%;
   margin-left: 3%;
   font-weight: 300;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .followerDiv {
   padding-left: 7%;
   padding-right: 5%;
-  margin-top: 7%;
+  margin-top: -3%;
   text-align: left;
   display: flex;
   align-items: center;
@@ -180,16 +198,16 @@
 }
 
 .logoutB:hover {
-  background-color: #104557;
+  background-color: #2f85a1;
 }
 
 .links {
-  color: #053B50;
+  color: #00CCFF;
   cursor: pointer;
 }
 
 .links:hover {
-  color: #075776;
+  color: #3490af;
   cursor: pointer;
 }
 
@@ -328,9 +346,9 @@
     height: 50%;
   }
 
-  .tabMenu {
+  /* .tabMenu {
     height: 50%;
-  }
+  } */
 }
 
 /* .tabMenu .p-menuitem-text {

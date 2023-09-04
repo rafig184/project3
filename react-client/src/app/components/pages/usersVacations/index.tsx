@@ -113,7 +113,7 @@ export default function UserVacationsPage() {
                 </div>
                 <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
                     <Checkbox onChange={handlerFollowingChecked} checked={followingChecked}></Checkbox>
-                    <label htmlFor="ingredient1" className="ml-2">Following Vacations</label>
+                    <label htmlFor="ingredient1" className="ml-2">Liked Vacations</label>
                 </div>
                 <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
                     <Checkbox onChange={handlerOngoingChecked} checked={onGoingVacationCecked}></Checkbox>

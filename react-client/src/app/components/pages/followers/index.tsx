@@ -26,7 +26,7 @@ export default function ReportsPage() {
     console.log(followers);
     const followersData = followers.map((e: any) => e.amountOfFollowers)
 
-
+    followersData.sort((a, b) => b - a);
 
     async function dataDispatchAction() {
         try {
