@@ -1,9 +1,9 @@
 #root {
-  max-width: 70vw;
+  /* max-width: 70vw;
   max-width: 70dvw;
   min-width: 70vw;
   min-width: 70dvw;
-  min-height: 100vh;
+  min-height: 100vh; */
   /* max-height: 20vh; */
   margin: auto;
   text-align: center;
@@ -19,11 +19,17 @@
 
 
 .top-container {
-  /* position: sticky;
-  top: 0; */
-  background-color: #EEEEEE;
-  padding-top: 1em;
+  /* position: sticky; */
+  background-image: url("../src/assets/cover5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* background-color: #eeeded; */
+  padding-top: 1%;
+  padding-bottom: 20%;
   z-index: 100;
+  padding-left: 12%;
+  padding-right: 12%;
 
 }
 
@@ -38,7 +44,7 @@
 }
 
 .logoImg {
-  width: 180px;
+  width: 220px;
 }
 
 .chartDiv {
@@ -46,6 +52,12 @@
   padding: 4%;
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.avatarLogout {
+  display: flex;
+  gap: 10px;
+  align-items: center
 }
 
 .chart {
@@ -70,7 +82,7 @@
 
 .vacations {
   background-color: #EFF3F8;
-  /* background-image: url("../src/assets/background.png"); */
+  background-image: url("../src/assets/background.png");
   background-size: 100vw;
   /* Adjust to your preferred size */
   /* background-repeat: no-repeat; */
@@ -83,7 +95,7 @@
   background-color: #FFFFFF;
   height: 540px;
   border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2)
+  box-shadow: 2px 5px 7px 5px rgba(0, 0, 0, 0.2)
 }
 
 .destination {
@@ -98,7 +110,7 @@
 .cardDate {
   position: relative;
   margin-bottom: 1%;
-  background-color: #64CCC5;
+  background-color: #5ddcfc;
   padding-top: 2%;
   padding-bottom: 2%;
   border-top-left-radius: 10px;
@@ -195,10 +207,16 @@
   border: 0px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
   font-weight: 300;
+  border-radius: 50px
 }
 
 .logoutB:hover {
   background-color: #2f85a1;
+}
+
+.speedDial {
+  position: relative;
+  top: 0
 }
 
 .links {
@@ -226,8 +244,14 @@
 }
 
 .welcome {
+
   font-size: medium;
   font-weight: 400;
+
+}
+
+.avatarDiv {
+  margin-top: -5%;
 }
 
 .addNewVacationDiv {
@@ -265,8 +289,8 @@
   }
 
   .top-container {
-    margin-left: -20%;
-    margin-right: -20%;
+    margin-left: -25%;
+    margin-right: -25%;
     position: sticky;
     top: 0;
     background-color: #EEEEEE;
@@ -284,6 +308,14 @@
     border-top-right-radius: 10px; */
   }
 
+
+  .speedDial {
+    right: 50px;
+    top: 35px;
+
+
+
+  }
 
   .vacations {
     background-color: #D0DFEC;
@@ -327,12 +359,13 @@
   }
 
   .logoImg {
-    width: 100px;
+    width: 130px;
   }
 
   .welcome {
     font-size: small;
     font-weight: 300;
+
   }
 
   .avatar {
@@ -343,7 +376,11 @@
 
   .logoutB {
     width: 100%;
-    height: 50%;
+    height: 100%;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    border-radius: 50px
   }
 
   /* .tabMenu {

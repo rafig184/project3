@@ -90,7 +90,7 @@ export function AdminVacationCard(props: IVacationsAdmin) {
                 <div style={{ marginTop: "-4%" }}>
                     <div style={{ borderBottomRightRadius: "10px" }}>
                         <div className="cardDate">
-                            <span >
+                            <span style={{ color: "#495057" }}>
                                 <i className={"pi pi-calendar"}></i><span> </span>
                                 {formatedStartDate} - {formatedEndtDate}</span>
                         </div>

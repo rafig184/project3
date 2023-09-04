@@ -12,11 +12,13 @@ import AdminVacationsPage from './app/components/pages/adminVacations';
 import AddVacation from './app/components/pages/adminVacations/addVacation';
 import { Button } from 'primereact/button';
 import { ProtectedRoute } from './app/components/ui-components/protected-route';
-import logoImage from '../src/assets/logo1.png';
+import logoImage from '../src/assets/logo22.png';
 import { Avatar } from 'primereact/avatar';
 import EditVacationPage from './app/components/pages/adminVacations/editVacation';
 import ReportsPage from './app/components/pages/followers';
 import NotFound from './app/components/pages/not-found';
+import { SpeedDial } from 'primereact/speeddial';
+import { MenuItem } from 'primereact/menuitem';
 
 
 
@@ -144,18 +146,27 @@ function App() {
     return true;
   });
 
+  const menuItems: MenuItem[] = [
+    {
+      label: 'Log Out',
+      icon: 'pi pi-sign-out',
+      command: () => {
+        logoutHandler()
+      }
+    }
+  ]
+
   return (
-    <div className='appsize'>
+    <div >
       <div className='top-container'>
         <div className='main'>
           {userToken ? (
             <div style={{ display: "flex", justifyContent: "space-between", margin: "auto" }}>
               <div >
-                <Avatar icon="pi pi-user" size="normal" style={{ backgroundColor: '#176B87', color: '#ffffff' }} shape="circle" /><span className='welcome' style={{ color: "#808080" }}> Welcome back {userFirstName}</span>
+                <img style={{ marginBottom: "3%", marginTop: "1%", marginRight: "6%" }} className='logoImg' src={logoImage} alt="Image" width="180" />
               </div>
-              <img style={{ marginBottom: "3%", marginTop: "1%", marginRight: "6%" }} className='logoImg' src={logoImage} alt="Image" width="180" />
-              <div>
-                <button className='logoutB' onClick={logoutHandler}> <i className="pi pi-sign-out"></i> Log Out</button>
+              <div className='speedDial' >
+                <SpeedDial model={menuItems} radius={120} direction="down" style={{ left: 0, bottom: "-50%" }} showIcon="pi pi-bars" buttonClassName="p-button-info" />
               </div>
             </div>
           ) : (
@@ -164,6 +175,9 @@ function App() {
             </span>
           )}
         </div>
+        <div className='avatarDiv' style={{ paddingTop: "2%" }}>
+          <Avatar icon="pi pi-user" size="normal" style={{ backgroundColor: '#3B82F6', color: '#ffffff' }} shape="circle" /><span className='welcome' style={{ color: "white", fontSize: "larger" }}> Welcome back {userFirstName}</span>
+        </div>
         <div>
           {userRole === "admin" && (
             <TabMenu style={{ borderRadius: "10px" }} model={items} activeIndex={activeIndex} onTabChange={onTabChange} />
@@ -171,7 +185,7 @@ function App() {
         </div>
       </div>
 
-      <div style={{ marginTop: "5%", display: "flex", justifyContent: "center" }}>
+      <div className='appsize' style={{ marginTop: "5%", display: "flex", justifyContent: "center" }}>
         <Routes>
           {filteredRoutes.map((route: IRoute) => (
             <Route

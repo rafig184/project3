@@ -11,7 +11,6 @@ export interface IVacationsAdmin {
 
 const initialState: IVacationsAdmin = {
   vacationsData: [],
-
 }
 
 export const fetchVacationsAsync = createAsyncThunk(
@@ -59,7 +58,7 @@ export const vacationSlice = createSlice({
 
 })
 
-// export const { addLike } = vacationSlice.actions
+
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

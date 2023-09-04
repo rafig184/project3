@@ -100,6 +100,7 @@ export default function ReportsPage() {
         <WithLoading isLoading={isReportLoading}>
             <div className='chartDiv' >
                 <CSVLink {...csvReport}>Export to CSV</CSVLink>
+                <h2 style={{ color: "#176B87" }}>Top Vacation Spots</h2>
                 <Chart className='chart' style={{ marginTop: "5%" }} type="bar" data={chartData} options={chartOptions} />
             </div>
         </WithLoading>

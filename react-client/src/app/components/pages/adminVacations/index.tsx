@@ -40,7 +40,7 @@ export default function AdminVacationsPage() {
             <div className="addNewVacationDiv">
                 <button className="buttons" onClick={() => { navigate("/add-vacation") }} >Add new vacation</button>
             </div>
-            <div className="vacationsAdmin" >
+            <div className="vacations" >
                 <ConfirmDialog />
                 <AdminVacationList vacations={vacations} />
             </div>
