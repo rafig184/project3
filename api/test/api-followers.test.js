@@ -72,7 +72,7 @@ describe("DELETE /reports/deleteFollowerService", function () {
         const vacationId = 2
         const result = await axios.delete(`http://localhost:4000/followers/?q=${vacationId}`, {
             headers: {
-                authorization: getTokenForNonAdmin()
+                authorization: getTokenForNonAdminFollowers()
             }
         })
         expect(result.status).equal(200)

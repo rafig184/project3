@@ -478,3 +478,5 @@
 {"level":"error","message":"2023-09-04T12:52:19.471Z => requestId: 222c7fe8-1c51-4714-ad96-37f456370cee | User Token invalid jwt must be provided","service":"api"}
 {"level":"error","message":"2023-09-04T12:55:39.052Z => requestId: 3f62cc7e-6ae0-43c8-b435-aa7de6e0dbc9 | User Token invalid jwt must be provided","service":"api"}
 {"level":"error","message":"2023-09-04T12:55:39.157Z => requestId: cb8a1ef2-2c25-4e5e-86a0-f1001571972e | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T13:12:30.959Z => requestId: 8af36b09-b13d-4c8c-a879-2ed115457f53 | User Token invalid jwt must be provided","service":"api"}
+{"level":"error","message":"2023-09-04T13:12:31.035Z => requestId: 87d66710-1db8-4c17-a25d-52d9a78da848 | User Token invalid jwt must be provided","service":"api"}
