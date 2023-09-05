@@ -7,7 +7,6 @@ import { useAppDispatch } from "../../../hooks";
 import { RootState } from "../../../store";
 import { useSelector } from "react-redux";
 import { fetchVacationsAsync } from "../adminVacations/vacationSlice";
-import { Checkbox } from 'primereact/checkbox';
 import { WithLoading } from "../../ui-components/withLoading";
 import { IFollowerByUser, getFollowersByUserIdService } from "../followers/api/followers";
 import { Divider } from "primereact/divider";
