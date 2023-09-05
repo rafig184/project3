@@ -101,7 +101,7 @@
 
 .vacationCard {
   background-color: #FFFFFF;
-  height: 540px;
+  height: 550px;
   border-radius: 10px;
   box-shadow: 2px 5px 7px 5px rgba(0, 0, 0, 0.2)
 }
@@ -267,8 +267,6 @@
 }
 
 
-
-
 .avatarDiv {
   margin-top: -8%;
 }
@@ -424,6 +422,12 @@
     font-size: 1.5rem;
     width: 50%;
 
+  }
+
+
+
+  .fieldset {
+    width: 90%;
   }
 
   .logoutB {

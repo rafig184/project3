@@ -111,20 +111,14 @@ export default function UserVacationsPage() {
                 <Fieldset className="fieldset" style={{ width: "100%", color: "#113446", fontSize: "larger" }} collapseIcon="pi pi-filter-slash" expandIcon="pi pi-filter-fill" legend="Filters" toggleable >
                     <span style={{ width: "100%" }}>
                         <div style={{ display: "flex" }}>
-                            <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
-                                <ToggleButton onLabel="Future Vacations" offLabel="Future Vacations" onChange={handlerFutureChecked} checked={futureChecked} style={{ backgroundColor: futureChecked ? "#FFC436" : "" }} />
+                            <div style={{ margin: "auto" }} className="checkbox">
+                                <ToggleButton onLabel="Future Vacations" offLabel="Future Vacations" onChange={handlerFutureChecked} checked={futureChecked} style={{ width: "110%", backgroundColor: futureChecked ? "#FFC436" : "" }} />
                             </div>
-                            <Divider layout="vertical" />
-                            <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
-                                <ToggleButton onLabel="Following Vacations" offLabel="Following Vacations" onChange={handlerFollowingChecked} checked={followingChecked} style={{ backgroundColor: followingChecked ? "#FFC436" : "" }} />
-                                {/* <Checkbox onChange={handlerFollowingChecked} checked={followingChecked}></Checkbox> */}
-                                {/* <label htmlFor="ingredient1" className="ml-2">Liked Vacations</label> */}
+                            <div style={{ margin: "auto" }} className="checkbox">
+                                <ToggleButton onLabel="Liked Vacations" offLabel="Liked Vacations" onChange={handlerFollowingChecked} checked={followingChecked} style={{ width: "110%", backgroundColor: followingChecked ? "#FFC436" : "" }} />
                             </div>
-                            <Divider layout="vertical" />
-                            <div style={{ margin: "auto", paddingRight: "2%" }} className="checkbox">
-                                <ToggleButton onLabel="On Going" offLabel="On Going" onChange={handlerOngoingChecked} checked={onGoingVacationCecked} style={{ backgroundColor: onGoingVacationCecked ? "#FFC436" : "" }} />
-                                {/* <Checkbox onChange={handlerOngoingChecked} checked={onGoingVacationCecked}></Checkbox>
-                                <label htmlFor="ingredient1" className="ml-2">On Going</label> */}
+                            <div style={{ margin: "auto" }} className="checkbox">
+                                <ToggleButton onLabel="On Going" offLabel="On Going" onChange={handlerOngoingChecked} checked={onGoingVacationCecked} style={{ width: "110%", backgroundColor: onGoingVacationCecked ? "#FFC436" : "" }} />
                             </div>
                         </div>
 
