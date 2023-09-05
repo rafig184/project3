@@ -34,6 +34,6 @@ export default function VacationList(props: { vacations: Array<IVacations> }) {
                 })}
 
         </div>
-        <Paginator className="paginator" style={{ backgroundColor: "#EFF3F8", borderTopLeftRadius: "0px", borderTopRightRadius: "0px" }} first={first} rows={9} totalRecords={props.vacations.length} onPageChange={onPageChange} />
+        <Paginator className="paginator" style={{ borderRadius: "10px" }} first={first} rows={9} totalRecords={props.vacations.length} onPageChange={onPageChange} />
     </div>
 }

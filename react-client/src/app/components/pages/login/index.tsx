@@ -7,6 +7,7 @@ import { InputText } from 'primereact/inputtext';
 import { useRef } from "react";
 import { Toast } from "primereact/toast";
 import { Password } from "primereact/password";
+import { Button } from "primereact/button";
 
 const loginSchema = object({
     email: string().email("Invalid email"),
@@ -60,7 +61,7 @@ const LoginComponent = () => {
 
         <FormProvider {...methods}>
             <div style={{ backgroundColor: "#053B50", padding: "20px", borderRadius: "10px" }}>
-                <h2 style={{ fontWeight: "400" }}>Log In</h2>
+                <h2 style={{ fontWeight: "500", color: "#F59E0B" }}>Log In</h2>
                 <form>
                     <div style={{ display: "flex", flexDirection: "column" }}>
                         Email:
@@ -75,7 +76,8 @@ const LoginComponent = () => {
                         {methods.formState.errors.password && <span>{methods.formState.errors.password.message}</span>}
                     </div>
                     <Toast ref={toast} />
-                    <button className="buttons" style={{ marginTop: "7%" }} type="button" onClick={logInService} >Log In</button>
+                    <Button icon="pi pi-sign-in" style={{ marginTop: "7%" }} type="button" rounded severity="warning" aria-label="Notification" onClick={logInService} />
+                    <div>Log In</div>
                     <div style={{ marginTop: "3%" }}>
                         <span>Dont have an account? </span>
                     </div>

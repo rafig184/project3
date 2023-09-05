@@ -150,6 +150,7 @@ function App() {
     {
       label: 'Log Out',
       icon: 'pi pi-sign-out',
+
       command: () => {
         logoutHandler()
       }
@@ -166,7 +167,8 @@ function App() {
                 <img style={{ marginBottom: "3%", marginTop: "1%", marginRight: "6%" }} className='logoImg' src={logoImage} alt="Image" width="180" />
               </div>
               <div className='speedDial' >
-                <SpeedDial model={menuItems} radius={120} direction="down" style={{ left: 0, bottom: "-50%" }} showIcon="pi pi-bars" buttonClassName="p-button-info" />
+                <div className='welcome' > Welcome back {userFirstName}</div>
+                <SpeedDial model={menuItems} radius={120} direction="down" style={{ right: 20 }} showIcon="pi pi-bars" buttonClassName="p-button-info" />
               </div>
             </div>
           ) : (
@@ -174,13 +176,11 @@ function App() {
               <img style={{ marginBottom: "3%", marginTop: "1%", marginLeft: "1%" }} className='logoImg' src={logoImage} alt="Image" width="180" />
             </span>
           )}
+
         </div>
-        <div className='avatarDiv' style={{ paddingTop: "2%" }}>
-          <Avatar icon="pi pi-user" size="normal" style={{ backgroundColor: '#3B82F6', color: '#ffffff' }} shape="circle" /><span className='welcome' style={{ color: "white", fontSize: "larger" }}> Welcome back {userFirstName}</span>
-        </div>
-        <div>
+        <div className='tabs' style={{ marginBottom: "-10%", marginTop: "10%" }}>
           {userRole === "admin" && (
-            <TabMenu style={{ borderRadius: "10px" }} model={items} activeIndex={activeIndex} onTabChange={onTabChange} />
+            <TabMenu className='tabMenu' style={{ borderRadius: "10px" }} model={items} activeIndex={activeIndex} onTabChange={onTabChange} />
           )}
         </div>
       </div>

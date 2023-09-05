@@ -8,6 +8,7 @@ import { Toast } from "primereact/toast";
 import { useRef } from "react";
 import { Password } from 'primereact/password';
 import { Divider } from 'primereact/divider';
+import { Button } from "primereact/button";
 
 
 const registrationSchema = object({
@@ -97,7 +98,7 @@ const RegistrationComponent = () => {
     return (
         <FormProvider {...methods}>
             <div style={{ backgroundColor: "#053B50", padding: "20px", borderRadius: "10px" }}>
-                <h2 style={{ fontWeight: "400" }}>Sign up</h2>
+                <h2 style={{ fontWeight: "400", color: "#F59E0B" }}>Sign up</h2>
                 <form >
                     <div style={{ display: "flex", flexDirection: "column" }}>
                         Email:
@@ -118,7 +119,9 @@ const RegistrationComponent = () => {
                         {methods.formState.errors.password && <span>{methods.formState.errors.password.message}</span>}
                     </div>
                     <Toast ref={toast} />
-                    <button className="buttons" style={{ marginTop: "5%" }} type="button" onClick={signUpService} >Sign Up</button>
+                    <Button icon="pi pi-sign-in" style={{ marginTop: "7%" }} type="button" rounded severity="warning" aria-label="Notification" onClick={signUpService} />
+                    <div>Sign up</div>
+                    {/* <button className="buttons" style={{ marginTop: "5%" }} type="button" onClick={signUpService} >Sign Up</button> */}
                     <div style={{ marginTop: "3%" }}>
                         <span>Already a user? </span>
                     </div>

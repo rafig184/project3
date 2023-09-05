@@ -119,7 +119,7 @@ const AddVacation = () => {
 
 
     return (
-        <div style={{ backgroundColor: "#053B50", padding: "2%", borderRadius: "10px" }}>
+        <div style={{ backgroundColor: "#0F3244", padding: "2%", borderRadius: "10px" }}>
             <form >
                 <h2 style={{ fontWeight: "400" }}>Add New Vacation</h2>
                 <div>
@@ -175,7 +175,9 @@ const AddVacation = () => {
                     />
                 </div>
                 <Toast ref={toast} />
-                <button className="buttons" style={{ marginTop: "5%" }} type="button" onClick={addVacationService}>Add Vacation</button>
+                {/* <Button icon="pi pi-bell" rounded severity="warning" aria-label="Notification" /> */}
+                <Button style={{ marginTop: "5%" }} rounded type="button" severity="warning" aria-label="Add Vacation" icon="pi pi-plus" onClick={addVacationService} />
+                <div>Add Vacation</div>
             </form>
         </div>
     )

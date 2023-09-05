@@ -86,7 +86,7 @@ export function VacationCard(props: IVacations) {
                 <div style={{ marginTop: "-4%" }}>
                     <div style={{ borderBottomRightRadius: "10px" }}>
                         <div className="cardDate">
-                            <span style={{ color: "#495057" }} >
+                            <span style={{ color: "white" }} >
                                 <i className={"pi pi-calendar"}></i><span> </span>
                                 {formatedStartDate} - {formatedEndtDate}</span>
                         </div>

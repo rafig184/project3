@@ -12,6 +12,7 @@ import { fetchVacationsAsync } from "../vacationSlice";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { WithLoading } from "../../../ui-components/withLoading";
+import { SpeedDial } from "primereact/speeddial";
 
 export interface IVacationsAdmin {
     vacationId: number,
@@ -75,6 +76,24 @@ export function AdminVacationCard(props: IVacationsAdmin) {
     const formatedStartDate = format(new Date(props.startDate), "dd/MM/yyyy")
     const formatedEndtDate = format(new Date(props.endDate), "dd/MM/yyyy")
 
+    const items = [
+        {
+            label: 'Edit',
+            icon: 'pi pi-file-edit',
+            command: () => {
+                editHandler()
+            }
+        },
+        {
+            label: 'Delete',
+            icon: 'pi pi-trash',
+            command: () => {
+                confirm()
+            }
+        }
+
+    ]
+
     return <div style={{ margin: "2%" }}>
         <WithLoading isLoading={isVacationsLoading}>
             <div className="vacationCard">
@@ -90,7 +109,7 @@ export function AdminVacationCard(props: IVacationsAdmin) {
                 <div style={{ marginTop: "-4%" }}>
                     <div style={{ borderBottomRightRadius: "10px" }}>
                         <div className="cardDate">
-                            <span style={{ color: "#495057" }}>
+                            <span style={{ color: "white" }}>
                                 <i className={"pi pi-calendar"}></i><span> </span>
                                 {formatedStartDate} - {formatedEndtDate}</span>
                         </div>
@@ -101,12 +120,10 @@ export function AdminVacationCard(props: IVacationsAdmin) {
                     </div>
                     <div >
                         <h3 style={{ color: "black", fontSize: "xx-large", fontWeight: "600", textAlign: "right", paddingRight: "3%", margin: "4%" }}>{`${props.price} $`}</h3>
+                        <SpeedDial className="adminSpeedial" model={items} direction="right" style={{ marginLeft: "1%", zIndex: "200" }} buttonClassName="p-button-danger" />
                     </div>
                     <Toast ref={toast} />
-                    <div style={{}}>
-                        <Button severity="danger" onClick={confirm} icon="pi pi-trash" label="Delete" raised />
-                        <Button onClick={editHandler} style={{ marginLeft: "4%" }} label="Edit" icon="pi pi-file-edit" severity="info" raised > </Button >
-                    </div>
+
                 </div>
             </div>
         </WithLoading>
