@@ -60,29 +60,34 @@ const LoginComponent = () => {
     return (
 
         <FormProvider {...methods}>
-            <div style={{ backgroundColor: "#053B50", padding: "20px", borderRadius: "10px" }}>
-                <h2 style={{ fontWeight: "500", color: "#F59E0B" }}>Log In</h2>
-                <form>
-                    <div style={{ display: "flex", flexDirection: "column" }}>
-                        Email:
-                        <InputText type="email" {...methods.register("email")} />
-                        {methods.formState.errors.email && <span>{methods.formState.errors.email.message}</span>}
-                        Password:
-                        <Password
-                            value={methods.getValues("password")}
-                            onChange={(e) => methods.setValue("password", e.target.value)}
-                            toggleMask feedback={false}
-                        />
-                        {methods.formState.errors.password && <span>{methods.formState.errors.password.message}</span>}
-                    </div>
-                    <Toast ref={toast} />
-                    <Button icon="pi pi-sign-in" style={{ marginTop: "7%" }} type="button" rounded severity="warning" aria-label="Notification" onClick={logInService} />
-                    <div>Log In</div>
-                    <div style={{ marginTop: "3%" }}>
-                        <span>Dont have an account? </span>
-                    </div>
-                    <Link className="links" to="/signup"> Sign Up!</Link>
-                </form>
+            <div className="forms">
+                <div >
+                    <img className="formImglogin" src="./src/assets/login.png" ></img>
+                </div>
+                <div className="formlogin" style={{ backgroundColor: "#053B50", padding: "20px" }}>
+                    <h2 style={{ fontWeight: "500", color: "#F59E0B" }}>Log In</h2>
+                    <form>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "7px", textAlign: "left" }}>
+                            Email :
+                            <InputText type="email" {...methods.register("email")} />
+                            {methods.formState.errors.email && <span>{methods.formState.errors.email.message}</span>}
+                            Password :
+                            <Password
+                                value={methods.getValues("password")}
+                                onChange={(e) => methods.setValue("password", e.target.value)}
+                                toggleMask feedback={false}
+                            />
+                            {methods.formState.errors.password && <span>{methods.formState.errors.password.message}</span>}
+                        </div>
+                        <Toast ref={toast} />
+                        <Button icon="pi pi-sign-in" style={{ marginTop: "7%" }} type="button" rounded severity="warning" aria-label="Notification" onClick={logInService} />
+                        <div>Log In</div>
+                        <div style={{ marginTop: "3%" }}>
+                            <span>Dont have an account? </span>
+                        </div>
+                        <Link className="links" to="/signup"> Sign Up!</Link>
+                    </form>
+                </div>
             </div>
         </FormProvider>
     );

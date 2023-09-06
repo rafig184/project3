@@ -50,7 +50,7 @@ export default function ReportsPage() {
             labels: [...destinations],
             datasets: [
                 {
-                    label: "Followers",
+                    label: "Likes",
                     data: [...followersData],
                     backgroundColor: [
                         'rgba(255, 159, 64, 0.2)',
@@ -99,8 +99,8 @@ export default function ReportsPage() {
     return (
         <WithLoading isLoading={isReportLoading}>
             <div className='chartDiv' >
-                <CSVLink {...csvReport}>Export to CSV</CSVLink>
-                <h2 style={{ color: "#176B87" }}>Top Vacation Spots</h2>
+                <CSVLink {...csvReport}><i className="pi pi-file-export"></i> Export to CSV</CSVLink>
+                <h2 style={{ color: "#176B87" }}>Top-Rated Vacation Destinations</h2>
                 <Chart className='chart' style={{ marginTop: "5%" }} type="bar" data={chartData} options={chartOptions} />
             </div>
         </WithLoading>

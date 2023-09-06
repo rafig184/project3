@@ -110,15 +110,15 @@ export default function UserVacationsPage() {
             <div className="filters ">
                 <Fieldset className="fieldset" style={{ width: "100%", color: "#113446", fontSize: "larger" }} collapseIcon="pi pi-filter-slash" expandIcon="pi pi-filter-fill" legend="Filters" toggleable >
                     <span style={{ width: "100%" }}>
-                        <div style={{ display: "flex" }}>
+                        <div style={{ display: "flex", flexWrap: "wrap" }}>
                             <div style={{ margin: "auto" }} className="checkbox">
-                                <ToggleButton onLabel="Future Vacations" offLabel="Future Vacations" onChange={handlerFutureChecked} checked={futureChecked} style={{ width: "110%", backgroundColor: futureChecked ? "#FFC436" : "" }} />
+                                <ToggleButton onLabel="Future Vacations" offLabel="Future Vacations" onIcon="pi pi-check-circle" offIcon="pi pi-circle" onChange={handlerFutureChecked} checked={futureChecked} style={{ width: "12rem", backgroundColor: futureChecked ? "#FFC436" : "" }} />
                             </div>
                             <div style={{ margin: "auto" }} className="checkbox">
-                                <ToggleButton onLabel="Liked Vacations" offLabel="Liked Vacations" onChange={handlerFollowingChecked} checked={followingChecked} style={{ width: "110%", backgroundColor: followingChecked ? "#FFC436" : "" }} />
+                                <ToggleButton onLabel="Liked Vacations" offLabel="Liked Vacations" onIcon="pi pi-check-circle" offIcon="pi pi-circle" onChange={handlerFollowingChecked} checked={followingChecked} style={{ width: "12rem", backgroundColor: followingChecked ? "#FFC436" : "" }} />
                             </div>
                             <div style={{ margin: "auto" }} className="checkbox">
-                                <ToggleButton onLabel="On Going" offLabel="On Going" onChange={handlerOngoingChecked} checked={onGoingVacationCecked} style={{ width: "110%", backgroundColor: onGoingVacationCecked ? "#FFC436" : "" }} />
+                                <ToggleButton onLabel="On Going" offLabel="On Going" onIcon="pi pi-check-circle" offIcon="pi pi-circle" onChange={handlerOngoingChecked} checked={onGoingVacationCecked} style={{ width: "12rem", backgroundColor: onGoingVacationCecked ? "#FFC436" : "" }} />
                             </div>
                         </div>
 
@@ -134,7 +134,7 @@ export default function UserVacationsPage() {
             <div className="vacations">
                 <VacationList vacations={filteredVacations} />
             </div>
-        </WithLoading>
+        </WithLoading >
     </div >
 }
 

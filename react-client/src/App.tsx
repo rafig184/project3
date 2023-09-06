@@ -158,45 +158,53 @@ function App() {
   ]
 
   return (
-    <div >
-      <div className='top-container'>
-        <div className='main'>
-          {userToken ? (
-            <div style={{ display: "flex", justifyContent: "space-between", margin: "auto" }}>
-              <div >
-                <img style={{ marginBottom: "3%", marginTop: "1%", marginRight: "6%" }} className='logoImg' src={logoImage} alt="Image" width="180" />
+    <div>
+      <div className='mainBody'>
+        <div className='top-container'>
+          <div className='main'>
+            {userToken ? (
+              <div style={{ display: "flex", justifyContent: "space-between", margin: "auto" }}>
+                <div >
+                  <img style={{ marginBottom: "3%", marginTop: "1%", marginRight: "6%" }} className='logoImg' src={logoImage} alt="Image" width="180" />
+                </div>
+                <div className='speedDial' >
+                  <div className='welcome' > Welcome back {userFirstName}</div>
+                  <SpeedDial model={menuItems} radius={120} direction="down" style={{ right: 20 }} showIcon="pi pi-bars" buttonClassName="p-button-info" />
+                </div>
               </div>
-              <div className='speedDial' >
-                <div className='welcome' > Welcome back {userFirstName}</div>
-                <SpeedDial model={menuItems} radius={120} direction="down" style={{ right: 20 }} showIcon="pi pi-bars" buttonClassName="p-button-info" />
-              </div>
-            </div>
-          ) : (
-            <span>
-              <img style={{ marginBottom: "3%", marginTop: "1%", marginLeft: "1%" }} className='logoImg' src={logoImage} alt="Image" width="180" />
-            </span>
-          )}
+            ) : (
+              <span>
+                <img style={{ marginBottom: "3%", marginTop: "1%", marginLeft: "1%" }} className='logoImg' src={logoImage} alt="Image" width="180" />
+              </span>
+            )}
 
+          </div>
+          <div className='tabs' style={{ marginBottom: "-10%", marginTop: "10%" }}>
+            {userRole === "admin" && (
+              <TabMenu className='tabMenu' style={{ borderRadius: "10px" }} model={items} activeIndex={activeIndex} onTabChange={onTabChange} />
+            )}
+          </div>
         </div>
-        <div className='tabs' style={{ marginBottom: "-10%", marginTop: "10%" }}>
-          {userRole === "admin" && (
-            <TabMenu className='tabMenu' style={{ borderRadius: "10px" }} model={items} activeIndex={activeIndex} onTabChange={onTabChange} />
-          )}
+
+        <div className='appsize' style={{ marginTop: "5%", display: "flex", justifyContent: "center" }}>
+          <Routes>
+            {filteredRoutes.map((route: IRoute) => (
+              <Route
+                key={route.key}
+                path={route.path}
+                element={userRole === "admin" || !route.onlyAdmin ? route.component : null}
+              />
+            ))}
+          </Routes>
         </div>
+
+
       </div>
+      <div style={{ backgroundColor: "#0F3244", height: "40vh" }}>
 
-      <div className='appsize' style={{ marginTop: "5%", display: "flex", justifyContent: "center" }}>
-        <Routes>
-          {filteredRoutes.map((route: IRoute) => (
-            <Route
-              key={route.key}
-              path={route.path}
-              element={userRole === "admin" || !route.onlyAdmin ? route.component : null}
-            />
-          ))}
-        </Routes>
       </div>
     </div>
+
 
   )
 }

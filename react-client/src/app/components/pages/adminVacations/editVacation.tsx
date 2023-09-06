@@ -159,8 +159,7 @@ const EditVacationPage = () => {
                         <label htmlFor="text">Start Date :</label>
                     </div>
                     <Calendar value={startDate} onChange={handlersStartDateCallback} dateFormat="dd/mm/yy" required />
-                </div>
-                <div>
+
                     <div>
                         <label htmlFor="text">End date :</label>
                     </div>
