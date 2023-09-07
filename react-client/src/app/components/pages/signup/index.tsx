@@ -97,12 +97,12 @@ const RegistrationComponent = () => {
 
     return (
         <FormProvider {...methods}>
-            <div className="forms" >
+            <div className="mainSignin" >
                 <div >
                     <img className="formImgSignin" src="./src/assets/sign.png" ></img>
                 </div>
 
-                <div className="formSignIn" style={{ backgroundColor: "#053B50", padding: "50px" }}>
+                <div className="formSignIn" >
                     <h2 style={{ fontWeight: "400", color: "#F59E0B" }}>Sign up</h2>
                     <form >
                         <div style={{ display: "flex", flexDirection: "column", textAlign: "left", gap: "7px" }}>

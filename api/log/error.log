@@ -496,3 +496,5 @@
 {"level":"error","message":"2023-09-06T05:59:57.478Z => requestId: 7cda8d21-be78-405e-bf35-ed8634f27266 | User Token invalid jwt expired","service":"api"}
 {"level":"error","message":"2023-09-06T06:00:00.756Z => requestId: b7362c6a-2892-48d4-b9eb-0e1c37720625 | User Token invalid jwt expired","service":"api"}
 {"level":"error","message":"2023-09-06T06:00:00.758Z => requestId: ff8e6be2-c79a-4fc5-87fa-1089ce0a8578 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-07T06:03:20.805Z => requestId: 3b5c21b8-8549-483a-9c73-6db1a52c1b26 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-07T06:03:20.932Z => requestId: 846a6644-2679-4c16-acb6-bf7a4e4ee2fa | User Token invalid jwt expired","service":"api"}

@@ -120,10 +120,9 @@ export function AdminVacationCard(props: IVacationsAdmin) {
                     </div>
                     <div >
                         <h3 style={{ color: "black", fontSize: "xx-large", fontWeight: "600", textAlign: "right", paddingRight: "3%", margin: "4%" }}>{`${props.price} $`}</h3>
-                        <SpeedDial className="adminSpeedial" model={items} direction="right" style={{ marginLeft: "1%", zIndex: "200" }} buttonClassName="p-button-info" />
+                        <SpeedDial className="adminSpeedial" model={items} direction="right" style={{ marginLeft: "1%", zIndex: "200" }} showIcon="pi pi-ellipsis-h" buttonClassName="p-button-info" />
                     </div>
                     <Toast ref={toast} />
-
                 </div>
             </div>
         </WithLoading>

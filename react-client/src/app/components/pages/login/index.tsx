@@ -60,11 +60,11 @@ const LoginComponent = () => {
     return (
 
         <FormProvider {...methods}>
-            <div className="forms">
+            <div className="mainLogin">
                 <div >
                     <img className="formImglogin" src="./src/assets/login.png" ></img>
                 </div>
-                <div className="formlogin" style={{ backgroundColor: "#053B50", padding: "20px" }}>
+                <div className="formlogin" >
                     <h2 style={{ fontWeight: "500", color: "#F59E0B" }}>Log In</h2>
                     <form>
                         <div style={{ display: "flex", flexDirection: "column", gap: "7px", textAlign: "left" }}>

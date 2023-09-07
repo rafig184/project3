@@ -139,7 +139,7 @@ const EditVacationPage = () => {
 
     return (
 
-        <div style={{ backgroundColor: "#0F3244", padding: "2%", borderRadius: "10px" }}>
+        <div className="addAndEditVacationPage">
             <form >
                 <h2 style={{ fontWeight: "400" }}>Edit Vacation</h2>
                 <div>

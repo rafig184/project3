@@ -134,6 +134,7 @@ export default function UserVacationsPage() {
             <div className="vacations">
                 <VacationList vacations={filteredVacations} />
             </div>
+
         </WithLoading >
     </div >
 }

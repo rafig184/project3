@@ -10,15 +10,14 @@ import LoginComponent from './app/components/pages/login';
 import UserVacationsPage from './app/components/pages/usersVacations';
 import AdminVacationsPage from './app/components/pages/adminVacations';
 import AddVacation from './app/components/pages/adminVacations/addVacation';
-import { Button } from 'primereact/button';
 import { ProtectedRoute } from './app/components/ui-components/protected-route';
 import logoImage from '../src/assets/logo22.png';
-import { Avatar } from 'primereact/avatar';
 import EditVacationPage from './app/components/pages/adminVacations/editVacation';
 import ReportsPage from './app/components/pages/followers';
 import NotFound from './app/components/pages/not-found';
 import { SpeedDial } from 'primereact/speeddial';
 import { MenuItem } from 'primereact/menuitem';
+import Footer from './app/components/ui-components/footer';
 
 
 
@@ -197,12 +196,9 @@ function App() {
             ))}
           </Routes>
         </div>
-
-
+        <Footer />
       </div>
-      <div style={{ backgroundColor: "#0F3244", height: "40vh" }}>
 
-      </div>
     </div>
 
 

@@ -23,6 +23,7 @@ followerRouter.get("/reports", async function (req, res, next) {
 })
 
 followerRouter.get("/followers-count", async function (req, res, next) {
+    if ((req as any).currentRole !== "user") return res.status(401).send("Authentication error")
     try {
         const result = await getFollowersCountById()
         return res.json(result)
@@ -33,7 +34,7 @@ followerRouter.get("/followers-count", async function (req, res, next) {
 })
 
 followerRouter.delete("/", async function (req: Request, res: Response, next: NextFunction) {
-
+    if ((req as any).currentRole !== "user") return res.status(401).send("Authentication error")
     try {
         const vacationId: any = req.query.q;
         const userId = (req as any).currentUserId
@@ -62,6 +63,7 @@ function middlewareNewFollower(req: Request, res: Response, next: NextFunction) 
 }
 
 followerRouter.post("/new-follower", middlewareNewFollower, async function (req, res, next) {
+    if ((req as any).currentRole !== "user") return res.status(401).send("Authentication error")
     try {
         const { vacationId } = req.body
         const userId = (req as any).currentUserId
@@ -74,6 +76,7 @@ followerRouter.post("/new-follower", middlewareNewFollower, async function (req,
 })
 
 followerRouter.get("/user-id", async function (req, res, next) {
+    if ((req as any).currentRole !== "user") return res.status(401).send("Authentication error")
     try {
         const userId = (req as any).currentUserId
         const result = await getFollowerById(userId)
