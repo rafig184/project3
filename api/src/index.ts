@@ -1,6 +1,4 @@
-// const express = require("express")
 import express, { Request, Response, NextFunction } from "express"
-import { pool } from "./database"
 import jsonwebtoken from "jsonwebtoken"
 import dotenv from "dotenv"
 import cors from "cors"
@@ -46,7 +44,6 @@ function verifyAuthentication(req: Request, res: Response, next: NextFunction) {
     const { authorization: token } = req.headers
     jsonwebtoken.verify(token as string, process.env.SECRET as string, function (err: any, decoded: any) {
         if (err) {
-            // console.log(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User Token invalid ${err.message}`)
             logger.error(`${new Date().toISOString()} => requestId: ${res.getHeader("x-request-id")} | User Token invalid ${err.message}`)
 
             return res.status(401).send("Authentication error")

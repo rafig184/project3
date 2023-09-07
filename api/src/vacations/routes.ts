@@ -1,12 +1,10 @@
 
 import express, { NextFunction, Request, Response } from "express"
 import zod from "zod"
-import { format } from 'date-fns'
 import { getAllVacations } from "./handlers/getAllVacations"
 import { removeVacation } from "./handlers/deleteVacation"
 import { addVacation } from "./handlers/addVacation"
 import { editVacation } from "./handlers/editVacation"
-import { log } from "winston"
 import { getVacationById } from "./handlers/getVacationById"
 
 
@@ -16,7 +14,6 @@ const vacationsRouter = express.Router()
 vacationsRouter.get("/", async function (req, res, next) {
     try {
         const result = await getAllVacations()
-        // console.log(result);
         return res.json(result)
     } catch (error) {
         console.log(error);
@@ -50,7 +47,6 @@ export const newVacationSchema = zod.object({
 function middlewareNewVacation(req: Request, res: Response, next: NextFunction) {
     try {
         newVacationSchema.parse(req.body)
-        console.log(req.body);
         return next()
     } catch (error) {
         console.log(error)
@@ -65,7 +61,6 @@ vacationsRouter.post("/new-vacation", middlewareNewVacation, async function (req
         const formatStartDate = new Date(startDate)
         const formatEndDate = new Date(endDate)
         const result = await addVacation(destination, description, formatStartDate, formatEndDate, price, image)
-        console.log(result)
         return res.json({ message: "Vacation successfully added!" })
     } catch (error) {
         console.log(error)
@@ -92,7 +87,6 @@ vacationsRouter.put("/edit-vacation", middlewareNewVacation, async function (req
 vacationsRouter.get("/search", async function (req: Request, res: Response, next: NextFunction) {
     try {
         const vacationId: any = req.query.q
-        console.log(`<<${{ vacationId }}>>>`);
         const result = await getVacationById(vacationId)
         return res.json(result)
     } catch (error) {

@@ -39,7 +39,6 @@ export default function AdminVacationsPage() {
         <WithLoading isLoading={isVacationsLoading}>
             <div className="addNewVacationDiv">
                 <Button icon="pi pi-plus" rounded severity="info" aria-label="Add Vacation" onClick={() => { navigate("/add-vacation") }} /> <span className="addV">Add new vacation</span>
-                {/* <button className="buttons" onClick={() => { navigate("/add-vacation") }} >Add new vacation</button> */}
             </div>
             <div className="vacations" >
                 <ConfirmDialog />

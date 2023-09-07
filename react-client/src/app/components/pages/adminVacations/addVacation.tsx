@@ -6,7 +6,6 @@ import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
-import { cleanup } from "@testing-library/react";
 
 
 
@@ -105,10 +104,8 @@ const AddVacation = () => {
                 }
             })
             console.log((result));
-
             show()
             clearState()
-
 
         } catch (err) {
             showError()
@@ -175,7 +172,6 @@ const AddVacation = () => {
                     />
                 </div>
                 <Toast ref={toast} />
-                {/* <Button icon="pi pi-bell" rounded severity="warning" aria-label="Notification" /> */}
                 <Button style={{ marginTop: "5%" }} rounded type="button" severity="warning" aria-label="Add Vacation" icon="pi pi-plus" onClick={addVacationService} />
                 <div>Add Vacation</div>
             </form>

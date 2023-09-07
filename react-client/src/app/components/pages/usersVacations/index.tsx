@@ -1,4 +1,3 @@
-
 import { useCallback, useEffect, useState } from "react"
 import { IVacations } from "./api"
 import { useNavigate } from "react-router-dom";
@@ -9,7 +8,6 @@ import { useSelector } from "react-redux";
 import { fetchVacationsAsync } from "../adminVacations/vacationSlice";
 import { WithLoading } from "../../ui-components/withLoading";
 import { IFollowerByUser, getFollowersByUserIdService } from "../followers/api/followers";
-import { Divider } from "primereact/divider";
 import { Fieldset } from 'primereact/fieldset';
 import { ToggleButton, ToggleButtonChangeEvent } from "primereact/togglebutton";
 

@@ -112,5 +112,4 @@ export function VacationCard(props: IVacations) {
             </div>
         </WithLoading>
     </div >
-
 }

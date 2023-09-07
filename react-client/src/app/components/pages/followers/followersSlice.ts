@@ -5,14 +5,12 @@ import { getFollowersCountByVacationIdService, getFollowersReportService } from 
 export interface IFollowers {
     followers: Array<any>
     followerCount: Array<any>
-    // followersCheck: Array<any>
 }
 
 
 const initialState: IFollowers = {
     followers: [],
     followerCount: [],
-    // followersCheck: []
 }
 
 
@@ -21,7 +19,6 @@ export const fetchFollowersReportsAsync = createAsyncThunk(
     "followers/getFollowersReportService",
     async () => {
         const response = await getFollowersReportService()
-        // console.log(response);
         return response
     }
 )
@@ -31,18 +28,10 @@ export const fetchFollowersAmountAsync = createAsyncThunk(
     "followers/getFollowersCountByVacationIdService",
     async () => {
         const response = await getFollowersCountByVacationIdService()
-        // console.log(response);
         return response
     }
 )
-// export const fetchFollowersByUserIdAsync = createAsyncThunk(
-//     "followers/getFollowersByUserIdService",
-//     async () => {
-//         const response = await getFollowersByUserIdService()
-//         // console.log(response);
-//         return response
-//     }
-// )
+
 
 
 
@@ -51,16 +40,7 @@ export const followersSlice = createSlice({
     initialState,
     // The `reducers` field lets us define reducers and generate associated actions
     reducers: {
-        // addLike: (state, action: PayloadAction<string>) => {
-        //   const index = state.vacationsData.findIndex(v => v.destination.toLowerCase() === action.payload)
-        //   if (index !== -1) {
-        //     state.vacationsData[index].likes++
-        //     state.totalFollowers = state.vacationsData.reduce(
-        //       (sum, current) => sum + current.likes,
-        //       0
-        //     );
-        //   }
-        // },
+
 
     },
     extraReducers: (builder) => {
@@ -69,7 +49,6 @@ export const followersSlice = createSlice({
         })
             .addCase(fetchFollowersReportsAsync.fulfilled, (state, action) => {
 
-                // state.value += action.payload
                 state.followers = action.payload
 
             })
@@ -84,7 +63,6 @@ export const followersSlice = createSlice({
         })
             .addCase(fetchFollowersAmountAsync.fulfilled, (state, action) => {
 
-                // state.value += action.payload
                 state.followerCount = action.payload
 
             })
@@ -94,20 +72,7 @@ export const followersSlice = createSlice({
 
             })
 
-        // builder.addCase(fetchFollowersByUserIdAsync.pending, (state) => {
-        //     state.followersCheck = []
-        // })
-        //     .addCase(fetchFollowersByUserIdAsync.fulfilled, (state, action) => {
 
-        //         // state.value += action.payload
-        //         state.followersCheck = action.payload
-
-        //     })
-        //     .addCase(fetchFollowersByUserIdAsync.rejected, (state) => {
-
-        //         state.followersCheck = []
-
-        //     })
     },
 
 })

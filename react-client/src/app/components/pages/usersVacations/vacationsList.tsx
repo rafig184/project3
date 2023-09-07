@@ -32,7 +32,6 @@ export default function VacationList(props: { vacations: Array<IVacations> }) {
                         endDate={vacation.endDate}
                         price={vacation.price} />
                 })}
-
         </div>
         <Paginator className="paginator" style={{ borderRadius: "10px" }} first={first} rows={9} totalRecords={props.vacations.length} onPageChange={onPageChange} />
     </div>

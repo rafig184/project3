@@ -191,13 +191,11 @@ const EditVacationPage = () => {
                         id="image"
                         value={image}
                         onChange={handlerImageCallback}
-
                     />
                 </div>
                 <Toast ref={toast} />
                 <Button style={{ marginTop: "5%" }} rounded type="button" severity="warning" aria-label="Edit Vacation" icon="pi pi-file-edit" onClick={editVacationService} />
                 <div>Edit Vacation</div>
-                {/* <button className="buttons" style={{ marginTop: "5%" }} type="button" onClick={editVacationService} >Edit Vacation</button> */}
             </form>
         </div>
 

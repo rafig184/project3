@@ -9,7 +9,6 @@ import { useRef } from "react";
 import { Password } from 'primereact/password';
 import { Divider } from 'primereact/divider';
 import { Button } from "primereact/button";
-import { Splitter, SplitterPanel } from 'primereact/splitter';
 
 const registrationSchema = object({
     email: string().email("Invalid email"),
@@ -106,16 +105,16 @@ const RegistrationComponent = () => {
                     <h2 style={{ fontWeight: "400", color: "#F59E0B" }}>Sign up</h2>
                     <form >
                         <div style={{ display: "flex", flexDirection: "column", textAlign: "left", gap: "7px" }}>
-                            Email:
+                            Email :
                             <InputText type="email" {...methods.register("email")} />
                             {methods.formState.errors.email && <span>{methods.formState.errors.email.message}</span>}
-                            First name:
+                            First name :
                             <InputText type="text" {...methods.register("firstName")} />
                             {methods.formState.errors.firstName && <span>{methods.formState.errors.firstName.message}</span>}
-                            Last name:
+                            Last name :
                             <InputText type="text" {...methods.register("lastName")} />
                             {methods.formState.errors.lastName && <span>{methods.formState.errors.lastName.message}</span>}
-                            Password:
+                            Password :
                             <Password
                                 value={methods.getValues("password")}
                                 onChange={(e) => methods.setValue("password", e.target.value)}
@@ -126,7 +125,6 @@ const RegistrationComponent = () => {
                         <Toast ref={toast} />
                         <Button icon="pi pi-sign-in" style={{ marginTop: "7%" }} type="button" rounded severity="warning" aria-label="Notification" onClick={signUpService} />
                         <div>Sign up</div>
-                        {/* <button className="buttons" style={{ marginTop: "5%" }} type="button" onClick={signUpService} >Sign Up</button> */}
                         <div style={{ marginTop: "3%" }}>
                             <span>Already a user? </span>
                         </div>

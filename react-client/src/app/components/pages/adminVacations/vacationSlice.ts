@@ -29,16 +29,7 @@ export const vacationSlice = createSlice({
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
-    // addLike: (state, action: PayloadAction<string>) => {
-    //   const index = state.vacationsData.findIndex(v => v.destination.toLowerCase() === action.payload)
-    //   if (index !== -1) {
-    //     state.vacationsData[index].likes++
-    //     state.totalFollowers = state.vacationsData.reduce(
-    //       (sum, current) => sum + current.likes,
-    //       0
-    //     );
-    //   }
-    // },
+
 
   },
   extraReducers: (builder) => {

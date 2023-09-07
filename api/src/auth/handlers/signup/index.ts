@@ -1,7 +1,5 @@
-import { signupSchema } from "../../route"
 import bcrypt from "bcrypt";
 import { pool } from "../../../database"
-import { ResultSetHeader } from "mysql2"
 
 
 interface IPayload {

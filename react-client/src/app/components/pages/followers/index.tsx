@@ -15,7 +15,6 @@ export default function ReportsPage() {
 
     const dispatch = useAppDispatch();
     const followers = useSelector((state: RootState) => state.followers.followers);
-    // const navigate = useNavigate()
 
 
     const [isReportLoading, setIsReportLoading] = useState(false)

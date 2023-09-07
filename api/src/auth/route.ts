@@ -69,7 +69,6 @@ authRouter.post("/login", middlewareLogin, async function (req, res, next) {
         const signedToken = jsonwebtoken.sign({ email: userRecord[0].email, userId: userRecord[0].userId, role: userRecord[0].role, firstName: userRecord[0].firstName }, process.env.SECRET as string, { expiresIn: '10h' })
         res.json({ token: signedToken, role: userRecord[0].role, firstName: userRecord[0].firstName })
     } catch (error) {
-        // logger.error({ message: error.message })
         console.log(error);
         return res.status(401).send("User is unauthorized")
     }
