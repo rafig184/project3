@@ -31,7 +31,7 @@ export default function UserVacationsPage() {
 
     const handlerFollowingChecked = useCallback((e: ToggleButtonChangeEvent) => {
         setFollowingChecked(e.value)
-        fetchFollowers()
+        fetchFollowingVacations()
     }, [followingChecked])
 
     const handlerOngoingChecked = useCallback((e: ToggleButtonChangeEvent) => {
@@ -48,15 +48,12 @@ export default function UserVacationsPage() {
     const navigate = useNavigate()
 
 
-    async function fetchFollowers() {
+    async function fetchFollowingVacations() {
         try {
-            setIsVacationsLoading(true)
             const followersData = await getFollowersByUserIdService();
             setFollowers(followersData);
         } catch (error) {
             console.error("Error fetching followers:", error);
-        } finally {
-            setIsVacationsLoading(false)
         }
     }
 
@@ -74,7 +71,7 @@ export default function UserVacationsPage() {
     }, [dispatch]);
 
     useEffect(() => {
-        fetchFollowers();
+        fetchFollowingVacations();
     }, []);
 
 
