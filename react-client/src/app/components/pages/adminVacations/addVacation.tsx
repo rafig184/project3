@@ -83,7 +83,7 @@ const AddVacation = () => {
         if (destination === "") return destinationError()
         if (startDate === "") return starDateError()
         if (endDate === "") return endDateError()
-        if (price === null) return priceError()
+        if (price === 0 || null) return priceError()
         if (price > 10000) return amountPriceError()
         if (description === "") return descriptionError()
 

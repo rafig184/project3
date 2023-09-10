@@ -103,7 +103,7 @@ const EditVacationPage = () => {
         if (destination === "") return destinationError()
         if (startDate === null) return starDateError()
         if (endDate === null) return endDateError()
-        if (price === null) return priceError()
+        if (price === 0 || null) return priceError()
         if (price > 10000) return amountPriceError()
         if (description === "") return descriptionError()
 
