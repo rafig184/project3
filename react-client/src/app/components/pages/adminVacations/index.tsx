@@ -34,9 +34,9 @@ export default function AdminVacationsPage() {
 
 
     return <div className="mainVacation" >
-        <div style={{ marginTop: "-4%" }}>
-        </div>
         <WithLoading isLoading={isVacationsLoading}>
+            <div style={{ marginTop: "-4%" }}>
+            </div>
             <div className="addNewVacationDiv">
                 <Button icon="pi pi-plus" rounded severity="info" aria-label="Add Vacation" onClick={() => { navigate("/add-vacation") }} /> <span className="addV">Add new vacation</span>
             </div>
