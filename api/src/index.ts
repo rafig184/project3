@@ -57,3 +57,4 @@ function verifyAuthentication(req: Request, res: Response, next: NextFunction) {
         }
     });
 }
+

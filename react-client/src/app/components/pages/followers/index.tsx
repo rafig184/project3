@@ -6,7 +6,7 @@ import { RootState } from "../../../store";
 import { useSelector } from "react-redux";
 import { CSVLink } from "react-csv";
 import { fetchFollowersReportsAsync } from './followersSlice';
-import { WithLoading } from '../../ui-components/withLoading';
+import { WithLoadingSpinner } from '../../ui-components/withLoading';
 
 
 
@@ -96,13 +96,13 @@ export default function ReportsPage() {
     };
 
     return (
-        <WithLoading isLoading={isReportLoading}>
+        <WithLoadingSpinner isLoading={isReportLoading}>
             <div className='chartDiv' >
                 <CSVLink {...csvReport}><i className="pi pi-file-export"></i> Export to CSV</CSVLink>
                 <h2 style={{ color: "#176B87" }}>Top-Rated Vacation Destinations</h2>
                 <Chart className='chart' style={{ marginTop: "5%" }} type="bar" data={chartData} options={chartOptions} />
             </div>
-        </WithLoading>
+        </WithLoadingSpinner>
 
 
     )

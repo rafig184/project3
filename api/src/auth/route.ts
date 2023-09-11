@@ -75,3 +75,4 @@ authRouter.post("/login", middlewareLogin, async function (req, res, next) {
 })
 
 export { authRouter };
+
