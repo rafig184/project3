@@ -2,10 +2,11 @@ const { expect } = require("chai")
 const axios = require("axios")
 const { getTokenForAdmin, getTokenForNonAdmin, getTokenForNonAdminFollowers } = require("./utils")
 
+const urlApi = "http://localhost:4000"
 
 describe("GET /reports/getFollowersReportService", function () {
     it("Get followers reports success ", async function () {
-        const result = await axios.get(`http://localhost:4000/followers/reports`, {
+        const result = await axios.get(`${urlApi}/followers/reports`, {
             headers: {
                 authorization: getTokenForAdmin()
             }
@@ -16,7 +17,7 @@ describe("GET /reports/getFollowersReportService", function () {
 
 describe("GET /reports/getFollowersByUserIdService", function () {
     it("Get followers by userId success ", async function () {
-        const result = await axios.get(`http://localhost:4000/followers/user-id`, {
+        const result = await axios.get(`${urlApi}/followers/user-id`, {
             headers: {
                 authorization: getTokenForNonAdminFollowers()
             }
@@ -27,7 +28,7 @@ describe("GET /reports/getFollowersByUserIdService", function () {
 
 describe("GET /reports/getFollowersCountByVacationIdService", function () {
     it("Get followers count by vacationId success ", async function () {
-        const result = await axios.get(`http://localhost:4000/followers/followers-count`, {
+        const result = await axios.get(`${urlApi}/followers/followers-count`, {
             headers: {
                 authorization: getTokenForNonAdmin()
             }
@@ -41,7 +42,7 @@ describe("POST /reports/addFollowService", function () {
         const FollowerPayload = {
             vacationId: 2
         }
-        const result = await axios.post("http://localhost:4000/followers/new-follower", FollowerPayload, {
+        const result = await axios.post(`${urlApi}/followers/new-follower`, FollowerPayload, {
             headers: {
                 authorization: getTokenForNonAdminFollowers()
             }
@@ -54,7 +55,7 @@ describe("POST /reports/addFollowService", function () {
             const FollowerPayload = {
                 vacationId: "20"
             }
-            const result = await axios.post("http://localhost:4000/followers/new-follower", FollowerPayload, {
+            const result = await axios.post(`${urlApi}/followers/new-follower`, FollowerPayload, {
                 headers: {
                     authorization: getTokenForNonAdmin()
                 }
@@ -70,7 +71,7 @@ describe("DELETE /reports/deleteFollowerService", function () {
     it("delete follower success ", async function () {
 
         const vacationId = 2
-        const result = await axios.delete(`http://localhost:4000/followers/?q=${vacationId}`, {
+        const result = await axios.delete(`${urlApi}/followers/?q=${vacationId}`, {
             headers: {
                 authorization: getTokenForNonAdminFollowers()
             }

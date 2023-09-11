@@ -9,6 +9,7 @@ import { useRef } from "react";
 import { Password } from 'primereact/password';
 import { Divider } from 'primereact/divider';
 import { Button } from "primereact/button";
+import { urlApi } from "../../../../App";
 
 const registrationSchema = object({
     email: string().email("Invalid email"),
@@ -47,7 +48,7 @@ const RegistrationComponent = () => {
         }
 
         try {
-            const result = await axios.post("http://localhost:4000/auth/sign-up", signUpPayload)
+            const result = await axios.post(`${urlApi}/auth/sign-up`, signUpPayload)
             if (result.data.errorCode === 1062) {
                 emailExistError(result.data.message)
                 return

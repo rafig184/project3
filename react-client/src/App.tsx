@@ -20,7 +20,7 @@ import { MenuItem } from 'primereact/menuitem';
 import Footer from './app/components/ui-components/footer';
 
 
-
+export const urlApi = "http://localhost:4000"
 
 interface IRoute {
   path: string,

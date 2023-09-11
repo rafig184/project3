@@ -6,6 +6,7 @@ import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
+import { urlApi } from "../../../../App";
 
 
 
@@ -98,7 +99,7 @@ const AddVacation = () => {
 
         console.log(vacationPayload);
         try {
-            const result = await axios.post("http://localhost:4000/vacations/new-vacation", vacationPayload, {
+            const result = await axios.post(`${urlApi}/vacations/new-vacation`, vacationPayload, {
                 headers: {
                     authorization: localStorage.getItem("token")
                 }

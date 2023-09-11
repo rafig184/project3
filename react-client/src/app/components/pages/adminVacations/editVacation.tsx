@@ -8,6 +8,7 @@ import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getVacationsByIdService } from "./api";
+import { urlApi } from "../../../../App";
 
 
 
@@ -118,7 +119,7 @@ const EditVacationPage = () => {
 
         console.log(vacationPayload);
         try {
-            const result = await axios.put(`http://localhost:4000/vacations/edit-vacation?q=${vacId}`, vacationPayload, {
+            const result = await axios.put(`${urlApi}/vacations/edit-vacation?q=${vacId}`, vacationPayload, {
                 headers: {
                     authorization: localStorage.getItem("token")
                 }

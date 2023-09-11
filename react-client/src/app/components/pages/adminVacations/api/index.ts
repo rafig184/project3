@@ -1,11 +1,12 @@
 import axios from "axios"
 import { IVacationsAdmin } from "../card";
+import { urlApi } from "../../../../../App";
 
 
 
 async function getVacationsService(): Promise<Array<IVacationsAdmin>> {
 
-    const { data, headers } = await axios.get(`http://localhost:4000/vacations/`, {
+    const { data, headers } = await axios.get(`${urlApi}/vacations/`, {
         headers: {
             authorization: localStorage.getItem("token")
         }
@@ -16,7 +17,7 @@ async function getVacationsService(): Promise<Array<IVacationsAdmin>> {
 }
 
 async function deleteVacationsService(vacationId: number) {
-    const result = await axios.delete(`http://localhost:4000/vacations/${vacationId}`, {
+    const result = await axios.delete(`${urlApi}/vacations/${vacationId}`, {
         headers: {
             authorization: localStorage.getItem("token")
         }
@@ -26,7 +27,7 @@ async function deleteVacationsService(vacationId: number) {
 
 
 async function getVacationsByIdService(vacationId: number): Promise<Array<IVacationsAdmin>> {
-    const { data, headers } = await axios.get(`http://localhost:4000/vacations/search?q=${vacationId}`, {
+    const { data, headers } = await axios.get(`${urlApi}/vacations/search?q=${vacationId}`, {
         headers: {
             authorization: localStorage.getItem("token")
         }

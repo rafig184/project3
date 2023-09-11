@@ -1,4 +1,5 @@
 import axios from "axios";
+import { urlApi } from "../../../../../App";
 
 export interface IFollower {
     vacationId: number,
@@ -18,7 +19,7 @@ export interface IFollowerByVacationId {
 }
 
 async function getFollowersReportService(): Promise<Array<IFollower>> {
-    const { data, headers } = await axios.get(`http://localhost:4000/followers/reports`, {
+    const { data, headers } = await axios.get(`${urlApi}/followers/reports`, {
         headers: {
             authorization: localStorage.getItem("token")
         }
@@ -30,7 +31,7 @@ async function getFollowersReportService(): Promise<Array<IFollower>> {
 
 
 async function getFollowersByUserIdService(): Promise<Array<IFollowerByUser>> {
-    const { data, headers } = await axios.get(`http://localhost:4000/followers/user-id`, {
+    const { data, headers } = await axios.get(`${urlApi}/followers/user-id`, {
         headers: {
             authorization: localStorage.getItem("token")
         }
@@ -42,7 +43,7 @@ async function getFollowersByUserIdService(): Promise<Array<IFollowerByUser>> {
 
 
 async function getFollowersCountByVacationIdService(): Promise<Array<IFollowerByVacationId>> {
-    const { data, headers } = await axios.get(`http://localhost:4000/followers/followers-count`, {
+    const { data, headers } = await axios.get(`${urlApi}/followers/followers-count`, {
         headers: {
             authorization: localStorage.getItem("token")
         }
@@ -59,7 +60,7 @@ async function addFollowService(vacationId: number) {
     }
     console.log(FollowerPayload);
     try {
-        const result = await axios.post("http://localhost:4000/followers/new-follower", FollowerPayload, {
+        const result = await axios.post(`${urlApi}/followers/new-follower`, FollowerPayload, {
             headers: {
                 authorization: localStorage.getItem("token")
             }
@@ -72,7 +73,7 @@ async function addFollowService(vacationId: number) {
 
 
 async function deleteFollowerService(vacationId: number) {
-    const result = await axios.delete(`http://localhost:4000/followers/?q=${vacationId}`, {
+    const result = await axios.delete(`${urlApi}/followers/?q=${vacationId}`, {
         headers: {
             authorization: localStorage.getItem("token")
         }

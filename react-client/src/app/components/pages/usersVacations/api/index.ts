@@ -1,4 +1,5 @@
 import axios from "axios"
+import { urlApi } from "../../../../../App";
 
 export interface IVacations {
     vacationId: number,
@@ -11,9 +12,10 @@ export interface IVacations {
 }
 
 
+
 async function getVacationsService(): Promise<Array<IVacations>> {
 
-    const { data, headers } = await axios.get(`http://localhost:4000/vacations/`, {
+    const { data, headers } = await axios.get(`${urlApi}/vacations/`, {
         headers: {
             authorization: localStorage.getItem("token")
         }

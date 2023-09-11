@@ -8,6 +8,7 @@ import { useRef } from "react";
 import { Toast } from "primereact/toast";
 import { Password } from "primereact/password";
 import { Button } from "primereact/button";
+import { urlApi } from "../../../../App";
 
 const loginSchema = object({
     email: string().email("Invalid email"),
@@ -32,7 +33,7 @@ const LoginComponent = () => {
         }
 
         try {
-            const result = await axios.post("http://localhost:4000/auth/login", loginPayload)
+            const result = await axios.post(`${urlApi}/auth/login`, loginPayload)
             showSuccess(result.data.message)
             console.log(result.data.firstName);
             localStorage.setItem("token", result.data.token)

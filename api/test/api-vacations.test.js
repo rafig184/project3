@@ -2,12 +2,12 @@ const { expect } = require("chai")
 const axios = require("axios")
 const { getTokenForAdmin, getTokenForNonAdmin, deleteVacationTest, insertVacationTest } = require("./utils")
 
-
+const urlApi = "http://localhost:4000"
 
 
 describe("GET /vacations/getAllVacations", function () {
     it("Get all vacation Success ", async function () {
-        const result = await axios.get(`http://localhost:4000/vacations`, {
+        const result = await axios.get(`${urlApi}/vacations`, {
             headers: {
                 authorization: getTokenForNonAdmin()
             }
@@ -29,7 +29,7 @@ describe("POST /vacations/new-vacation", function () {
             image: "test.jpg"
 
         }
-        const result = await axios.post("http://localhost:4000/vacations/new-vacation", dummyVacation, {
+        const result = await axios.post(`${urlApi}/vacations/new-vacation`, dummyVacation, {
             headers: {
                 authorization: getTokenForAdmin()
             }
@@ -48,7 +48,7 @@ describe("POST /vacations/new-vacation", function () {
                 description: "blabla",
                 image: "test.jpg"
             }
-            const result = await axios.post("http://localhost:4000/vacations/new-vacation", dummyVacation)
+            const result = await axios.post(`${urlApi}/vacations/new-vacation`, dummyVacation)
             throw new Error("TEST FAIELD")
         } catch (error) {
             expect(error?.response.status).equal(401)
@@ -61,7 +61,7 @@ describe("DELETE /adminVacations/deleteVacationsService", function () {
     it("delete vacation with bad request ", async function () {
         try {
             const vacationId = "100"
-            const result = await axios.delete(`http://localhost:4000/vacations/${vacationId}`, {
+            const result = await axios.delete(`${urlApi}/vacations/${vacationId}`, {
                 headers: {
                     authorization: getTokenForAdmin()
                 }
@@ -74,7 +74,7 @@ describe("DELETE /adminVacations/deleteVacationsService", function () {
     it("Delete vacation success ", async function () {
         await insertVacationTest()
         const vacationId = "666"
-        const result = await axios.delete(`http://localhost:4000/vacations/${vacationId}`, {
+        const result = await axios.delete(`${urlApi}/vacations/${vacationId}`, {
             headers: {
                 authorization: getTokenForAdmin()
             }
@@ -97,7 +97,7 @@ describe("PUT /vacations/edit-vacation", function () {
             description: "blabla",
             image: "test.jpg",
         }
-        const result = await axios.put(`http://localhost:4000/vacations/edit-vacation?q=${666}`, dummyVacation, {
+        const result = await axios.put(`${urlApi}/vacations/edit-vacation?q=${666}`, dummyVacation, {
             headers: {
                 authorization: getTokenForAdmin()
             }
@@ -116,7 +116,7 @@ describe("PUT /vacations/edit-vacation", function () {
                 description: "blabla",
                 image: "test.jpg"
             }
-            const result = await axios.post("http://localhost:4000/vacations/edit-vacation", dummyVacation)
+            const result = await axios.post(`${urlApi}/vacations/edit-vacation`, dummyVacation)
             throw new Error("TEST FAIELD")
         } catch (error) {
             expect(error?.response.status).equal(401)

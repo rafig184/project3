@@ -2,6 +2,8 @@ const { expect } = require("chai")
 const axios = require("axios")
 const { deleteUserTest } = require("./utils")
 
+const urlApi = "http://localhost:4000"
+
 
 describe("POST /auth/sign-up", function () {
 
@@ -12,7 +14,7 @@ describe("POST /auth/sign-up", function () {
             lastName: "testUser",
             password: "1234",
         }
-        const result = await axios.post("http://localhost:4000/auth/sign-up", dummyUser)
+        const result = await axios.post(`${urlApi}/auth/sign-up`, dummyUser)
         expect(result.status).equal(200)
         await deleteUserTest(dummyUser.email)
     })
@@ -24,7 +26,7 @@ describe("POST /auth/sign-up", function () {
                 lastName: "testUser",
                 password: "1234",
             }
-            const result = await axios.post("http://localhost:4000/auth/sign-up", dummyUser)
+            const result = await axios.post(`${urlApi}/auth/sign-up`, dummyUser)
             throw new Error("TEST FAIELD")
         } catch (error) {
             expect(error?.response.status).equal(400)
@@ -38,7 +40,7 @@ describe("POST /auth/sign-up", function () {
                 lastName: "admin",
                 password: "admin",
             }
-            const result = await axios.post("http://localhost:4000/auth/sign-up", dummyUser)
+            const result = await axios.post(`${urlApi}/auth/sign-up`, dummyUser)
         } catch (error) {
             console.log(error);
             expect(error?.response.status).equal(409)
@@ -48,7 +50,7 @@ describe("POST /auth/sign-up", function () {
 
 describe("POST /auth/login", function () {
     it("Login new user Success ", async function () {
-        const resultLogin = await axios.post("http://localhost:4000/auth/login", { email: "root@root.com", password: "admin" })
+        const resultLogin = await axios.post(`${urlApi}/auth/login`, { email: "root@root.com", password: "admin" })
         expect(typeof resultLogin.data.token).equal("string")
     })
 })
