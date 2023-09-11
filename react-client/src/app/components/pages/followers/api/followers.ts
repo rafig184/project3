@@ -65,6 +65,8 @@ async function addFollowService(vacationId: number) {
                 authorization: localStorage.getItem("token")
             }
         })
+        console.log(result);
+
     } catch (err) {
         alert("Something went wrong!")
         console.log(err);
