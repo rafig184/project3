@@ -18,6 +18,7 @@ import NotFound from './app/components/pages/not-found';
 import { SpeedDial } from 'primereact/speeddial';
 import { MenuItem } from 'primereact/menuitem';
 import Footer from './app/components/ui-components/footer';
+import { Scale } from 'chart.js';
 
 
 export const urlApi = "http://localhost:4000"
@@ -180,7 +181,7 @@ function App() {
           </div>
           <div className='tabs' style={{ marginBottom: "-10%", marginTop: "10%" }}>
             {userRole === "admin" && (
-              <TabMenu className='tabMenu' style={{ borderRadius: "10px" }} model={items} activeIndex={activeIndex} onTabChange={onTabChange} />
+              <TabMenu className='tabMenu' style={{ borderRadius: "10px", transform: "scale(0.75)" }} model={items} activeIndex={activeIndex} onTabChange={onTabChange} />
             )}
           </div>
         </div>

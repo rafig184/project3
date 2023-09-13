@@ -405,7 +405,7 @@
   background-color: #0F3244;
   padding: 2%;
   border-radius: 10px;
-  margin-bottom: 15%
+  margin-bottom: 15%;
 }
 
 
@@ -510,7 +510,7 @@
     /* background-color: #EEEEEE; */
     padding-top: 1em;
     z-index: 100;
-
+    background-size: 170%;
   }
 
   .addNewVacationDiv {
