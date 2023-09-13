@@ -18,7 +18,7 @@ import NotFound from './app/components/pages/not-found';
 import { SpeedDial } from 'primereact/speeddial';
 import { MenuItem } from 'primereact/menuitem';
 import Footer from './app/components/ui-components/footer';
-import { Scale } from 'chart.js';
+
 
 
 export const urlApi = "http://localhost:4000"
