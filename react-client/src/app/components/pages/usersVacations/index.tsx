@@ -116,7 +116,7 @@ export default function UserVacationsPage() {
                                 <ToggleButton onLabel="Liked Vacations" offLabel="Liked Vacations" onIcon="pi pi-check-circle" offIcon="pi pi-circle" onChange={handlerFollowingChecked} checked={followingChecked} style={{ width: "14rem", backgroundColor: followingChecked ? "#FFC436" : "" }} />
                             </div>
                             <div style={{ margin: "auto" }} className="checkbox">
-                                <ToggleButton onLabel="On Going" offLabel="On Going" onIcon="pi pi-check-circle" offIcon="pi pi-circle" onChange={handlerOngoingChecked} checked={onGoingVacationCecked} style={{ width: "14rem", backgroundColor: onGoingVacationCecked ? "#FFC436" : "" }} />
+                                <ToggleButton onLabel="On Going Vacations" offLabel="On Going Vacations" onIcon="pi pi-check-circle" offIcon="pi pi-circle" onChange={handlerOngoingChecked} checked={onGoingVacationCecked} style={{ width: "14rem", backgroundColor: onGoingVacationCecked ? "#FFC436" : "" }} />
                             </div>
                         </div>
                     </span>
