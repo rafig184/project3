@@ -105,7 +105,7 @@ export default function UserVacationsPage() {
     return <div className="mainVacationUser">
         <WhyUs />
         <WithLoading isLoading={isVacationsLoading}>
-            <div className="filters ">
+            <div className="filters" id="userVacation">
                 <Fieldset className="fieldset" style={{ width: "100%", color: "#113446", fontSize: "larger" }} collapseIcon="pi pi-filter-slash" expandIcon="pi pi-filter-fill" legend="Filters" toggleable >
                     <span style={{ width: "100%" }}>
                         <div style={{ display: "flex", flexWrap: "wrap" }}>

@@ -18,6 +18,7 @@ import NotFound from './app/components/pages/not-found';
 import { SpeedDial } from 'primereact/speeddial';
 import { MenuItem } from 'primereact/menuitem';
 import Footer from './app/components/ui-components/footer/footer';
+import ContactForm from './app/components/pages/contactUs';
 
 
 
@@ -92,6 +93,12 @@ const routes: Array<IRoute> = [
     path: "*",
     component: <NotFound />,
     key: "not found",
+    onlyAdmin: false
+  },
+  {
+    path: "/contactUs",
+    component: <ContactForm />,
+    key: "contactUs",
     onlyAdmin: false
   }
 

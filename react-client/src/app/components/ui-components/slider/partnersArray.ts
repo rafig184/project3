@@ -5,7 +5,7 @@ export const partnersArray = [{
     name: "Delta", image: "https://1000logos.net/wp-content/uploads/2017/09/Delta-Air-Lines-Logo-640x400.png"
 },
 {
-    name: "El Al", image: "https://1000logos.net/wp-content/uploads/2023/05/El-Al-Logo-768x432.png"
+    name: "EL AL", image: "https://1000logos.net/wp-content/uploads/2023/05/El-Al-Logo-768x432.png"
 },
 {
     name: "Ryanair", image: "https://1000logos.net/wp-content/uploads/2020/03/Ryanair-Logo-640x400.png"

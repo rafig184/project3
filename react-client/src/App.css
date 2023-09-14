@@ -7,14 +7,20 @@
   /* max-height: 10vh; */
   margin: auto;
   text-align: center;
-  /* margin-bottom: 2%; */
+
 
 }
 
 .appsize {
   transform: scale(0.75);
   transform-origin: top left;
+  /* width: 100vw; */
   width: 133.33%;
+  /* max-width: 100px; */
+  margin: auto;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+
   /* margin-bottom: -20%; */
 
 }
@@ -232,13 +238,13 @@
 
 
 .mainVacation {
-  width: 100vw;
+  width: 80vw;
 
 }
 
 .mainVacationUser {
   margin-top: -3%;
-  width: 100vw;
+  width: 80vw;
 }
 
 .vacationsAdmin {
@@ -365,7 +371,7 @@
 }
 
 .slider {
-  margin-bottom: -35%;
+  margin-bottom: -20%;
 }
 
 .footer-content {

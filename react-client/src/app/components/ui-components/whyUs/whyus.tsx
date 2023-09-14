@@ -5,7 +5,7 @@ import HealthAndSafetyOutlinedIcon from '@mui/icons-material/HealthAndSafetyOutl
 
 
 export default function WhyUs() {
-    return <div className="whyUs">
+    return <div className="whyUs" id='whyus'>
         <h2 style={{ paddingTop: "2%", paddingBottom: "2%" }}>Why choosing Travelos?</h2>
         <div className='innerWhyUS' >
             <div>

@@ -33,7 +33,7 @@ export default function AdminVacationsPage() {
     const navigate = useNavigate()
 
 
-    return <div className="mainVacation" >
+    return <div className="mainVacation" id="adminVacation" >
         <WithLoading isLoading={isVacationsLoading}>
             <div style={{ marginTop: "-4%" }}>
             </div>

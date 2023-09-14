@@ -1,7 +1,10 @@
+
 import logoImage from '../../../../assets/logoWhite.png';
 
 
 function Footer() {
+
+
     return (
         <footer className="footer">
             <div className="container">
@@ -12,9 +15,9 @@ function Footer() {
                     <div className="footer-links">
                         <ul>
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">Destinations</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href={isAdminDestination()}>Destinations</a></li>
+                            <li><a href="#whyus">About Us</a></li>
+                            <li><a href={isAdminContactUs()}>Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -33,4 +36,24 @@ function Footer() {
     );
 }
 
+
+
+function isAdminDestination() {
+    if (localStorage.getItem("role") === "admin") {
+        return "#adminVacation"
+    } else {
+        return "#userVacation"
+    }
+}
+
+function isAdminContactUs() {
+    if (localStorage.getItem("role") === "user") {
+        return "/contactUs"
+    } else {
+        return "#"
+    }
+}
+
 export default Footer;
+
+// "#adminVacation" || "#userVacation"

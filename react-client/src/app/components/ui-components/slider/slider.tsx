@@ -41,7 +41,7 @@ export default function PartnersSlider() {
         return (
             <div className="border-1 surface-border border-round m-2 text-center py-5 px-3">
                 <div className="mb-3">
-                    <img height={"120px"} src={partners.image} alt={partners.name} className="w-6 shadow-2" />
+                    <img width={"200px"} height={"130px"} src={partners.image} alt={partners.name} />
                 </div>
                 <div>
                     <h4 style={{ color: "#0F3244" }} className="mb-1">{partners.name}</h4>
