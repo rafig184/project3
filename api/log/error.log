@@ -503,3 +503,5 @@
 {"level":"error","message":"2023-09-10T06:10:13.527Z => requestId: b0c6cd2d-e854-4c3b-af02-5c43ecc41d4a | User Token invalid jwt expired","service":"api"}
 {"level":"error","message":"2023-09-13T14:01:58.761Z => requestId: ebb5eaa6-017c-4790-b688-dd115be571e7 | User Token invalid jwt expired","service":"api"}
 {"level":"error","message":"2023-09-13T14:01:58.768Z => requestId: 120db5bb-66fe-4c9a-b674-198f0159bf5d | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-14T07:43:25.052Z => requestId: c64e46d1-2261-4016-96f5-5dd36a053c25 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-14T07:43:25.060Z => requestId: ac149c32-76d8-40be-b1a3-c2fe460a25db | User Token invalid jwt expired","service":"api"}

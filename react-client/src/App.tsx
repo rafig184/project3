@@ -17,7 +17,8 @@ import ReportsPage from './app/components/pages/followers';
 import NotFound from './app/components/pages/not-found';
 import { SpeedDial } from 'primereact/speeddial';
 import { MenuItem } from 'primereact/menuitem';
-import Footer from './app/components/ui-components/footer';
+import Footer from './app/components/ui-components/footer/footer';
+
 
 
 
@@ -162,6 +163,7 @@ function App() {
       <div className='mainBody'>
         <div className='top-container'>
           <div className='main'>
+
             {userToken ? (
               <div style={{ display: "flex", justifyContent: "space-between", margin: "auto" }}>
                 <div >
@@ -179,13 +181,13 @@ function App() {
             )}
 
           </div>
+
           <div className='tabs' style={{ marginBottom: "-10%", marginTop: "10%" }}>
             {userRole === "admin" && (
               <TabMenu className='tabMenu' style={{ borderRadius: "10px", transform: "scale(0.75)" }} model={items} activeIndex={activeIndex} onTabChange={onTabChange} />
             )}
           </div>
         </div>
-
         <div className='appsize' style={{ marginTop: "5%", display: "flex", justifyContent: "center" }}>
           <Routes>
             {filteredRoutes.map((route: IRoute) => (

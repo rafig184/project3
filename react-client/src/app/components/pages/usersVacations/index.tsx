@@ -10,6 +10,8 @@ import { WithLoading } from "../../ui-components/withLoading";
 import { IFollowerByUser, getFollowersByUserIdService } from "../followers/api/followers";
 import { Fieldset } from 'primereact/fieldset';
 import { ToggleButton, ToggleButtonChangeEvent } from "primereact/togglebutton";
+import WhyUs from "../../ui-components/whyUs/whyus";
+import PartnersSlider from "../../ui-components/slider/slider";
 
 
 export default function UserVacationsPage() {
@@ -101,35 +103,30 @@ export default function UserVacationsPage() {
 
 
     return <div className="mainVacationUser">
+        <WhyUs />
         <WithLoading isLoading={isVacationsLoading}>
             <div className="filters ">
                 <Fieldset className="fieldset" style={{ width: "100%", color: "#113446", fontSize: "larger" }} collapseIcon="pi pi-filter-slash" expandIcon="pi pi-filter-fill" legend="Filters" toggleable >
                     <span style={{ width: "100%" }}>
                         <div style={{ display: "flex", flexWrap: "wrap" }}>
                             <div style={{ margin: "auto" }} className="checkbox">
-                                <ToggleButton onLabel="Future Vacations" offLabel="Future Vacations" onIcon="pi pi-check-circle" offIcon="pi pi-circle" onChange={handlerFutureChecked} checked={futureChecked} style={{ width: "12rem", backgroundColor: futureChecked ? "#FFC436" : "" }} />
+                                <ToggleButton onLabel="Upcoming Vacations" offLabel="Upcoming Vacations" onIcon="pi pi-check-circle" offIcon="pi pi-circle" onChange={handlerFutureChecked} checked={futureChecked} style={{ width: "14rem", backgroundColor: futureChecked ? "#FFC436" : "" }} />
                             </div>
                             <div style={{ margin: "auto" }} className="checkbox">
-                                <ToggleButton onLabel="Liked Vacations" offLabel="Liked Vacations" onIcon="pi pi-check-circle" offIcon="pi pi-circle" onChange={handlerFollowingChecked} checked={followingChecked} style={{ width: "12rem", backgroundColor: followingChecked ? "#FFC436" : "" }} />
+                                <ToggleButton onLabel="Liked Vacations" offLabel="Liked Vacations" onIcon="pi pi-check-circle" offIcon="pi pi-circle" onChange={handlerFollowingChecked} checked={followingChecked} style={{ width: "14rem", backgroundColor: followingChecked ? "#FFC436" : "" }} />
                             </div>
                             <div style={{ margin: "auto" }} className="checkbox">
-                                <ToggleButton onLabel="On Going" offLabel="On Going" onIcon="pi pi-check-circle" offIcon="pi pi-circle" onChange={handlerOngoingChecked} checked={onGoingVacationCecked} style={{ width: "12rem", backgroundColor: onGoingVacationCecked ? "#FFC436" : "" }} />
+                                <ToggleButton onLabel="On Going" offLabel="On Going" onIcon="pi pi-check-circle" offIcon="pi pi-circle" onChange={handlerOngoingChecked} checked={onGoingVacationCecked} style={{ width: "14rem", backgroundColor: onGoingVacationCecked ? "#FFC436" : "" }} />
                             </div>
                         </div>
-
                     </span>
-
                 </Fieldset>
-
-
-
-
             </div>
 
             <div className="vacations">
                 <VacationList vacations={filteredVacations} />
             </div>
-
+            <PartnersSlider />
         </WithLoading >
     </div >
 }
