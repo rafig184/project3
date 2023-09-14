@@ -22,12 +22,10 @@ export default function WhyUs() {
             </div>
             <div>
                 <SvgIcon style={{ transform: "scale(1.7)" }} component={HealthAndSafetyOutlinedIcon} fontSize='large' />
-                <p style={{ color: "#818181", fontSize: "larger" }}>We prioritize your safety<br></br>
+                <p style={{ color: "#818181", fontSize: "larger" }}>We care about your safety<br></br>
                     and convenience for a memorable<br></br>
                     and worry-free journey.</p>
             </div>
         </div>
-
-
     </div>
 }
