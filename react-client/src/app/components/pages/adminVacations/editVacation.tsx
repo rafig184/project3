@@ -19,6 +19,7 @@ const EditVacationPage = () => {
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
+    const [buttonIcon, setButtonIcon] = useState("pi pi-file-edit")
 
     const navigate = useNavigate()
     const toast = useRef<Toast>(null);
@@ -125,7 +126,7 @@ const EditVacationPage = () => {
                 }
             })
             console.log(result);
-
+            setButtonIcon("pi pi-check")
             show()
             setTimeout(() => {
                 navigate("/admin-vacations")
@@ -195,13 +196,11 @@ const EditVacationPage = () => {
                     />
                 </div>
                 <Toast ref={toast} />
-                <Button style={{ marginTop: "5%" }} rounded type="button" severity="warning" aria-label="Edit Vacation" icon="pi pi-file-edit" onClick={editVacationService} />
+                <Button style={{ marginTop: "5%" }} rounded type="button" severity="warning" aria-label="Edit Vacation" icon={buttonIcon} onClick={editVacationService} />
                 <div>Edit Vacation</div>
             </form>
         </div>
-
     )
-
 }
 
 

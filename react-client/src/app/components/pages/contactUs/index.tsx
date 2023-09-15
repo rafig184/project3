@@ -44,14 +44,14 @@ const ContactForm = () => {
             <div style={{ color: "white", display: "flex", flexDirection: "column", borderRadius: "10px", backgroundColor: "#0F3244", padding: "4%", marginBottom: "15%" }}>
                 <h2 >Contact Us</h2>
                 <form onSubmit={onSubmit}>
-                    <div style={{ color: "white", display: "flex", flexDirection: "column" }}>
-                        <label className="form-label" htmlFor="name">
+                    <div style={{ color: "white", display: "flex", flexDirection: "column", gap: "5px" }}>
+                        <label className="form-label" htmlFor="name" >
                             Name :
                         </label>
                         <InputText className="form-control" type="text" id="name" required />
                     </div >
-                    <div className="mb-3" style={{ color: "white", display: "flex", flexDirection: "column" }}>
-                        <label className="form-label" htmlFor="email">
+                    <div className="mb-3" style={{ color: "white", display: "flex", flexDirection: "column", gap: "5px" }}>
+                        <label className="form-label" htmlFor="email" style={{ marginTop: "5px" }}>
                             Email :
                         </label>
                         <InputText className="form-control" type="email" id="email" required />

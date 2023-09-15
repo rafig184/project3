@@ -5,7 +5,6 @@ import { Toast } from 'primereact/toast';
 import { Image } from 'primereact/image';
 import { ScrollPanel } from 'primereact/scrollpanel';
 import { useAppDispatch } from "../../../../hooks";
-
 import { fetchVacationsAsync } from "../vacationSlice";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";

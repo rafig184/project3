@@ -17,6 +17,7 @@ const AddVacation = () => {
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
+    const [buttonIcon, setButtonIcon] = useState("pi pi-plus")
 
     const toast = useRef<Toast>(null)
 
@@ -106,7 +107,11 @@ const AddVacation = () => {
             })
             console.log((result));
             show()
-            clearState()
+            setButtonIcon("pi pi-check")
+            setTimeout(() => {
+                clearState()
+                setButtonIcon("pi pi-plus")
+            }, 3000);
 
         } catch (err) {
             showError()
@@ -173,7 +178,7 @@ const AddVacation = () => {
                     />
                 </div>
                 <Toast ref={toast} />
-                <Button style={{ marginTop: "5%" }} rounded type="button" severity="warning" aria-label="Add Vacation" icon="pi pi-plus" onClick={addVacationService} />
+                <Button style={{ marginTop: "5%" }} rounded type="button" severity="warning" aria-label="Add Vacation" icon={buttonIcon} onClick={addVacationService} />
                 <div>Add Vacation</div>
             </form>
         </div>
