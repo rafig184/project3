@@ -695,7 +695,15 @@
     margin: -21.5%;
     padding-top: 30%;
     padding-left: 3%;
+    /* padding-right: 15%; */
   }
+
+  /* .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 50vw;
+  } */
 
   .container {
     flex-direction: column;
@@ -705,6 +713,8 @@
 
   .footer-content {
     margin-bottom: 20px;
+    flex-direction: column;
+    gap: 5px;
   }
 
   .whyUs {

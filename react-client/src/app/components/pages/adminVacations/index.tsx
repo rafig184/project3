@@ -17,6 +17,7 @@ export default function AdminVacationsPage() {
     const vacations = useSelector((state: RootState) => state.vacations.vacationsData);
     const [isVacationsLoading, setIsVacationsLoading] = useState(false)
 
+
     useEffect(() => {
         try {
             setIsVacationsLoading(true)

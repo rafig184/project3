@@ -505,3 +505,7 @@
 {"level":"error","message":"2023-09-13T14:01:58.768Z => requestId: 120db5bb-66fe-4c9a-b674-198f0159bf5d | User Token invalid jwt expired","service":"api"}
 {"level":"error","message":"2023-09-14T07:43:25.052Z => requestId: c64e46d1-2261-4016-96f5-5dd36a053c25 | User Token invalid jwt expired","service":"api"}
 {"level":"error","message":"2023-09-14T07:43:25.060Z => requestId: ac149c32-76d8-40be-b1a3-c2fe460a25db | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-16T16:42:59.451Z => requestId: 4940da0f-9822-4065-94e3-e12fb1239772 | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-16T16:42:59.457Z => requestId: fcb39677-0e58-465a-a919-3100831329fe | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-17T13:18:57.143Z => requestId: efef1f4a-c0d4-4c9e-a121-e195bcc1a0cc | User Token invalid jwt expired","service":"api"}
+{"level":"error","message":"2023-09-17T13:18:57.150Z => requestId: 7fc00f90-ae04-4911-b018-4abfc1e8c689 | User Token invalid jwt expired","service":"api"}

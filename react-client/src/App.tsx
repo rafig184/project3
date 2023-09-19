@@ -82,7 +82,6 @@ const routes: Array<IRoute> = [
     key: "login",
     onlyAdmin: false
   },
-
   {
     path: "/",
     component: <LoginComponent />,

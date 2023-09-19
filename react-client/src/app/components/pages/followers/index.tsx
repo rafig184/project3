@@ -10,6 +10,8 @@ import { WithLoadingSpinner } from '../../ui-components/withLoading';
 
 
 
+
+
 export default function ReportsPage() {
 
 
@@ -98,6 +100,7 @@ export default function ReportsPage() {
     return (
         <WithLoadingSpinner isLoading={isReportLoading}>
             <div className='chartDiv' >
+
                 <CSVLink {...csvReport}><i className="pi pi-file-export"></i> Export to CSV</CSVLink>
                 <h2 style={{ color: "#176B87" }}>Top-Rated Vacation Destinations</h2>
                 <Chart className='chart' style={{ marginTop: "5%" }} type="bar" data={chartData} options={chartOptions} />
