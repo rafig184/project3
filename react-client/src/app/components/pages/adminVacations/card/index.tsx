@@ -79,7 +79,8 @@ export function AdminVacationCard(props: IVacationsAdmin) {
             icon: 'pi pi-file-edit',
             command: () => {
                 editHandler()
-            }
+            },
+
         },
         {
             label: 'Delete',

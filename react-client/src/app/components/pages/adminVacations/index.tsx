@@ -41,7 +41,7 @@ export default function AdminVacationsPage() {
             <div className="addNewVacationDiv">
                 <Button icon="pi pi-plus" rounded severity="info" aria-label="Add Vacation" onClick={() => { navigate("/add-vacation") }} /> <span className="addV">Add new vacation</span>
             </div>
-            <div className="vacations" >
+            <div className="vacations">
                 <ConfirmDialog />
                 <AdminVacationList vacations={vacations} />
             </div>

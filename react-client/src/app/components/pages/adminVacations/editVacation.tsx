@@ -98,6 +98,7 @@ const EditVacationPage = () => {
 
     useEffect(() => {
         getVacationByIdAction(vacId)
+        window.scrollTo(0, 0);
     }, []);
 
 
@@ -141,7 +142,7 @@ const EditVacationPage = () => {
 
     return (
 
-        <div className="addAndEditVacationPage">
+        <div className="addAndEditVacationPage" id="editPage">
             <form >
                 <h2 style={{ fontWeight: "400" }}>Edit Vacation</h2>
                 <div>
