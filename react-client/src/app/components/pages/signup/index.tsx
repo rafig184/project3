@@ -21,6 +21,7 @@ const registrationSchema = object({
 type RegistrationInput = TypeOf<typeof registrationSchema>;
 
 const RegistrationComponent = () => {
+    window.scrollTo(0, 0);
     const navigate = useNavigate()
     const toast = useRef<Toast>(null);
     const methods = useForm<RegistrationInput>({

@@ -19,6 +19,7 @@ export default function AdminVacationsPage() {
 
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         try {
             setIsVacationsLoading(true)
             dispatch(fetchVacationsAsync());

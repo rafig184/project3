@@ -71,6 +71,7 @@ export default function UserVacationsPage() {
     }, [dispatch]);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         fetchFollowingVacations();
     }, []);
 

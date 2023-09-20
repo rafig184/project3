@@ -12,6 +12,7 @@ export default function VacationList(props: { vacations: Array<IVacations> }) {
 
 
     const onPageChange = (event: PaginatorPageChangeEvent) => {
+        window.scrollTo(500, 500);
         setFirst(event.first);
     };
 

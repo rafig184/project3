@@ -19,6 +19,7 @@ const loginSchema = object({
 type LoginInput = TypeOf<typeof loginSchema>;
 
 const LoginComponent = () => {
+    window.scrollTo(0, 0);
     const navigate = useNavigate()
     const toast = useRef<Toast>(null);
     const methods = useForm<LoginInput>({

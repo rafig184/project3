@@ -46,6 +46,7 @@ function isAdminDestination() {
     }
 }
 
+
 function isAdminContactUs() {
     if (localStorage.getItem("role") === "user") {
         return "/contactUs"

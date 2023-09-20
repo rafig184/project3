@@ -9,6 +9,7 @@ export default function AdminVacationList(props: { vacations: Array<IVacationsAd
     const [first, setFirst] = useState<number>(0);
 
     const onPageChange = (event: PaginatorPageChangeEvent) => {
+        window.scrollTo(340, 340);
         setFirst(event.first);
     };
     const displayedVacations = props.vacations.slice(first, first + 9);
